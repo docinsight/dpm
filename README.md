@@ -4,6 +4,11 @@
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/DelphiPackageManager/DPM)
 # DPM - A package manager for Delphi
 
+> [!NOTE]
+> This is an unofficial DocInsight showcase for [DPM](https://delphi.dev), a package manager for Delphi.
+>
+> This showcase uses an adapted, co-located layout for DocInsight. The original DPM project keeps code and documentation in separate repositories; here, the guide content is imported into `docs/guide` so DocInsight can check Markdown topics, API comments, and cross-references as one connected documentation graph.
+
 ## Introducing DPM
 
 DPM is an open-source package/library manager for Delphi XE2 or later. It is heavily influenced by NuGet, so the cli, docs etc will seem very familiar to NuGet users. Delphi's development environment is quite different from .net, and has different challenges to overcome, so whilst we were influenced by NuGet, DPM is not identical to NuGet. We also took a close look at many other package managers for other development eco-systems.
