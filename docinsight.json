@@ -1,0 +1,60 @@
+{
+  "project": {
+    "name": "dpm",
+    "title": "DPM",
+    "description": "Documentation showcase for the Delphi Package Manager, generated with DocInsight.",
+    "copyright": "Unofficial DocInsight showcase for DPM. Not affiliated with, sponsored by, or endorsed by the DPM maintainers.\nCopyright © 2023 - present DPM Dev team. All Rights Reserved.",
+    "homepage": "https://delphi.dev",
+    "repository": "https://github.com/DelphiPackageManager/DPM"
+  },
+  "sources": {
+    "main": {
+      "type": "delphi",
+      "files": [
+        "Source/dpm.dproj"
+      ],
+      "options": {
+        "compatibility": "delphi_13",
+        "platform": "Win32"
+      }
+    }
+  },
+  "content": {
+    "guide": {
+      "title": "Guide",
+      "type": "markdown",
+      "root": "docs/guide",
+      "mount": "/"
+    },
+    "reference": {
+      "title": "Code Reference",
+      "type": "delphi",
+      "source": "main",
+      "structure": {
+        "path": {
+          "prefix": "none"
+        }
+      }
+    }
+  },
+  "site": {
+    "title": "DPM Docs",
+    "title_suffix": " | DocInsight Showcase",
+    "robots": "noindex,follow"
+  },
+  "output": {
+    "default_targets": [
+      "site"
+    ],
+    "targets": {
+      "site": {
+        "type": "html",
+        "path": "dist/docs/site",
+        "content": [
+          "guide",
+          "reference"
+        ]
+      }
+    }
+  }
+}
