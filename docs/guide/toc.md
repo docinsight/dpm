@@ -1,10 +1,10 @@
 ---
-default_topic: ./introduction.md
+default_topic: ./index.md
 ---
 
 ## Introduction
 
-* [Introduction](introduction.md)
+* [Introduction](index.md)
 * [Contributing](contributing.md)
 * [Compiler Versions](compiler-versions.md)
 * [Platforms](platforms.md)
