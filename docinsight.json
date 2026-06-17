@@ -2,10 +2,25 @@
   "project": {
     "name": "dpm",
     "title": "DPM",
+    "variable_alias": "dpm",
     "description": "Documentation showcase for the Delphi Package Manager, generated with DocInsight.",
     "copyright": "Unofficial DocInsight showcase for DPM. Not affiliated with, sponsored by, or endorsed by the DPM maintainers.\nCopyright © 2023 - present DPM Dev team. All Rights Reserved.",
     "homepage": "https://delphi.dev",
     "repository": "https://github.com/DelphiPackageManager/DPM"
+  },
+  "variables": {
+    "dpm": {
+      "team": {
+        "type": "link",
+        "label": "DPM Dev Team",
+        "href": "https://github.com/DelphiPackageManager"
+      }
+    },
+    "vsoft": {
+      "type": "link",
+      "label": "VSoft Technologies Pty Ltd.",
+      "href": "https://www.finalbuilder.com/"
+    }
   },
   "sources": {
     "main": {
