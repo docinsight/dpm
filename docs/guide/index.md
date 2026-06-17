@@ -1,6 +1,6 @@
 # Introduction
 
-DPM is an open-source package/library manager for Delphi XE2 or later.
+{{dpm.homepage}} is an open-source package/library manager for Delphi XE2 or later.
 
 ### What is a Package Manager
 
@@ -24,7 +24,6 @@ DPM is in beta - we have put a lot of work in to getting it to a point where it 
 - Repository and Author Trust.
 - SBOM generation.
 - CLI and IDE plugin clients.
-
 
 ### Can I use it with non DPM third party libraries?
 
