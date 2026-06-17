@@ -18,8 +18,13 @@
     },
     "vsoft": {
       "type": "link",
-      "label": "VSoft Technologies Pty Ltd.",
+      "label": "VSoft Technologies Pty Ltd",
       "href": "https://www.finalbuilder.com/"
+    },
+    "showcase_repo": {
+      "type": "link",
+      "label": "source for this showcase",
+      "href": "https://github.com/docinsight/dpm/"
     }
   },
   "sources": {
@@ -58,7 +63,7 @@
     "description": "Unofficial DocInsight documentation showcase for DPM, an open-source package manager for Delphi.",
     "robots": "noindex,follow",
     "footer": {
-      "notice": "Unofficial DocInsight showcase for {{dpm.homepage}}. This showcase is not affiliated with, sponsored by, or endorsed by the {{dpm.team}} or {{vsoft}}.\n{{dpm.copyright}}\nBuilt with {{docinsight}}."
+      "notice": "Unofficial DocInsight showcase for {{dpm.homepage}}. This showcase is not affiliated with, sponsored by, or endorsed by the {{dpm.team}} or {{vsoft}}.\n{{dpm.copyright}}\nBuilt with {{docinsight}}. View the {{showcase_repo}}."
     }
   },
   "output": {
