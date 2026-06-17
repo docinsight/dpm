@@ -3,7 +3,7 @@
     "name": "dpm",
     "title": "DPM",
     "variable_alias": "dpm",
-    "description": "Documentation showcase for the Delphi Package Manager, generated with DocInsight.",
+    "description": "A open-source package manager for Delphi",
     "copyright": "Copyright © 2023 - present {{dpm.team}}. All Rights Reserved.",
     "homepage": "https://delphi.dev",
     "repository": "https://github.com/DelphiPackageManager/DPM"
@@ -55,6 +55,7 @@
   "site": {
     "title": "DPM Docs",
     "title_suffix": " | DocInsight Showcase",
+    "description": "Unofficial DocInsight documentation showcase for DPM, an open-source package manager for Delphi.",
     "robots": "noindex,follow",
     "footer": {
       "notice": "Unofficial DocInsight showcase for {{dpm.homepage}}. This showcase is not affiliated with, sponsored by, or endorsed by the {{dpm.team}} or {{vsoft}}.\n{{dpm.copyright}}\nBuilt with {{docinsight}}."
