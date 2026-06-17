@@ -61,6 +61,7 @@
     "title": "DPM Docs",
     "title_suffix": " | DocInsight Showcase",
     "description": "Unofficial DocInsight documentation showcase for DPM, an open-source package manager for Delphi.",
+    "base_path": "/dpm/",
     "robots": "noindex,follow",
     "footer": {
       "notice": "Unofficial DocInsight showcase for {{dpm.homepage}}. This showcase is not affiliated with, sponsored by, or endorsed by the {{dpm.team}} or {{vsoft}}.\n{{dpm.copyright}}\nBuilt with {{docinsight}}. View the {{showcase_repo}}."
