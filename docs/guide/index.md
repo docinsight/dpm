@@ -1,6 +1,9 @@
 # Introduction
 
-{{dpm.homepage}} is an open-source package/library manager for Delphi XE2 or later.
+> [!NOTE]
+> This is an unofficial documentation showcase for {{dpm.homepage}}, built with a prerelease build of **DocInsight 2026.1**, which has not been publicly released yet.
+
+DPM is an open-source package/library manager for Delphi XE2 or later.
 
 ### What is a Package Manager
 
