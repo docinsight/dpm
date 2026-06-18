@@ -52,7 +52,7 @@
       "source": "main",
       "structure": {
         "path": {
-          "prefix": "none"
+          "project": "none"
         }
       }
     }
