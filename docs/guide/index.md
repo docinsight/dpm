@@ -2,6 +2,8 @@
 
 > [!NOTE]
 > This is an unofficial documentation showcase for {{dpm.homepage}}, built with a prerelease build of **DocInsight 2026.1**, which has not been publicly released yet.
+> 
+> For an example of the API reference documentation, see <xref:reference/DPM.Core.Package.Interfaces/IPackageInfo>.
 
 DPM is an open-source package/library manager for Delphi XE2 or later.
 
