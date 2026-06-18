@@ -23,7 +23,7 @@
     },
     "showcase_repo": {
       "type": "link",
-      "label": "source for this showcase",
+      "label": "showcase repository",
       "href": "https://github.com/docinsight/dpm/"
     }
   },
@@ -64,7 +64,7 @@
     "base_path": "/dpm/",
     "robots": "noindex,follow",
     "footer": {
-      "notice": "Unofficial DocInsight showcase for {{dpm.homepage}}. This showcase is not affiliated with, sponsored by, or endorsed by the {{dpm.team}} or {{vsoft}}.\n{{dpm.copyright}}\nBuilt with {{docinsight}}. View the {{showcase_repo}}."
+      "notice": "Unofficial DocInsight showcase for {{dpm.homepage}}. This showcase is not affiliated with, sponsored by, or endorsed by the {{dpm.team}} or {{vsoft}}.\n{{dpm.copyright}}\nBuilt with {{sys.docinsight}}. View the {{showcase_repo}}."
     }
   },
   "output": {
