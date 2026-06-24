@@ -1,12 +1,12 @@
 # Introduction
 
 > [!NOTE]
-> This is an unofficial DocInsight-generated showcase for DPM.
-> It is not affiliated with, sponsored by, or endorsed by the DPM maintainers.
-> The official DPM project and documentation remain the authoritative source.
+> This fork is used by DocInsight for internal compatibility and documentation-generation testing.
 >
-> This preview was built with a prerelease build of **DocInsight 2026.1**, which has not been publicly released yet.
+> It is not official DPM documentation and is not affiliated with, sponsored by, or endorsed by the DPM maintainers.
 >
+> Please use the official DPM project and documentation as the authoritative source.
+> 
 > For an example of the API reference documentation, see <xref:reference/DPM.Core.Package.Interfaces/IPackageInfo>.
 
 DPM is an open-source package/library manager for Delphi XE2 or later.
