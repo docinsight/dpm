@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html class="layout layout-holy-grail" lang="en-US"
+  dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ISpecTemplate Interface | DocInsight Showcase</title>
+  <meta name="description" content="Unofficial DocInsight documentation showcase for DPM, an open-source package manager for Delphi." />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="generator" content="DocInsight" />
+  <meta name="toc-key" content="reference:project/dpm" />
+  <meta name="uid" content="dpm.reference/dpm/dpm.core.spec.interfaces/ispectemplate" />
+  <meta name="search-index" content="../../_static/themes/learn/search/reference.js" />
+  <meta name="robots" content="noindex,follow" />
+  <link rel="icon" href="../../favicon.ico" type="image/x-icon" sizes="any" />
+  <link rel="stylesheet" href="../../_static/themes/learn/assets/learn.08b892543dc6.css" />
+  <script src="../../_static/themes/learn/toc/reference-project-dpm.js"></script>
+  <script src="../../_static/themes/learn/assets/learn.429029d00211.js" defer></script>
+</head>
+
+<body id="body" class="layout-body">
+
+  <header id="header" class="layout-body-header background-color-body-medium">
+    <div class="site-header display-flex align-items-center ">
+      <a href="../../index.html" class="site-header-brand padding-left-none">
+        <span>DPM Showcase</span>
+      </a>
+
+      <nav aria-label="site header nav" class="site-header-nav display-flex align-items-center gap-xxs">
+        <ul class="display-none display-flex-tablet justify-content-space-between gap-none">
+          <li>
+            <a class="site-header-button" href="../../index.html"><span>Guide</span></a>
+          </li>
+          <li>
+            <a class="site-header-button font-weight-semibold" href="../dpm/index.html"><span>Code Reference</span></a>
+          </li>
+        </ul>
+
+        <form role="search" aria-label="Search" id="search-container" class="margin-left-xss margin-left-lg-tablet">
+          <div class="autocomplete display-block">
+            <div class="position-relative">
+              <input class="input input-icon input-sm" type="text" placeholder="Search Code Reference" aria-expanded="false"
+                aria-activedescendant="">
+              <span class="icon search" aria-hidden="true"></span>
+            </div>
+            <ul role="listbox" id="search-suggestions"
+              class="autocomplete-suggestions is-vertically-scrollable padding-xxs" aria-label="Suggestions" hidden>
+            </ul>
+          </div>
+        </form>
+
+        <div class="display-flex flex-wrap-no-wrap margin-left-auto">
+          <button id="color-mode-toggle" title="Toggle color mode" aria-label="Toggle color mode" class="button button-clear">
+            <span class="icon color-mode" aria-hidden="true">
+            </span>
+          </button>
+          <a aria-label="Visit repository" class="button button-clear" href="https://github.com/DelphiPackageManager/DPM" data-external="true" target="_blank" rel="noopener">
+            <span class="icon repository github" aria-hidden="true">
+            </span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section id="layout-body-menu" class="layout-body-menu border-right display-flex background-color-body-medium">
+    <div id="left-container"
+      class="left-container display-none display-block-tablet padding-inline-sm padding-bottom-sm width-full">
+      <nav id="affixed-left-container" class="margin-top-sm-tablet position-sticky display-flex flex-direction-column"
+        aria-label="Primary">
+      </nav>
+    </div>
+  </section>
+
+  <main id="main" role="main" class="layout-body-main">
+    <article class="reading-width margin-inline-auto padding-sm padding-top-none padding-top-sm-tablet">
+      <div id="article-header"
+        class="align-items-center display-flex background-color-body margin-bottom-xs display-none-print">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumbs">
+            <li
+              class="breadcrumbs-item">
+              <a href="../dpm/index.html" class="cref">dpm</a>
+            </li>
+            <li
+              class="breadcrumbs-item">
+              <a href="index.html" class="cref">DPM.Core.Spec.Interfaces</a>
+            </li>
+            <li
+              class="breadcrumbs-item breadcrumbs-item-slashless">
+              ISpecTemplate
+            </li>
+          </ol>
+        </nav>
+
+        <div id="page-actions" class="display-flex flex-wrap-no-wrap margin-left-auto">
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="heading-wrapper" data-heading-level="h1">
+          <a class="anchor-link" href="ispectemplate.html" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+          <h1>  ISpecTemplate Interface</h1>
+        </div>
+
+        <nav id="center-doc-outline" class="doc-outline is-hidden-desktop display-none-print margin-bottom-sm"
+          aria-label="On this page">
+          <h2 id="on-this-page" class="title is-6 margin-block-xs">
+            On this page
+          </h2>
+          <ol id="content-well-in-this-article-list2" class="border-left padding-left-xxs">
+  <li>
+    <a href="#definition">Definition</a>
+  </li>
+  <li>
+    <a href="#properties">Properties</a>
+  </li>
+  <li>
+    <a href="#methods">Methods</a>
+  </li>
+</ol>
+        </nav>
+
+        <div class="heading-wrapper" data-heading-level="h2">
+  <a class="anchor-link" href="#definition" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+  <h2 id="definition">Definition</h2>
+</div>
+
+<div class="metadata">
+  <dl class="attributeList">
+    <dt>Unit:</dt>
+    <dd>
+      <span class="break-text">
+          DPM.Core.Spec.Interfaces
+      </span>
+    </dd>
+  </dl>
+  <dl class="attributeList">
+    <dt>Package:</dt>
+    <dd>
+      <span class="break-text">
+          dpm
+      </span>
+    </dd>
+  </dl>
+</div>
+
+
+
+
+<div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">Delphi</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+<pre class="wrap has-inner-focus"><code class="language-Delphi" dir="ltr">type ISpecTemplate = interface(ISpecNode)</code></pre>
+
+
+
+
+
+
+<dl class="attributeList stack">
+  <dt>Inheritance</dt>
+  <dd>
+    <div class="pdlHolder">
+      <div class="pdl">
+        IInterface
+      </div>
+      <div class="pdl">
+        <a href="ispecnode.html" data-linktype="relative-path">ISpecNode</a>
+      </div>
+      <span>ISpecTemplate</span>
+    </div>
+  </dd>
+</dl>
+
+<dl id="derived" class="attributeList stack">
+  <dt>Derived</dt>
+  <dd>
+    <div>
+      <span class="break-text">
+        <a href="../dpm.core.spec.template/tspectemplate.html" data-linktype="relative-path">TSpecTemplate</a>
+      </span>
+    </div>
+  </dd>
+</dl>
+
+
+
+
+
+
+
+<section class="member-group">
+  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#properties" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="properties">Properties</h2>
+  </div>
+  <div class="has-inner-focus">
+    <table class="table table-sm margin-top-none">
+      <tbody>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.buildcomments.html" class="cref">BuildComments</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.buildentries.html" class="cref">BuildEntries</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ispecnode.comments.html" class="cref">Comments</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ispecnode.html" data-linktype="relative-path">ISpecNode</a>)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.copylocalentries.html" class="cref">CopyLocalEntries</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            <p>  First-class copyLocal entries: globs (relative to the extracted package root, may
+contain $platform$) whose matched files &#x27;dpm copylocal&#x27; copies, flattened, into the consuming
+project&#x27;s build output folder at build time. Each entry carries a platform list (empty = all)
+and is always copied. (Referenced runtime .bpls are copied automatically and need no entry.)
+Authored directly, so they can target artifacts built during install.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.copytobinentries.html" class="cref">CopyToBinEntries</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            <p>  Source globs (archive-relative) whose matched files should be copied, flattened,
+into bpl\{platform} at install time - but only when installing for the entry&#x27;s platform.
+Populated at pack time from source entries flagged copyToBin, since the source entries
+themselves are stripped from the packed spec.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.copytolibentries.html" class="cref">CopyToLibEntries</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            <p>  Source globs (archive-relative) whose matched files should also be copied, flattened,
+into lib\{platform} at install time. Populated at pack time from source entries flagged
+copyToLib, since the source entries themselves are stripped from the packed spec.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.dependencies.html" class="cref">Dependencies</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.dependenciescomments.html" class="cref">DependenciesComments</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.designcomments.html" class="cref">DesignComments</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.designentries.html" class="cref">DesignEntries</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.environmentvariables.html" class="cref">EnvironmentVariables</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            <p>  IDE environment variables to set (in the IDE process) while this package&#x27;s design
+components are loaded, and clear&#x2f;restore when unloaded. Key = variable name (PATH is
+special-cased as append-only); value may use the install-time $packageDir$ token.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.name.html" class="cref">Name</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.packagedefcomments.html" class="cref">PackageDefComments</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.packagedefinitions.html" class="cref">PackageDefinitions</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.precompiledbinaries.html" class="cref">PrecompiledBinaries</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            <p>  Precompiled Windows PE binaries (.bpl&#x2f;.dll&#x2f;.exe) this package ships, declared as
+archive-relative paths (forward slashes) exactly as they appear inside the .dpkg. Auto-derived
+at pack time from the files actually added to the archive. The gallery cross-checks this against
+archive contents: an author-signed package whose archive contains an undeclared PE is rejected.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.sourcecomments.html" class="cref">SourceComments</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.sourceentries.html" class="cref">SourceEntries</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section class="member-group">
+  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#methods" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="methods">Methods</h2>
+  </div>
+  <div class="has-inner-focus">
+    <table class="table table-sm margin-top-none">
+      <tbody>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.clone.html" class="cref">Clone</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.deletebuildentry.html" class="cref">DeleteBuildEntry(string)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.deletecopylocalentry.html" class="cref">DeleteCopyLocalEntry(string)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.deletedependency.html" class="cref">DeleteDependency(string)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.deletedesignentry.html" class="cref">DeleteDesignEntry(string)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.deletepackagedefinition.html" class="cref">DeletePackageDefinition(string)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.deletesource.html" class="cref">DeleteSource(string)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.findbuildentry.html" class="cref">FindBuildEntry(string)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.finddependency.html" class="cref">FindDependency(string)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.finddesignentry.html" class="cref">FindDesignEntry(string)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.findpackagedefinition.html" class="cref">FindPackageDefinition(string)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.findsourceentry.html" class="cref">FindSourceEntry(string)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.getbuildcomments.html" class="cref">GetBuildComments</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.getbuildentries.html" class="cref">GetBuildEntries</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ispecnode.getcomments.html" class="cref">GetComments</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ispecnode.html" data-linktype="relative-path">ISpecNode</a>)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.getcopylocalentries.html" class="cref">GetCopyLocalEntries</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.getcopytobinentries.html" class="cref">GetCopyToBinEntries</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.getcopytolibentries.html" class="cref">GetCopyToLibEntries</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.getdependencies.html" class="cref">GetDependencies</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.getdependenciescomments.html" class="cref">GetDependenciesComments</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.getdesigncomments.html" class="cref">GetDesignComments</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.getdesignfiles.html" class="cref">GetDesignFiles</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.getenvironmentvariables.html" class="cref">GetEnvironmentVariables</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.getname.html" class="cref">GetName</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.getpackagedefcomments.html" class="cref">GetPackageDefComments</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.getpackagedefinitions.html" class="cref">GetPackageDefinitions</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.getprecompiledbinaries.html" class="cref">GetPrecompiledBinaries</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.getsourcecomments.html" class="cref">GetSourceComments</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.getsourcefiles.html" class="cref">GetSourceFiles</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ispecnode.hascomments.html" class="cref">HasComments</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ispecnode.html" data-linktype="relative-path">ISpecNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ispecnode.loadfromyaml.html" class="cref">LoadFromYAML(IYAMLMapping)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ispecnode.html" data-linktype="relative-path">ISpecNode</a>)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.newbuildentry.html" class="cref">NewBuildEntry(string)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.newcopylocalentry.html" class="cref">NewCopyLocalEntry(string)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.newdependency.html" class="cref">NewDependency(string)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.newdesignentry.html" class="cref">NewDesignEntry(string)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.newpackagedefinition.html" class="cref">NewPackageDefinition(string)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.newsource.html" class="cref">NewSource(string)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ispecnode.setcomments.html" class="cref">SetComments(TStrings)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ispecnode.html" data-linktype="relative-path">ISpecNode</a>)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ispectemplate.setname.html" class="cref">SetName(string)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ispecnode.toyaml.html" class="cref">ToYAML(IYAMLValue, TDPMPackageKind)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ispecnode.html" data-linktype="relative-path">ISpecNode</a>)
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+      </div>
+
+    </article>
+  </main>
+
+  <aside id="layout-body-aside" class="layout-body-aside" aria-label="Page Outline">
+    <div id="additional-resources" class="right-container padding-sm display-none display-block-desktop height-full"
+      role="complementary" aria-label="Additional resources">
+      <div id="affixed-right-container" class="position-sticky">
+        <nav id="side-doc-outline" class="doc-outline padding-bottom-xs margin-bottom-xs" aria-label="On this page">
+          <h2 class="title is-6 margin-top-xxs margin-bottom-xs">
+            On this page
+          </h2>
+          <ol id="right-rail-on-this-page-list">
+  <li class="border-left-md padding-left-xxs border-color-primary">
+    <a href="#definition" class="font-weight-semibold color-text">Definition</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#properties" class="color-text-subtle">Properties</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#methods" class="color-text-subtle">Methods</a>
+  </li>
+</ol>
+        </nav>
+      </div>
+    </div>
+  </aside>
+
+
+  <footer id="footer" class="layout-body-footer footer-layout uhf-container  has-padding
+    border-top" role="contentinfo">
+    <p class="color-text-subtle">Unofficial DocInsight showcase for <a href="https://delphi.dev" data-external="true">DPM</a>. This showcase is not affiliated with, sponsored by, or endorsed by the <a href="https://github.com/DelphiPackageManager" data-external="true">DPM Dev Team</a> or <a href="https://www.finalbuilder.com/" data-external="true">VSoft Technologies Pty Ltd</a>.<br>DPM source and documentation are copyright © 2023–present DPM Dev Team and licensed under the Apache License 2.0.<br>Built with <a href="https://docinsight.dev/" data-external="true">DocInsight</a>. View the <a href="https://github.com/docinsight/dpm/" data-external="true">showcase repository</a>.</p>
+  </footer>
+
+</body>
+
+</html>

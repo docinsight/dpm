@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html class="layout layout-holy-grail" lang="en-US"
+  dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bundled Dependencies | DocInsight Showcase</title>
+  <meta name="description" content="Unofficial DocInsight documentation showcase for DPM, an open-source package manager for Delphi." />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="generator" content="DocInsight" />
+  <meta name="toc-key" content="__root" />
+  <meta name="uid" content="dpm.guide/concepts/bundled-dependencies" />
+  <meta name="search-index" content="../_static/themes/learn/search/root.js" />
+  <meta name="robots" content="noindex,follow" />
+  <link rel="icon" href="../favicon.ico" type="image/x-icon" sizes="any" />
+  <link rel="stylesheet" href="../_static/themes/learn/assets/learn.08b892543dc6.css" />
+  <script src="../_static/themes/learn/toc/root.js"></script>
+  <script src="../_static/themes/learn/assets/learn.429029d00211.js" defer></script>
+</head>
+
+<body id="body" class="layout-body">
+
+  <header id="header" class="layout-body-header background-color-body-medium">
+    <div class="site-header display-flex align-items-center ">
+      <a href="../index.html" class="site-header-brand padding-left-none">
+        <span>DPM Showcase</span>
+      </a>
+
+      <nav aria-label="site header nav" class="site-header-nav display-flex align-items-center gap-xxs">
+        <ul class="display-none display-flex-tablet justify-content-space-between gap-none">
+          <li>
+            <a class="site-header-button font-weight-semibold" href="../index.html"><span>Guide</span></a>
+          </li>
+          <li>
+            <a class="site-header-button" href="../reference/dpm/index.html"><span>Code Reference</span></a>
+          </li>
+        </ul>
+
+        <form role="search" aria-label="Search" id="search-container" class="margin-left-xss margin-left-lg-tablet">
+          <div class="autocomplete display-block">
+            <div class="position-relative">
+              <input class="input input-icon input-sm" type="text" placeholder="Search Guide" aria-expanded="false"
+                aria-activedescendant="">
+              <span class="icon search" aria-hidden="true"></span>
+            </div>
+            <ul role="listbox" id="search-suggestions"
+              class="autocomplete-suggestions is-vertically-scrollable padding-xxs" aria-label="Suggestions" hidden>
+            </ul>
+          </div>
+        </form>
+
+        <div class="display-flex flex-wrap-no-wrap margin-left-auto">
+          <button id="color-mode-toggle" title="Toggle color mode" aria-label="Toggle color mode" class="button button-clear">
+            <span class="icon color-mode" aria-hidden="true">
+            </span>
+          </button>
+          <a aria-label="Visit repository" class="button button-clear" href="https://github.com/DelphiPackageManager/DPM" data-external="true" target="_blank" rel="noopener">
+            <span class="icon repository github" aria-hidden="true">
+            </span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section id="layout-body-menu" class="layout-body-menu border-right display-flex background-color-body-medium">
+    <div id="left-container"
+      class="left-container display-none display-block-tablet padding-inline-sm padding-bottom-sm width-full">
+      <nav id="affixed-left-container" class="margin-top-sm-tablet position-sticky display-flex flex-direction-column"
+        aria-label="Primary">
+      </nav>
+    </div>
+  </section>
+
+  <main id="main" role="main" class="layout-body-main">
+    <article class="reading-width margin-inline-auto padding-sm padding-top-none padding-top-sm-tablet">
+      <div id="article-header"
+        class="align-items-center display-flex background-color-body margin-bottom-xs display-none-print">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumbs">
+            <li
+              class="breadcrumbs-item">
+              Concepts
+            </li>
+            <li
+              class="breadcrumbs-item breadcrumbs-item-slashless">
+              Bundled Dependencies
+            </li>
+          </ol>
+        </nav>
+
+        <div id="page-actions" class="display-flex flex-wrap-no-wrap margin-left-auto">
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="heading-wrapper" data-heading-level="h1">
+          <a class="anchor-link" href="bundled-dependencies.html" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+          <h1>  Bundled Dependencies</h1>
+        </div>
+
+        <nav id="center-doc-outline" class="doc-outline is-hidden-desktop display-none-print margin-bottom-sm"
+          aria-label="On this page">
+          <h2 id="on-this-page" class="title is-6 margin-block-xs">
+            On this page
+          </h2>
+          <ol id="content-well-in-this-article-list2" class="border-left padding-left-xxs">
+  <li>
+    <a href="#declaring-a-bundled-dependency">Declaring a bundled dependency</a>
+  </li>
+  <li>
+    <a href="#a-worked-example-indy">A worked example: Indy</a>
+    <ol>
+  <li>
+    <a href="#what-happens-when-a-user-installs-acme-myhttphelper">What happens when a user installs Acme.MyHttpHelper</a>
+  </li>
+</ol>
+  </li>
+  <li>
+    <a href="#rules-and-behaviour">Rules and behaviour</a>
+  </li>
+  <li>
+    <a href="#when-to-use-it">When to use it</a>
+  </li>
+  <li>
+    <a href="#see-also">See also</a>
+  </li>
+</ol>
+        </nav>
+
+        <p>  Some libraries ship   <strong>bundled with the Delphi IDE</strong>   rather than as DPM packages. The   classic example is   <strong>Indy</strong>   — every Delphi install already has a copy of Indy on its   library path, but there is (currently) no DPM package for it.</p><p>  This creates a problem for package authors. If your package uses Indy, you would like to   <em>declare</em>   that dependency so it is visible and documented. But a normal DPM dependency   must point at a real package and a version range:</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">yaml</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-yaml" dir="ltr">dependencies:
+  - id: Indy.System
+    version: &quot;[10.6.2,]&quot;     # &lt;-- there is no Indy.System package to satisfy this!
+</code></pre><p>  With no <code>Indy.System</code>   package on any feed, the resolver fails: it cannot satisfy the   dependency, so the install errors out.</p><p>  <strong>Bundled dependencies</strong>   solve this. You declare the dependency using the special   version <code>bundled</code>  , and DPM does the right thing:</p><ul><li><p>  If   <strong>no</strong>   package for that id exists, the dependency is satisfied by the copy that   ships with the IDE — no download, nothing added to your <code>.dproj</code>   search paths.</p></li><li><p>  If a   <strong>real</strong>   package for that id   <em>is</em>   present (because the user installed one, or   another package pulled it in), that real package is used automatically — at whatever   version it happens to be.</p></li></ul><p>  You declare the intent once; DPM picks the best available option at install time.</p><hr />  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#declaring-a-bundled-dependency" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="declaring-a-bundled-dependency">  Declaring a bundled dependency</h2>
+  </div>
+<p>  Use <code>bundled</code>   as the version:</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">yaml</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-yaml" dir="ltr">dependencies:
+  - id: Indy.System
+    version: bundled
+</code></pre><p>  That&#x27;s it. There is no separate &quot;kind&quot; or flag — the version string is the whole signal.</p><blockquote>
+    <p>  Under the hood <code>bundled</code>   is an alias for the sentinel version <code>999.999.999</code>  . You can   write either form; <code>bundled</code>   is just easier to read.</p>
+  </blockquote><hr />  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#a-worked-example-indy" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="a-worked-example-indy">  A worked example: Indy</h2>
+  </div>
+<p>  Imagine the Indy source is eventually published to DPM as three packages that build on   each other:</p><table class="table table-sm">
+    <thead>
+      <tr>
+        <th><p>  Package</p></th>
+        <th><p>  Purpose</p></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><p><code>Indy.System</code></p></td>
+        <td><p>  Low-level system units (sockets, streams, globals)</p></td>
+      </tr>
+      <tr>
+        <td><p><code>Indy.Core</code></p></td>
+        <td><p>  Core components, built on <code>Indy.System</code></p></td>
+      </tr>
+      <tr>
+        <td><p><code>Indy.Protocols</code></p></td>
+        <td><p>  HTTP &#x2f; SMTP &#x2f; FTP etc., built on <code>Indy.Core</code>   and <code>Indy.System</code></p></td>
+      </tr>
+    </tbody>
+  </table><p>  Today none of these exist as DPM packages — Indy comes from the IDE. So a package that   needs Indy&#x27;s protocols declares the whole chain as   <strong>bundled</strong>  :</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">yaml</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-yaml" dir="ltr"># MyHttpHelper.dspec
+metadata:
+  id: Acme.MyHttpHelper
+  version: 1.0.0
+  description: Helpers built on Indy&#x27;s HTTP client
+  authors:
+    - Acme
+  license: Apache-2.0
+targetPlatforms:
+  - compiler: 12.0
+    platforms: [Win32, Win64]
+    template: default
+templates:
+  - name: default
+    dependencies:
+      - id: Indy.System
+        version: bundled
+      - id: Indy.Core
+        version: bundled
+      - id: Indy.Protocols
+        version: bundled
+    source:
+      - src: .\src\*.pas
+        dest: src
+</code></pre>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#what-happens-when-a-user-installs-acme-myhttphelper" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="what-happens-when-a-user-installs-acme-myhttphelper">  What happens when a user installs <code>Acme.MyHttpHelper</code></h3>
+  </div>
+<p>  <strong>Case 1 — no Indy packages exist (the situation today).</strong>   The three bundled dependencies resolve to no-ops. Nothing is downloaded for them and no   Indy search paths are added — the compiler finds Indy on the IDE&#x27;s default library path,   exactly as it would without DPM. The install succeeds.</p><p>  <strong>Case 2 — the user installs a real Indy package.</strong>   Later, real Indy packages become available and the user adds one to their project as a   top-level package:</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">text</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code dir="ltr">dpm install Indy.Protocols
+</code></pre><p>  Now <code>Indy.Protocols</code>   (and whatever it depends on — <code>Indy.Core</code>  , <code>Indy.System</code>  ) is a real   resolved package. The next time <code>Acme.MyHttpHelper</code>   is resolved, its <code>bundled</code>   dependencies see the real packages already in the graph and   <strong>defer to them</strong>   <strong>automatically</strong>  . The real Indy source is used and its search paths are added — no change   needed to <code>Acme.MyHttpHelper</code>  .</p><p>  The author never had to ship two versions of their package or guess at version numbers.</p><hr />  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#rules-and-behaviour" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="rules-and-behaviour">  Rules and behaviour</h2>
+  </div>
+<ul><li><p>  <strong>Any real version wins.</strong>   A <code>bundled</code>   dependency is satisfied by   <em>any</em>   version of a   real package with the same id. DPM does not apply a version range to it — that is the   user&#x27;s choice when they install the real package.</p></li><li><p>  <strong>DPM never auto-fetches the real package.</strong>   A <code>bundled</code>   dependency only honours what is   already in the dependency graph. It will not reach out to a feed and pull in the latest   Indy on its own — the user opts in by installing a real package themselves. This keeps   resolution predictable and works offline.</p></li><li><p>  <strong>Nothing is written to your project.</strong>   A bundled no-op contributes no <code>PackageReference</code>   and no search path to the <code>.dproj</code>  . Restores re-evaluate it each time, so there is never   a stale <code>999.999.999</code>   entry left behind.</p></li><li><p>  <strong>It is satisfied per id, once.</strong>   If several of your packages declare <code>bundled</code>   on the   same id, they all share a single resolution.</p></li></ul><hr />  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#when-to-use-it" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="when-to-use-it">  When to use it</h2>
+  </div>
+<p>  Use a bundled dependency when:</p><ul><li><p>  The library ships with the Delphi IDE (Indy, and similar built-in libraries),   <strong>and</strong></p></li><li><p>  You want to declare the dependency so it is documented and ready to be replaced by a   real package later.</p></li></ul><p>  Do   <strong>not</strong>   use it for ordinary libraries that have a normal DPM package — declare those   with a real version range (see <a href="version-range.html">  Version Ranges</a>  ).</p><hr />  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#see-also" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="see-also">  See also</h2>
+  </div>
+<ul><li><p><a href="../getting-started/creating-packages.html">  Creating Packages</a>   — the full spec format,   including the <a href="../getting-started/creating-packages.html#dependencies">  dependencies</a>   section.</p></li><li><p><a href="version-range.html">  Version Range</a>   — the dependency version range syntax.</p></li></ul>
+      </div>
+
+    </article>
+  </main>
+
+  <aside id="layout-body-aside" class="layout-body-aside" aria-label="Page Outline">
+    <div id="additional-resources" class="right-container padding-sm display-none display-block-desktop height-full"
+      role="complementary" aria-label="Additional resources">
+      <div id="affixed-right-container" class="position-sticky">
+        <nav id="side-doc-outline" class="doc-outline padding-bottom-xs margin-bottom-xs" aria-label="On this page">
+          <h2 class="title is-6 margin-top-xxs margin-bottom-xs">
+            On this page
+          </h2>
+          <ol id="right-rail-on-this-page-list">
+  <li class="border-left-md padding-left-xxs border-color-primary">
+    <a href="#declaring-a-bundled-dependency" class="font-weight-semibold color-text">Declaring a bundled dependency</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#a-worked-example-indy" class="color-text-subtle">A worked example: Indy</a>
+    <ol>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#what-happens-when-a-user-installs-acme-myhttphelper" class="color-text-subtle">What happens when a user installs Acme.MyHttpHelper</a>
+  </li>
+</ol>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#rules-and-behaviour" class="color-text-subtle">Rules and behaviour</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#when-to-use-it" class="color-text-subtle">When to use it</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#see-also" class="color-text-subtle">See also</a>
+  </li>
+</ol>
+        </nav>
+      </div>
+    </div>
+  </aside>
+
+
+  <footer id="footer" class="layout-body-footer footer-layout uhf-container  has-padding
+    border-top" role="contentinfo">
+    <p class="color-text-subtle">Unofficial DocInsight showcase for <a href="https://delphi.dev" data-external="true">DPM</a>. This showcase is not affiliated with, sponsored by, or endorsed by the <a href="https://github.com/DelphiPackageManager" data-external="true">DPM Dev Team</a> or <a href="https://www.finalbuilder.com/" data-external="true">VSoft Technologies Pty Ltd</a>.<br>DPM source and documentation are copyright © 2023–present DPM Dev Team and licensed under the Apache License 2.0.<br>Built with <a href="https://docinsight.dev/" data-external="true">DocInsight</a>. View the <a href="https://github.com/docinsight/dpm/" data-external="true">showcase repository</a>.</p>
+  </footer>
+
+</body>
+
+</html>

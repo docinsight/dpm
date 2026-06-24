@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html class="layout layout-holy-grail" lang="en-US"
+  dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How does DPM work | DocInsight Showcase</title>
+  <meta name="description" content="Unofficial DocInsight documentation showcase for DPM, an open-source package manager for Delphi." />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="generator" content="DocInsight" />
+  <meta name="toc-key" content="__root" />
+  <meta name="uid" content="dpm.guide/concepts/how-it-works" />
+  <meta name="search-index" content="../_static/themes/learn/search/root.js" />
+  <meta name="robots" content="noindex,follow" />
+  <link rel="icon" href="../favicon.ico" type="image/x-icon" sizes="any" />
+  <link rel="stylesheet" href="../_static/themes/learn/assets/learn.08b892543dc6.css" />
+  <script src="../_static/themes/learn/toc/root.js"></script>
+  <script src="../_static/themes/learn/assets/learn.429029d00211.js" defer></script>
+</head>
+
+<body id="body" class="layout-body">
+
+  <header id="header" class="layout-body-header background-color-body-medium">
+    <div class="site-header display-flex align-items-center ">
+      <a href="../index.html" class="site-header-brand padding-left-none">
+        <span>DPM Showcase</span>
+      </a>
+
+      <nav aria-label="site header nav" class="site-header-nav display-flex align-items-center gap-xxs">
+        <ul class="display-none display-flex-tablet justify-content-space-between gap-none">
+          <li>
+            <a class="site-header-button font-weight-semibold" href="../index.html"><span>Guide</span></a>
+          </li>
+          <li>
+            <a class="site-header-button" href="../reference/dpm/index.html"><span>Code Reference</span></a>
+          </li>
+        </ul>
+
+        <form role="search" aria-label="Search" id="search-container" class="margin-left-xss margin-left-lg-tablet">
+          <div class="autocomplete display-block">
+            <div class="position-relative">
+              <input class="input input-icon input-sm" type="text" placeholder="Search Guide" aria-expanded="false"
+                aria-activedescendant="">
+              <span class="icon search" aria-hidden="true"></span>
+            </div>
+            <ul role="listbox" id="search-suggestions"
+              class="autocomplete-suggestions is-vertically-scrollable padding-xxs" aria-label="Suggestions" hidden>
+            </ul>
+          </div>
+        </form>
+
+        <div class="display-flex flex-wrap-no-wrap margin-left-auto">
+          <button id="color-mode-toggle" title="Toggle color mode" aria-label="Toggle color mode" class="button button-clear">
+            <span class="icon color-mode" aria-hidden="true">
+            </span>
+          </button>
+          <a aria-label="Visit repository" class="button button-clear" href="https://github.com/DelphiPackageManager/DPM" data-external="true" target="_blank" rel="noopener">
+            <span class="icon repository github" aria-hidden="true">
+            </span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section id="layout-body-menu" class="layout-body-menu border-right display-flex background-color-body-medium">
+    <div id="left-container"
+      class="left-container display-none display-block-tablet padding-inline-sm padding-bottom-sm width-full">
+      <nav id="affixed-left-container" class="margin-top-sm-tablet position-sticky display-flex flex-direction-column"
+        aria-label="Primary">
+      </nav>
+    </div>
+  </section>
+
+  <main id="main" role="main" class="layout-body-main">
+    <article class="reading-width margin-inline-auto padding-sm padding-top-none padding-top-sm-tablet">
+      <div id="article-header"
+        class="align-items-center display-flex background-color-body margin-bottom-xs display-none-print">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumbs">
+            <li
+              class="breadcrumbs-item">
+              Concepts
+            </li>
+            <li
+              class="breadcrumbs-item breadcrumbs-item-slashless">
+              How it works
+            </li>
+          </ol>
+        </nav>
+
+        <div id="page-actions" class="display-flex flex-wrap-no-wrap margin-left-auto">
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="heading-wrapper" data-heading-level="h1">
+          <a class="anchor-link" href="how-it-works.html" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+          <h1>  How does DPM work</h1>
+        </div>
+
+        <nav id="center-doc-outline" class="doc-outline is-hidden-desktop display-none-print margin-bottom-sm"
+          aria-label="On this page">
+          <h2 id="on-this-page" class="title is-6 margin-block-xs">
+            On this page
+          </h2>
+          <ol id="content-well-in-this-article-list2" class="border-left padding-left-xxs">
+  <li>
+    <a href="#packages">Packages</a>
+    <ol>
+  <li>
+    <a href="#so-how-are-packages-created">So how are packages created?</a>
+  </li>
+  <li>
+    <a href="#what-does-installing-a-package-actually-do">What does installing a package actually do?</a>
+  </li>
+  <li>
+    <a href="#what-changes-does-dpm-make-to-my-dproj">What changes does dpm make to my dproj?</a>
+  </li>
+  <li>
+    <a href="#so-do-i-need-to-install-the-package-on-every-dev-machine">So do I need to install the package on every dev machine?</a>
+  </li>
+  <li>
+    <a href="#how-do-i-upgrade-package-versions">How do I upgrade package versions?</a>
+  </li>
+  <li>
+    <a href="#what-about-upgrading-ide-versions">What about upgrading IDE Versions</a>
+  </li>
+</ol>
+  </li>
+</ol>
+        </nav>
+
+        <p>  Many people have expressed a concern that using DPM would force them to give up using other techniques for working with third-party libraries. This is not the case, and this page will explain just how it all hangs together. Let&#x27;s start with the basics:</p>  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#packages" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="packages">  Packages</h2>
+  </div>
+<p>  DPM packages are a zip file that contains source files and&#x2f;or compiled dcu&#x2f;dcp&#x2f;bpl files, and a manifest file that describes the package, how it should be used, which paths to add to the project search path (more on this below), which design time packages should be install, which runtime files should be included etc. The manifest also describes the other packages this package depends on. When this package is installed, any dependencies are also installed, and their dependencies are also installed.</p>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#so-how-are-packages-created" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="so-how-are-packages-created">  So how are packages created?</h3>
+  </div>
+<p>  See <a href="../getting-started/creating-packages.html">  Creating Packages</a>  .</p>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#what-does-installing-a-package-actually-do" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="what-does-installing-a-package-actually-do">  What does installing a package actually do?</h3>
+  </div>
+<p>  Let&#x27;s walk through the installation process, starting with the command line.</p><p><code>dpm install vsoft.commandline .\myproject.dproj</code></p><p>  The first step is to determine the Delphi compiler version, which is done by reading the dproj file (<a href="../getting-started/known-issues.html">  see known issues</a>  ). You can also specify the version on the command line (useful when upgrading compiler versions)</p><p>  The next step is find our package (VSoft.CommandLine). In the above example, we didn&#x27;t specify a package version, so dpm searches the registered <a href="package-sources.html">  sources</a>   to determine the latest version (if any) available.</p><p>  DPM then checks it&#x27;s <a href="package-cache.html">  package cache</a>   to see if it already has the package version downloaded.</p><p>  If the package is not already cached, dpm downloads it from the registered <a href="package-sources.html">  source</a>   and extracts the package file into the package cache. This provides us with access to the package manifest. If the packaged was was signed then the signatures (repository, author or both) are checked against the package contents.</p><p>  Using the package.dspec.yaml , we then start the package <a href="package-dependencies.html">  dependency resolution</a>   process, which walks the dependency tree to ensure that all dependencies can be resolved. The dependent packages are also downloaded to the package cache during this process.</p><p>  When all the dependencies are met, the dproj is updated with the package references (id and version) and the collected search paths are added to the base configuration for each platform. Note that the command line default is to attempt to install the package for all supported platforms that are enabled in the project.</p>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#what-changes-does-dpm-make-to-my-dproj" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="what-changes-does-dpm-make-to-my-dproj">  What changes does dpm make to my dproj?</h3>
+  </div>
+  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#so-do-i-need-to-install-the-package-on-every-dev-machine" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="so-do-i-need-to-install-the-package-on-every-dev-machine">  So do I need to install the package on every dev machine?</h3>
+  </div>
+<p>  No. DPM has a <a href="../commands/restore-command.html">  restore command</a>   which will look at the package references in the dproj, and go through the process of downloading and installing the packages and dependencies. If the <a href="../getting-started/ide-integration.html">  IDE integration</a>   is installed, then when opening the project in the IDE, the restore command is run as the project is loading to ensure that all packages are available.</p>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#how-do-i-upgrade-package-versions" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="how-do-i-upgrade-package-versions">  How do I upgrade package versions?</h3>
+  </div>
+<p>  Using the IDE integration, the package search view will show when newer versions are available. See <a href="../getting-started/ide-integration.html">  IDE integration</a>   for more details.</p>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#what-about-upgrading-ide-versions" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="what-about-upgrading-ide-versions">  What about upgrading IDE Versions</h3>
+  </div>
+<p>  Provided the referenced packages&#x2f;versions are available for the new IDE, then loading the project into the new IDE should restore the packages for that IDE version and away you go. The likely scenario is that package authors will add the new compiler version support, and publish a new package version. First upgrade the package to that version in your old IDE, and then load the project in the new IDE.</p><p>  Our hope is that using DPM will make upgrading Delphi versions trivial compared to the current situation (as of 2026), where managing third party libraries is an impediment to upgrading.</p>
+      </div>
+
+    </article>
+  </main>
+
+  <aside id="layout-body-aside" class="layout-body-aside" aria-label="Page Outline">
+    <div id="additional-resources" class="right-container padding-sm display-none display-block-desktop height-full"
+      role="complementary" aria-label="Additional resources">
+      <div id="affixed-right-container" class="position-sticky">
+        <nav id="side-doc-outline" class="doc-outline padding-bottom-xs margin-bottom-xs" aria-label="On this page">
+          <h2 class="title is-6 margin-top-xxs margin-bottom-xs">
+            On this page
+          </h2>
+          <ol id="right-rail-on-this-page-list">
+  <li class="border-left-md padding-left-xxs border-color-primary">
+    <a href="#packages" class="font-weight-semibold color-text">Packages</a>
+    <ol>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#so-how-are-packages-created" class="color-text-subtle">So how are packages created?</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#what-does-installing-a-package-actually-do" class="color-text-subtle">What does installing a package actually do?</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#what-changes-does-dpm-make-to-my-dproj" class="color-text-subtle">What changes does dpm make to my dproj?</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#so-do-i-need-to-install-the-package-on-every-dev-machine" class="color-text-subtle">So do I need to install the package on every dev machine?</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#how-do-i-upgrade-package-versions" class="color-text-subtle">How do I upgrade package versions?</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#what-about-upgrading-ide-versions" class="color-text-subtle">What about upgrading IDE Versions</a>
+  </li>
+</ol>
+  </li>
+</ol>
+        </nav>
+      </div>
+    </div>
+  </aside>
+
+
+  <footer id="footer" class="layout-body-footer footer-layout uhf-container  has-padding
+    border-top" role="contentinfo">
+    <p class="color-text-subtle">Unofficial DocInsight showcase for <a href="https://delphi.dev" data-external="true">DPM</a>. This showcase is not affiliated with, sponsored by, or endorsed by the <a href="https://github.com/DelphiPackageManager" data-external="true">DPM Dev Team</a> or <a href="https://www.finalbuilder.com/" data-external="true">VSoft Technologies Pty Ltd</a>.<br>DPM source and documentation are copyright © 2023–present DPM Dev Team and licensed under the Apache License 2.0.<br>Built with <a href="https://docinsight.dev/" data-external="true">DocInsight</a>. View the <a href="https://github.com/docinsight/dpm/" data-external="true">showcase repository</a>.</p>
+  </footer>
+
+</body>
+
+</html>

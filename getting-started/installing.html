@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html class="layout layout-holy-grail" lang="en-US"
+  dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>installing | DocInsight Showcase</title>
+  <meta name="description" content="Unofficial DocInsight documentation showcase for DPM, an open-source package manager for Delphi." />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="generator" content="DocInsight" />
+  <meta name="toc-key" content="__root" />
+  <meta name="uid" content="dpm.guide/getting-started/installing" />
+  <meta name="search-index" content="../_static/themes/learn/search/root.js" />
+  <meta name="robots" content="noindex,follow" />
+  <link rel="icon" href="../favicon.ico" type="image/x-icon" sizes="any" />
+  <link rel="stylesheet" href="../_static/themes/learn/assets/learn.08b892543dc6.css" />
+  <script src="../_static/themes/learn/toc/root.js"></script>
+  <script src="../_static/themes/learn/assets/learn.429029d00211.js" defer></script>
+</head>
+
+<body id="body" class="layout-body">
+
+  <header id="header" class="layout-body-header background-color-body-medium">
+    <div class="site-header display-flex align-items-center ">
+      <a href="../index.html" class="site-header-brand padding-left-none">
+        <span>DPM Showcase</span>
+      </a>
+
+      <nav aria-label="site header nav" class="site-header-nav display-flex align-items-center gap-xxs">
+        <ul class="display-none display-flex-tablet justify-content-space-between gap-none">
+          <li>
+            <a class="site-header-button font-weight-semibold" href="../index.html"><span>Guide</span></a>
+          </li>
+          <li>
+            <a class="site-header-button" href="../reference/dpm/index.html"><span>Code Reference</span></a>
+          </li>
+        </ul>
+
+        <form role="search" aria-label="Search" id="search-container" class="margin-left-xss margin-left-lg-tablet">
+          <div class="autocomplete display-block">
+            <div class="position-relative">
+              <input class="input input-icon input-sm" type="text" placeholder="Search Guide" aria-expanded="false"
+                aria-activedescendant="">
+              <span class="icon search" aria-hidden="true"></span>
+            </div>
+            <ul role="listbox" id="search-suggestions"
+              class="autocomplete-suggestions is-vertically-scrollable padding-xxs" aria-label="Suggestions" hidden>
+            </ul>
+          </div>
+        </form>
+
+        <div class="display-flex flex-wrap-no-wrap margin-left-auto">
+          <button id="color-mode-toggle" title="Toggle color mode" aria-label="Toggle color mode" class="button button-clear">
+            <span class="icon color-mode" aria-hidden="true">
+            </span>
+          </button>
+          <a aria-label="Visit repository" class="button button-clear" href="https://github.com/DelphiPackageManager/DPM" data-external="true" target="_blank" rel="noopener">
+            <span class="icon repository github" aria-hidden="true">
+            </span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section id="layout-body-menu" class="layout-body-menu border-right display-flex background-color-body-medium">
+    <div id="left-container"
+      class="left-container display-none display-block-tablet padding-inline-sm padding-bottom-sm width-full">
+      <nav id="affixed-left-container" class="margin-top-sm-tablet position-sticky display-flex flex-direction-column"
+        aria-label="Primary">
+      </nav>
+    </div>
+  </section>
+
+  <main id="main" role="main" class="layout-body-main">
+    <article class="reading-width margin-inline-auto padding-sm padding-top-none padding-top-sm-tablet">
+      <div id="article-header"
+        class="align-items-center display-flex background-color-body margin-bottom-xs display-none-print">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumbs">
+            <li
+              class="breadcrumbs-item">
+              Getting Started
+            </li>
+            <li
+              class="breadcrumbs-item breadcrumbs-item-slashless">
+              Installing DPM
+            </li>
+          </ol>
+        </nav>
+
+        <div id="page-actions" class="display-flex flex-wrap-no-wrap margin-left-auto">
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="heading-wrapper" data-heading-level="h1">
+          <a class="anchor-link" href="installing.html" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+          <h1>  installing</h1>
+        </div>
+
+        <nav id="center-doc-outline" class="doc-outline is-hidden-desktop display-none-print margin-bottom-sm"
+          aria-label="On this page">
+          <h2 id="on-this-page" class="title is-6 margin-block-xs">
+            On this page
+          </h2>
+          <ol id="content-well-in-this-article-list2" class="border-left padding-left-xxs">
+  <li>
+    <a href="#getting-started">Getting Started</a>
+    <ol>
+  <li>
+    <a href="#installing">Installing</a>
+  </li>
+  <li>
+    <a href="#creating-packages">Creating packages</a>
+  </li>
+  <li>
+    <a href="#building-dpm">Building DPM</a>
+  </li>
+</ol>
+  </li>
+</ol>
+        </nav>
+
+          <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#getting-started" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="getting-started">  Getting Started</h2>
+  </div>
+<p>  Note that DPM is still very much alpha software, things are subject to change.</p>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#installing" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="installing">  Installing</h3>
+  </div>
+<p>  Download the latest installer from github (it is codesigned, as are the dll&#x27;s and command line exe) :</p><p><a href="https://github.com/DelphiPackageManager/DPM/releases" data-external="true">  https:&#x2f;&#x2f;github.com&#x2f;DelphiPackageManager&#x2f;DPM&#x2f;releases</a></p><p>  The installer will prompt to install for the &quot;me only&quot; (recommended) or everyone (needs admin access for everyone).</p><figure>
+    <img src="../images/installermode.png" alt="Installer mode" />
+  </figure><p>  Note that when installing &quot;me only&quot;, the install path defaults to</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">bat</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-bat" dir="ltr">C:\Users\[username]\AppData\Local\Programs\DPM Package Manager
+</code></pre><p>  This puts the install location under your user profile. If you change this you may run int permissions issues.</p><p>  The installer will detect which supported versions of the Rad Studio IDE you have installed.</p><p>  I recommended you leave the &quot;add to path&quot; option checked, it makes running the command line easier.</p><p>  When you install packages, they will be downloaded from the package source to the package cache folder. By default the package cache folder will be in %APPDATA%  \.dpm\packages</p><p>  You can change that by editing %APPDATA%  \.dpm\dpm.config and changing the packageCacheLocation setting.</p><p>  To use DPM, you need some packages. The default package source is <a href="https://delphi.dev/api/v1/index.json" data-external="true">  https:&#x2f;&#x2f;delphi.dev&#x2f;api&#x2f;v1&#x2f;index.json</a>   - newer builds of dpm will add that by default.</p><p>  You can either install packages from the command line, or using the IDE plugin. The IDE plugin adds a DPM node to each project in the project tree,   and a right click menu to &quot;Manage DPM Packages&quot;. The DPM package view will open docked in the IDE code window, and show the list of installed packages, plus the first 100 packages   from the package sources. When you click on a package, the details on the right side of the view will show the package information and the projects which have the package installed.</p><p>  Note that your dproj will be modified by installing packages.</p><p>  DPM will :</p><p>  a) Add some msbuild properties, and add a   $  (DPMSearch) variable to the base configuration project search path for each platform that you install for.   b) Add a DPM section at the bottom of the file with PackageReference elements, which record which packages are installed in the project.</p><p>  Note that installing design time packages is not currently supported, I&#x27;m working on that still.</p><p>  The rest of this post is for people that want to compile or contribute or create dpm packages.</p>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#creating-packages" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="creating-packages">  Creating packages</h3>
+  </div>
+<p>  Scaffold a starter <code>.dspec.yaml</code>   with <a href="../commands/spec-command.html"><code>dpm spec</code></a>   and edit it to suit your package. See <a href="creating-packages.html">  Creating Packages</a>   for the full spec reference.</p><p>  To build the package files, run:</p><p><code>dpm pack My.Package.dspec.yaml -o=c:\mypackagefolder</code></p><p>  That will generate 1 file per compiler&#x2f;platform combination.</p>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#building-dpm" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="building-dpm">  Building DPM</h3>
+  </div>
+<p>  See <a href="../contributing.html">  Contributing</a></p>
+      </div>
+
+    </article>
+  </main>
+
+  <aside id="layout-body-aside" class="layout-body-aside" aria-label="Page Outline">
+    <div id="additional-resources" class="right-container padding-sm display-none display-block-desktop height-full"
+      role="complementary" aria-label="Additional resources">
+      <div id="affixed-right-container" class="position-sticky">
+        <nav id="side-doc-outline" class="doc-outline padding-bottom-xs margin-bottom-xs" aria-label="On this page">
+          <h2 class="title is-6 margin-top-xxs margin-bottom-xs">
+            On this page
+          </h2>
+          <ol id="right-rail-on-this-page-list">
+  <li class="border-left-md padding-left-xxs border-color-primary">
+    <a href="#getting-started" class="font-weight-semibold color-text">Getting Started</a>
+    <ol>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#installing" class="color-text-subtle">Installing</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#creating-packages" class="color-text-subtle">Creating packages</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#building-dpm" class="color-text-subtle">Building DPM</a>
+  </li>
+</ol>
+  </li>
+</ol>
+        </nav>
+      </div>
+    </div>
+  </aside>
+
+
+  <footer id="footer" class="layout-body-footer footer-layout uhf-container  has-padding
+    border-top" role="contentinfo">
+    <p class="color-text-subtle">Unofficial DocInsight showcase for <a href="https://delphi.dev" data-external="true">DPM</a>. This showcase is not affiliated with, sponsored by, or endorsed by the <a href="https://github.com/DelphiPackageManager" data-external="true">DPM Dev Team</a> or <a href="https://www.finalbuilder.com/" data-external="true">VSoft Technologies Pty Ltd</a>.<br>DPM source and documentation are copyright © 2023–present DPM Dev Team and licensed under the Apache License 2.0.<br>Built with <a href="https://docinsight.dev/" data-external="true">DocInsight</a>. View the <a href="https://github.com/docinsight/dpm/" data-external="true">showcase repository</a>.</p>
+  </footer>
+
+</body>
+
+</html>

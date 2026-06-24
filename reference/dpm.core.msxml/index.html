@@ -1,0 +1,4952 @@
+<!DOCTYPE html>
+<html class="layout layout-holy-grail" lang="en-US"
+  dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DPM.Core.MSXML Unit | DocInsight Showcase</title>
+  <meta name="description" content="Unofficial DocInsight documentation showcase for DPM, an open-source package manager for Delphi." />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="generator" content="DocInsight" />
+  <meta name="toc-key" content="reference:project/dpm" />
+  <meta name="uid" content="dpm.reference/dpm/dpm.core.msxml" />
+  <meta name="search-index" content="../../_static/themes/learn/search/reference.js" />
+  <meta name="robots" content="noindex,follow" />
+  <link rel="icon" href="../../favicon.ico" type="image/x-icon" sizes="any" />
+  <link rel="stylesheet" href="../../_static/themes/learn/assets/learn.08b892543dc6.css" />
+  <script src="../../_static/themes/learn/toc/reference-project-dpm.js"></script>
+  <script src="../../_static/themes/learn/assets/learn.429029d00211.js" defer></script>
+</head>
+
+<body id="body" class="layout-body">
+
+  <header id="header" class="layout-body-header background-color-body-medium">
+    <div class="site-header display-flex align-items-center ">
+      <a href="../../index.html" class="site-header-brand padding-left-none">
+        <span>DPM Showcase</span>
+      </a>
+
+      <nav aria-label="site header nav" class="site-header-nav display-flex align-items-center gap-xxs">
+        <ul class="display-none display-flex-tablet justify-content-space-between gap-none">
+          <li>
+            <a class="site-header-button" href="../../index.html"><span>Guide</span></a>
+          </li>
+          <li>
+            <a class="site-header-button font-weight-semibold" href="../dpm/index.html"><span>Code Reference</span></a>
+          </li>
+        </ul>
+
+        <form role="search" aria-label="Search" id="search-container" class="margin-left-xss margin-left-lg-tablet">
+          <div class="autocomplete display-block">
+            <div class="position-relative">
+              <input class="input input-icon input-sm" type="text" placeholder="Search Code Reference" aria-expanded="false"
+                aria-activedescendant="">
+              <span class="icon search" aria-hidden="true"></span>
+            </div>
+            <ul role="listbox" id="search-suggestions"
+              class="autocomplete-suggestions is-vertically-scrollable padding-xxs" aria-label="Suggestions" hidden>
+            </ul>
+          </div>
+        </form>
+
+        <div class="display-flex flex-wrap-no-wrap margin-left-auto">
+          <button id="color-mode-toggle" title="Toggle color mode" aria-label="Toggle color mode" class="button button-clear">
+            <span class="icon color-mode" aria-hidden="true">
+            </span>
+          </button>
+          <a aria-label="Visit repository" class="button button-clear" href="https://github.com/DelphiPackageManager/DPM" data-external="true" target="_blank" rel="noopener">
+            <span class="icon repository github" aria-hidden="true">
+            </span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section id="layout-body-menu" class="layout-body-menu border-right display-flex background-color-body-medium">
+    <div id="left-container"
+      class="left-container display-none display-block-tablet padding-inline-sm padding-bottom-sm width-full">
+      <nav id="affixed-left-container" class="margin-top-sm-tablet position-sticky display-flex flex-direction-column"
+        aria-label="Primary">
+      </nav>
+    </div>
+  </section>
+
+  <main id="main" role="main" class="layout-body-main">
+    <article class="reading-width margin-inline-auto padding-sm padding-top-none padding-top-sm-tablet">
+      <div id="article-header"
+        class="align-items-center display-flex background-color-body margin-bottom-xs display-none-print">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumbs">
+            <li
+              class="breadcrumbs-item">
+              <a href="../dpm/index.html" class="cref">dpm</a>
+            </li>
+            <li
+              class="breadcrumbs-item breadcrumbs-item-slashless">
+              DPM.Core.MSXML
+            </li>
+          </ol>
+        </nav>
+
+        <div id="page-actions" class="display-flex flex-wrap-no-wrap margin-left-auto">
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="heading-wrapper" data-heading-level="h1">
+          <a class="anchor-link" href="index.html" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+          <h1>  DPM.Core.MSXML Unit</h1>
+        </div>
+
+        <nav id="center-doc-outline" class="doc-outline is-hidden-desktop display-none-print margin-bottom-sm"
+          aria-label="On this page">
+          <h2 id="on-this-page" class="title is-6 margin-block-xs">
+            On this page
+          </h2>
+          <ol id="content-well-in-this-article-list2" class="border-left padding-left-xxs">
+  <li>
+    <a href="#classes">Classes</a>
+  </li>
+  <li>
+    <a href="#interfaces">Interfaces</a>
+  </li>
+  <li>
+    <a href="#types">Types</a>
+  </li>
+  <li>
+    <a href="#constants">Constants</a>
+  </li>
+</ol>
+        </nav>
+
+        
+<div class="metadata margin-top-md">
+  <dl class="attributeList">
+    <dt>Package:</dt>
+    <dd>
+      <span class="break-text">
+          dpm
+      </span>
+    </dd>
+  </dl>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="member-group">
+  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#classes" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="classes">Classes</h2>
+  </div>
+  <div class="has-inner-focus">
+    <table class="table table-sm margin-top-none">
+      <tbody>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="codomdocument40.html" class="cref">CoDOMDocument40</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="codomdocument60.html" class="cref">CoDOMDocument60</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="codsocontrol40.html" class="cref">CoDSOControl40</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="cofreethreadeddomdocument40.html" class="cref">CoFreeThreadedDOMDocument40</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="cofreethreadeddomdocument60.html" class="cref">CoFreeThreadedDOMDocument60</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="comxhtmlwriter.html" class="cref">CoMXHTMLWriter</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="comxhtmlwriter30.html" class="cref">CoMXHTMLWriter30</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="comxhtmlwriter40.html" class="cref">CoMXHTMLWriter40</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="comxhtmlwriter60.html" class="cref">CoMXHTMLWriter60</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="comxnamespacemanager.html" class="cref">CoMXNamespaceManager</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="comxnamespacemanager40.html" class="cref">CoMXNamespaceManager40</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="comxnamespacemanager60.html" class="cref">CoMXNamespaceManager60</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="comxxmlwriter40.html" class="cref">CoMXXMLWriter40</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="comxxmlwriter60.html" class="cref">CoMXXMLWriter60</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="cosaxattributes40.html" class="cref">CoSAXAttributes40</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="cosaxattributes60.html" class="cref">CoSAXAttributes60</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="cosaxxmlreader40.html" class="cref">CoSAXXMLReader40</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="cosaxxmlreader60.html" class="cref">CoSAXXMLReader60</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="coserverxmlhttp40.html" class="cref">CoServerXMLHTTP40</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="coserverxmlhttp60.html" class="cref">CoServerXMLHTTP60</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="coxmlhttp40.html" class="cref">CoXMLHTTP40</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="coxmlhttp60.html" class="cref">CoXMLHTTP60</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="coxmlschemacache40.html" class="cref">CoXMLSchemaCache40</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="coxmlschemacache60.html" class="cref">CoXMLSchemaCache60</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="coxsltemplate40.html" class="cref">CoXSLTemplate40</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="coxsltemplate60.html" class="cref">CoXSLTemplate60</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="comsdomdocument.html" class="cref">ComsDOMDocument</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="comsdomdocument26.html" class="cref">ComsDOMDocument26</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="comsdomdocument30.html" class="cref">ComsDOMDocument30</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="comsdsocontrol.html" class="cref">ComsDSOControl</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="comsdsocontrol26.html" class="cref">ComsDSOControl26</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="comsdsocontrol30.html" class="cref">ComsDSOControl30</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="comsfreethreadeddomdocument.html" class="cref">ComsFreeThreadedDOMDocument</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="comsfreethreadeddomdocument26.html" class="cref">ComsFreeThreadedDOMDocument26</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="comsfreethreadeddomdocument30.html" class="cref">ComsFreeThreadedDOMDocument30</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="comsmxxmlwriter.html" class="cref">ComsMXXMLWriter</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="comsmxxmlwriter30.html" class="cref">ComsMXXMLWriter30</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="comssaxattributes.html" class="cref">ComsSAXAttributes</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="comssaxattributes30.html" class="cref">ComsSAXAttributes30</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="comssaxxmlreader.html" class="cref">ComsSAXXMLReader</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="comssaxxmlreader30.html" class="cref">ComsSAXXMLReader30</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="comsserverxmlhttp.html" class="cref">ComsServerXMLHTTP</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="comsserverxmlhttp30.html" class="cref">ComsServerXMLHTTP30</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="comsxmlhttp.html" class="cref">ComsXMLHTTP</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="comsxmlhttp26.html" class="cref">ComsXMLHTTP26</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="comsxmlhttp30.html" class="cref">ComsXMLHTTP30</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="comsxmlschemacache.html" class="cref">ComsXMLSchemaCache</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="comsxmlschemacache26.html" class="cref">ComsXMLSchemaCache26</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="comsxmlschemacache30.html" class="cref">ComsXMLSchemaCache30</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="comsxsltemplate.html" class="cref">ComsXSLTemplate</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="comsxsltemplate26.html" class="cref">ComsXSLTemplate26</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="comsxsltemplate30.html" class="cref">ComsXSLTemplate30</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section class="member-group">
+  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#interfaces" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="interfaces">Interfaces</h2>
+  </div>
+  <div class="has-inner-focus">
+    <table class="table table-sm margin-top-none">
+      <tbody>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="domdocument40.html" class="cref">DOMDocument40</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="domdocument60.html" class="cref">DOMDocument60</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="dsocontrol40.html" class="cref">DSOControl40</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="freethreadeddomdocument40.html" class="cref">FreeThreadedDOMDocument40</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="freethreadeddomdocument60.html" class="cref">FreeThreadedDOMDocument60</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="idsocontrol.html" class="cref">IDSOControl</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="idsocontroldisp.html" class="cref">IDSOControlDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="imxattributes.html" class="cref">IMXAttributes</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="imxattributesdisp.html" class="cref">IMXAttributesDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="imxnamespacemanager.html" class="cref">IMXNamespaceManager</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="imxnamespaceprefixes.html" class="cref">IMXNamespacePrefixes</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="imxnamespaceprefixesdisp.html" class="cref">IMXNamespacePrefixesDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="imxreadercontrol.html" class="cref">IMXReaderControl</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="imxreadercontroldisp.html" class="cref">IMXReaderControlDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="imxschemadeclhandler.html" class="cref">IMXSchemaDeclHandler</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="imxschemadeclhandlerdisp.html" class="cref">IMXSchemaDeclHandlerDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="imxwriter.html" class="cref">IMXWriter</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="imxwriterdisp.html" class="cref">IMXWriterDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="imxxmlfilter.html" class="cref">IMXXMLFilter</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="imxxmlfilterdisp.html" class="cref">IMXXMLFilterDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="isaxattributes.html" class="cref">ISAXAttributes</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="isaxcontenthandler.html" class="cref">ISAXContentHandler</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="isaxdtdhandler.html" class="cref">ISAXDTDHandler</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="isaxdeclhandler.html" class="cref">ISAXDeclHandler</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="isaxentityresolver.html" class="cref">ISAXEntityResolver</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="isaxerrorhandler.html" class="cref">ISAXErrorHandler</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="isaxlexicalhandler.html" class="cref">ISAXLexicalHandler</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="isaxlocator.html" class="cref">ISAXLocator</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="isaxxmlfilter.html" class="cref">ISAXXMLFilter</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="isaxxmlreader.html" class="cref">ISAXXMLReader</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ischema.html" class="cref">ISchema</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ischemaany.html" class="cref">ISchemaAny</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ischemaanydisp.html" class="cref">ISchemaAnyDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ischemaattribute.html" class="cref">ISchemaAttribute</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ischemaattributedisp.html" class="cref">ISchemaAttributeDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ischemaattributegroup.html" class="cref">ISchemaAttributeGroup</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ischemaattributegroupdisp.html" class="cref">ISchemaAttributeGroupDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ischemacomplextype.html" class="cref">ISchemaComplexType</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ischemacomplextypedisp.html" class="cref">ISchemaComplexTypeDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ischemadisp.html" class="cref">ISchemaDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ischemaelement.html" class="cref">ISchemaElement</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ischemaelementdisp.html" class="cref">ISchemaElementDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ischemaidentityconstraint.html" class="cref">ISchemaIdentityConstraint</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ischemaidentityconstraintdisp.html" class="cref">ISchemaIdentityConstraintDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ischemaitem.html" class="cref">ISchemaItem</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ischemaitemcollection.html" class="cref">ISchemaItemCollection</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ischemaitemcollectiondisp.html" class="cref">ISchemaItemCollectionDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ischemaitemdisp.html" class="cref">ISchemaItemDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ischemamodelgroup.html" class="cref">ISchemaModelGroup</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ischemamodelgroupdisp.html" class="cref">ISchemaModelGroupDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ischemanotation.html" class="cref">ISchemaNotation</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ischemanotationdisp.html" class="cref">ISchemaNotationDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ischemaparticle.html" class="cref">ISchemaParticle</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ischemaparticledisp.html" class="cref">ISchemaParticleDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ischemastringcollection.html" class="cref">ISchemaStringCollection</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ischemastringcollectiondisp.html" class="cref">ISchemaStringCollectionDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ischematype.html" class="cref">ISchemaType</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ischematypedisp.html" class="cref">ISchemaTypeDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iserverxmlhttprequest.html" class="cref">IServerXMLHTTPRequest</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iserverxmlhttprequest2.html" class="cref">IServerXMLHTTPRequest2</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iserverxmlhttprequest2disp.html" class="cref">IServerXMLHTTPRequest2Disp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iserverxmlhttprequestdisp.html" class="cref">IServerXMLHTTPRequestDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ivbmxnamespacemanager.html" class="cref">IVBMXNamespaceManager</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ivbmxnamespacemanagerdisp.html" class="cref">IVBMXNamespaceManagerDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ivbsaxattributes.html" class="cref">IVBSAXAttributes</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ivbsaxattributesdisp.html" class="cref">IVBSAXAttributesDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ivbsaxcontenthandler.html" class="cref">IVBSAXContentHandler</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ivbsaxcontenthandlerdisp.html" class="cref">IVBSAXContentHandlerDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ivbsaxdtdhandler.html" class="cref">IVBSAXDTDHandler</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ivbsaxdtdhandlerdisp.html" class="cref">IVBSAXDTDHandlerDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ivbsaxdeclhandler.html" class="cref">IVBSAXDeclHandler</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ivbsaxdeclhandlerdisp.html" class="cref">IVBSAXDeclHandlerDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ivbsaxentityresolver.html" class="cref">IVBSAXEntityResolver</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ivbsaxentityresolverdisp.html" class="cref">IVBSAXEntityResolverDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ivbsaxerrorhandler.html" class="cref">IVBSAXErrorHandler</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ivbsaxerrorhandlerdisp.html" class="cref">IVBSAXErrorHandlerDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ivbsaxlexicalhandler.html" class="cref">IVBSAXLexicalHandler</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ivbsaxlexicalhandlerdisp.html" class="cref">IVBSAXLexicalHandlerDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ivbsaxlocator.html" class="cref">IVBSAXLocator</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ivbsaxlocatordisp.html" class="cref">IVBSAXLocatorDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ivbsaxxmlfilter.html" class="cref">IVBSAXXMLFilter</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ivbsaxxmlfilterdisp.html" class="cref">IVBSAXXMLFilterDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ivbsaxxmlreader.html" class="cref">IVBSAXXMLReader</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ivbsaxxmlreaderdisp.html" class="cref">IVBSAXXMLReaderDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomattribute.html" class="cref">IXMLDOMAttribute</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomattributedisp.html" class="cref">IXMLDOMAttributeDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomcdatasection.html" class="cref">IXMLDOMCDATASection</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomcdatasectiondisp.html" class="cref">IXMLDOMCDATASectionDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomcharacterdata.html" class="cref">IXMLDOMCharacterData</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomcharacterdatadisp.html" class="cref">IXMLDOMCharacterDataDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomcomment.html" class="cref">IXMLDOMComment</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomcommentdisp.html" class="cref">IXMLDOMCommentDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomdocument.html" class="cref">IXMLDOMDocument</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomdocument2.html" class="cref">IXMLDOMDocument2</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomdocument2disp.html" class="cref">IXMLDOMDocument2Disp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomdocument3.html" class="cref">IXMLDOMDocument3</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomdocument3disp.html" class="cref">IXMLDOMDocument3Disp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomdocumentdisp.html" class="cref">IXMLDOMDocumentDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomdocumentfragment.html" class="cref">IXMLDOMDocumentFragment</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomdocumentfragmentdisp.html" class="cref">IXMLDOMDocumentFragmentDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomdocumenttype.html" class="cref">IXMLDOMDocumentType</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomdocumenttypedisp.html" class="cref">IXMLDOMDocumentTypeDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomelement.html" class="cref">IXMLDOMElement</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomelementdisp.html" class="cref">IXMLDOMElementDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomentity.html" class="cref">IXMLDOMEntity</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomentitydisp.html" class="cref">IXMLDOMEntityDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomentityreference.html" class="cref">IXMLDOMEntityReference</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomentityreferencedisp.html" class="cref">IXMLDOMEntityReferenceDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomimplementation.html" class="cref">IXMLDOMImplementation</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomimplementationdisp.html" class="cref">IXMLDOMImplementationDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnamednodemap.html" class="cref">IXMLDOMNamedNodeMap</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnamednodemapdisp.html" class="cref">IXMLDOMNamedNodeMapDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.html" class="cref">IXMLDOMNode</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnodedisp.html" class="cref">IXMLDOMNodeDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnodelist.html" class="cref">IXMLDOMNodeList</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnodelistdisp.html" class="cref">IXMLDOMNodeListDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnotation.html" class="cref">IXMLDOMNotation</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnotationdisp.html" class="cref">IXMLDOMNotationDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomparseerror.html" class="cref">IXMLDOMParseError</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomparseerror2.html" class="cref">IXMLDOMParseError2</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomparseerror2disp.html" class="cref">IXMLDOMParseError2Disp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomparseerrorcollection.html" class="cref">IXMLDOMParseErrorCollection</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomparseerrorcollectiondisp.html" class="cref">IXMLDOMParseErrorCollectionDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomparseerrordisp.html" class="cref">IXMLDOMParseErrorDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomprocessinginstruction.html" class="cref">IXMLDOMProcessingInstruction</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomprocessinginstructiondisp.html" class="cref">IXMLDOMProcessingInstructionDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomschemacollection.html" class="cref">IXMLDOMSchemaCollection</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomschemacollection2.html" class="cref">IXMLDOMSchemaCollection2</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomschemacollection2disp.html" class="cref">IXMLDOMSchemaCollection2Disp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomschemacollectiondisp.html" class="cref">IXMLDOMSchemaCollectionDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomselection.html" class="cref">IXMLDOMSelection</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomselectiondisp.html" class="cref">IXMLDOMSelectionDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomtext.html" class="cref">IXMLDOMText</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomtextdisp.html" class="cref">IXMLDOMTextDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmlhttprequest.html" class="cref">IXMLHTTPRequest</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmlhttprequestdisp.html" class="cref">IXMLHTTPRequestDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixslprocessor.html" class="cref">IXSLProcessor</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixslprocessordisp.html" class="cref">IXSLProcessorDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixsltemplate.html" class="cref">IXSLTemplate</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixsltemplatedisp.html" class="cref">IXSLTemplateDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixtlruntime.html" class="cref">IXTLRuntime</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixtlruntimedisp.html" class="cref">IXTLRuntimeDisp</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="mxhtmlwriter.html" class="cref">MXHTMLWriter</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="mxhtmlwriter30.html" class="cref">MXHTMLWriter30</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="mxhtmlwriter40.html" class="cref">MXHTMLWriter40</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="mxhtmlwriter60.html" class="cref">MXHTMLWriter60</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="mxnamespacemanager.html" class="cref">MXNamespaceManager</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="mxnamespacemanager40.html" class="cref">MXNamespaceManager40</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="mxnamespacemanager60.html" class="cref">MXNamespaceManager60</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="mxxmlwriter40.html" class="cref">MXXMLWriter40</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="mxxmlwriter60.html" class="cref">MXXMLWriter60</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="saxattributes40.html" class="cref">SAXAttributes40</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="saxattributes60.html" class="cref">SAXAttributes60</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="saxxmlreader40.html" class="cref">SAXXMLReader40</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="saxxmlreader60.html" class="cref">SAXXMLReader60</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="serverxmlhttp40.html" class="cref">ServerXMLHTTP40</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="serverxmlhttp60.html" class="cref">ServerXMLHTTP60</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="xmldomdocumentevents.html" class="cref">XMLDOMDocumentEvents</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="xmlhttp40.html" class="cref">XMLHTTP40</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="xmlhttp60.html" class="cref">XMLHTTP60</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="xmlschemacache40.html" class="cref">XMLSchemaCache40</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="xmlschemacache60.html" class="cref">XMLSchemaCache60</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="xsltemplate40.html" class="cref">XSLTemplate40</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="xsltemplate60.html" class="cref">XSLTemplate60</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="msdomdocument.html" class="cref">msDOMDocument</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="msdomdocument26.html" class="cref">msDOMDocument26</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="msdomdocument30.html" class="cref">msDOMDocument30</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="msdsocontrol.html" class="cref">msDSOControl</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="msdsocontrol26.html" class="cref">msDSOControl26</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="msdsocontrol30.html" class="cref">msDSOControl30</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="msfreethreadeddomdocument.html" class="cref">msFreeThreadedDOMDocument</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="msfreethreadeddomdocument26.html" class="cref">msFreeThreadedDOMDocument26</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="msfreethreadeddomdocument30.html" class="cref">msFreeThreadedDOMDocument30</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="msmxxmlwriter.html" class="cref">msMXXMLWriter</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="msmxxmlwriter30.html" class="cref">msMXXMLWriter30</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="mssaxattributes.html" class="cref">msSAXAttributes</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="mssaxattributes30.html" class="cref">msSAXAttributes30</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="mssaxxmlreader.html" class="cref">msSAXXMLReader</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="mssaxxmlreader30.html" class="cref">msSAXXMLReader30</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="msserverxmlhttp.html" class="cref">msServerXMLHTTP</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="msserverxmlhttp30.html" class="cref">msServerXMLHTTP30</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="msxmlhttp.html" class="cref">msXMLHTTP</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="msxmlhttp26.html" class="cref">msXMLHTTP26</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="msxmlhttp30.html" class="cref">msXMLHTTP30</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="msxmlschemacache.html" class="cref">msXMLSchemaCache</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="msxmlschemacache26.html" class="cref">msXMLSchemaCache26</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="msxmlschemacache30.html" class="cref">msXMLSchemaCache30</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="msxsltemplate.html" class="cref">msXSLTemplate</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="msxsltemplate26.html" class="cref">msXSLTemplate26</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="msxsltemplate30.html" class="cref">msXSLTemplate30</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section class="member-group">
+  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#types" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="types">Types</h2>
+  </div>
+  <div class="has-inner-focus">
+    <table class="table table-sm margin-top-none">
+      <tbody>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="domnodetype.html" class="cref">DOMNodeType</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="pword1.html" class="cref">PWord1</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="schemacontenttype.html" class="cref">SCHEMACONTENTTYPE</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="schemaderivationmethod.html" class="cref">SCHEMADERIVATIONMETHOD</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="schemaprocesscontents.html" class="cref">SCHEMAPROCESSCONTENTS</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="schematypevariety.html" class="cref">SCHEMATYPEVARIETY</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="schemause.html" class="cref">SCHEMAUSE</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="schemawhitespace.html" class="cref">SCHEMAWHITESPACE</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="serverxmlhttp_option.html" class="cref">SERVERXMLHTTP_OPTION</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitemtype.html" class="cref">SOMITEMTYPE</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="sxh_proxy_setting.html" class="cref">SXH_PROXY_SETTING</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="sxh_server_cert_option.html" class="cref">SXH_SERVER_CERT_OPTION</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="_schemacontenttype.html" class="cref">_SCHEMACONTENTTYPE</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="_schemaderivationmethod.html" class="cref">_SCHEMADERIVATIONMETHOD</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="_schemaprocesscontents.html" class="cref">_SCHEMAPROCESSCONTENTS</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="_schematypevariety.html" class="cref">_SCHEMATYPEVARIETY</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="_schemause.html" class="cref">_SCHEMAUSE</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="_schemawhitespace.html" class="cref">_SCHEMAWHITESPACE</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="_serverxmlhttp_option.html" class="cref">_SERVERXMLHTTP_OPTION</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="_somitemtype.html" class="cref">_SOMITEMTYPE</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="_sxh_proxy_setting.html" class="cref">_SXH_PROXY_SETTING</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="_sxh_server_cert_option.html" class="cref">_SXH_SERVER_CERT_OPTION</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="tagdomnodetype.html" class="cref">tagDOMNodeType</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section class="member-group">
+  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#constants" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="constants">Constants</h2>
+  </div>
+  <div class="has-inner-focus">
+    <table class="table table-sm margin-top-none">
+      <tbody>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_domdocument40.html" class="cref">CLASS_DOMDocument40</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_domdocument60.html" class="cref">CLASS_DOMDocument60</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_dsocontrol40.html" class="cref">CLASS_DSOControl40</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_freethreadeddomdocument40.html" class="cref">CLASS_FreeThreadedDOMDocument40</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_freethreadeddomdocument60.html" class="cref">CLASS_FreeThreadedDOMDocument60</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_mxhtmlwriter.html" class="cref">CLASS_MXHTMLWriter</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_mxhtmlwriter30.html" class="cref">CLASS_MXHTMLWriter30</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_mxhtmlwriter40.html" class="cref">CLASS_MXHTMLWriter40</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_mxhtmlwriter60.html" class="cref">CLASS_MXHTMLWriter60</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_mxnamespacemanager.html" class="cref">CLASS_MXNamespaceManager</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_mxnamespacemanager40.html" class="cref">CLASS_MXNamespaceManager40</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_mxnamespacemanager60.html" class="cref">CLASS_MXNamespaceManager60</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_mxxmlwriter40.html" class="cref">CLASS_MXXMLWriter40</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_mxxmlwriter60.html" class="cref">CLASS_MXXMLWriter60</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_saxattributes40.html" class="cref">CLASS_SAXAttributes40</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_saxattributes60.html" class="cref">CLASS_SAXAttributes60</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_saxxmlreader40.html" class="cref">CLASS_SAXXMLReader40</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_saxxmlreader60.html" class="cref">CLASS_SAXXMLReader60</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_serverxmlhttp40.html" class="cref">CLASS_ServerXMLHTTP40</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_serverxmlhttp60.html" class="cref">CLASS_ServerXMLHTTP60</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_xmlhttp40.html" class="cref">CLASS_XMLHTTP40</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_xmlhttp60.html" class="cref">CLASS_XMLHTTP60</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_xmlschemacache40.html" class="cref">CLASS_XMLSchemaCache40</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_xmlschemacache60.html" class="cref">CLASS_XMLSchemaCache60</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_xsltemplate40.html" class="cref">CLASS_XSLTemplate40</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_xsltemplate60.html" class="cref">CLASS_XSLTemplate60</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_msdomdocument.html" class="cref">CLASS_msDOMDocument</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_msdomdocument26.html" class="cref">CLASS_msDOMDocument26</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_msdomdocument30.html" class="cref">CLASS_msDOMDocument30</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_msdsocontrol.html" class="cref">CLASS_msDSOControl</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_msdsocontrol26.html" class="cref">CLASS_msDSOControl26</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_msdsocontrol30.html" class="cref">CLASS_msDSOControl30</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_msfreethreadeddomdocument.html" class="cref">CLASS_msFreeThreadedDOMDocument</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_msfreethreadeddomdocument26.html" class="cref">CLASS_msFreeThreadedDOMDocument26</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_msfreethreadeddomdocument30.html" class="cref">CLASS_msFreeThreadedDOMDocument30</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_msmxxmlwriter.html" class="cref">CLASS_msMXXMLWriter</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_msmxxmlwriter30.html" class="cref">CLASS_msMXXMLWriter30</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_mssaxattributes.html" class="cref">CLASS_msSAXAttributes</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_mssaxattributes30.html" class="cref">CLASS_msSAXAttributes30</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_mssaxxmlreader.html" class="cref">CLASS_msSAXXMLReader</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_mssaxxmlreader30.html" class="cref">CLASS_msSAXXMLReader30</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_msserverxmlhttp.html" class="cref">CLASS_msServerXMLHTTP</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_msserverxmlhttp30.html" class="cref">CLASS_msServerXMLHTTP30</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_msxmlhttp.html" class="cref">CLASS_msXMLHTTP</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_msxmlhttp26.html" class="cref">CLASS_msXMLHTTP26</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_msxmlhttp30.html" class="cref">CLASS_msXMLHTTP30</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_msxmlschemacache.html" class="cref">CLASS_msXMLSchemaCache</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_msxmlschemacache26.html" class="cref">CLASS_msXMLSchemaCache26</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_msxmlschemacache30.html" class="cref">CLASS_msXMLSchemaCache30</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_msxsltemplate.html" class="cref">CLASS_msXSLTemplate</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_msxsltemplate26.html" class="cref">CLASS_msXSLTemplate26</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="class_msxsltemplate30.html" class="cref">CLASS_msXSLTemplate30</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="diid_xmldomdocumentevents.html" class="cref">DIID_XMLDOMDocumentEvents</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_idsocontrol.html" class="cref">IID_IDSOControl</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_imxattributes.html" class="cref">IID_IMXAttributes</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_imxnamespacemanager.html" class="cref">IID_IMXNamespaceManager</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_imxnamespaceprefixes.html" class="cref">IID_IMXNamespacePrefixes</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_imxreadercontrol.html" class="cref">IID_IMXReaderControl</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_imxschemadeclhandler.html" class="cref">IID_IMXSchemaDeclHandler</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_imxwriter.html" class="cref">IID_IMXWriter</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_imxxmlfilter.html" class="cref">IID_IMXXMLFilter</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_isaxattributes.html" class="cref">IID_ISAXAttributes</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_isaxcontenthandler.html" class="cref">IID_ISAXContentHandler</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_isaxdtdhandler.html" class="cref">IID_ISAXDTDHandler</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_isaxdeclhandler.html" class="cref">IID_ISAXDeclHandler</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_isaxentityresolver.html" class="cref">IID_ISAXEntityResolver</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_isaxerrorhandler.html" class="cref">IID_ISAXErrorHandler</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_isaxlexicalhandler.html" class="cref">IID_ISAXLexicalHandler</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_isaxlocator.html" class="cref">IID_ISAXLocator</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_isaxxmlfilter.html" class="cref">IID_ISAXXMLFilter</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_isaxxmlreader.html" class="cref">IID_ISAXXMLReader</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ischema.html" class="cref">IID_ISchema</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ischemaany.html" class="cref">IID_ISchemaAny</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ischemaattribute.html" class="cref">IID_ISchemaAttribute</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ischemaattributegroup.html" class="cref">IID_ISchemaAttributeGroup</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ischemacomplextype.html" class="cref">IID_ISchemaComplexType</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ischemaelement.html" class="cref">IID_ISchemaElement</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ischemaidentityconstraint.html" class="cref">IID_ISchemaIdentityConstraint</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ischemaitem.html" class="cref">IID_ISchemaItem</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ischemaitemcollection.html" class="cref">IID_ISchemaItemCollection</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ischemamodelgroup.html" class="cref">IID_ISchemaModelGroup</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ischemanotation.html" class="cref">IID_ISchemaNotation</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ischemaparticle.html" class="cref">IID_ISchemaParticle</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ischemastringcollection.html" class="cref">IID_ISchemaStringCollection</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ischematype.html" class="cref">IID_ISchemaType</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_iserverxmlhttprequest.html" class="cref">IID_IServerXMLHTTPRequest</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_iserverxmlhttprequest2.html" class="cref">IID_IServerXMLHTTPRequest2</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ivbmxnamespacemanager.html" class="cref">IID_IVBMXNamespaceManager</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ivbsaxattributes.html" class="cref">IID_IVBSAXAttributes</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ivbsaxcontenthandler.html" class="cref">IID_IVBSAXContentHandler</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ivbsaxdtdhandler.html" class="cref">IID_IVBSAXDTDHandler</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ivbsaxdeclhandler.html" class="cref">IID_IVBSAXDeclHandler</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ivbsaxentityresolver.html" class="cref">IID_IVBSAXEntityResolver</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ivbsaxerrorhandler.html" class="cref">IID_IVBSAXErrorHandler</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ivbsaxlexicalhandler.html" class="cref">IID_IVBSAXLexicalHandler</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ivbsaxlocator.html" class="cref">IID_IVBSAXLocator</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ivbsaxxmlfilter.html" class="cref">IID_IVBSAXXMLFilter</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ivbsaxxmlreader.html" class="cref">IID_IVBSAXXMLReader</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ixmldomattribute.html" class="cref">IID_IXMLDOMAttribute</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ixmldomcdatasection.html" class="cref">IID_IXMLDOMCDATASection</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ixmldomcharacterdata.html" class="cref">IID_IXMLDOMCharacterData</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ixmldomcomment.html" class="cref">IID_IXMLDOMComment</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ixmldomdocument.html" class="cref">IID_IXMLDOMDocument</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ixmldomdocument2.html" class="cref">IID_IXMLDOMDocument2</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ixmldomdocument3.html" class="cref">IID_IXMLDOMDocument3</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ixmldomdocumentfragment.html" class="cref">IID_IXMLDOMDocumentFragment</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ixmldomdocumenttype.html" class="cref">IID_IXMLDOMDocumentType</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ixmldomelement.html" class="cref">IID_IXMLDOMElement</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ixmldomentity.html" class="cref">IID_IXMLDOMEntity</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ixmldomentityreference.html" class="cref">IID_IXMLDOMEntityReference</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ixmldomimplementation.html" class="cref">IID_IXMLDOMImplementation</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ixmldomnamednodemap.html" class="cref">IID_IXMLDOMNamedNodeMap</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ixmldomnode.html" class="cref">IID_IXMLDOMNode</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ixmldomnodelist.html" class="cref">IID_IXMLDOMNodeList</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ixmldomnotation.html" class="cref">IID_IXMLDOMNotation</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ixmldomparseerror.html" class="cref">IID_IXMLDOMParseError</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ixmldomparseerror2.html" class="cref">IID_IXMLDOMParseError2</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ixmldomparseerrorcollection.html" class="cref">IID_IXMLDOMParseErrorCollection</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ixmldomprocessinginstruction.html" class="cref">IID_IXMLDOMProcessingInstruction</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ixmldomschemacollection.html" class="cref">IID_IXMLDOMSchemaCollection</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ixmldomschemacollection2.html" class="cref">IID_IXMLDOMSchemaCollection2</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ixmldomselection.html" class="cref">IID_IXMLDOMSelection</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ixmldomtext.html" class="cref">IID_IXMLDOMText</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ixmlhttprequest.html" class="cref">IID_IXMLHTTPRequest</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ixslprocessor.html" class="cref">IID_IXSLProcessor</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ixsltemplate.html" class="cref">IID_IXSLTemplate</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="iid_ixtlruntime.html" class="cref">IID_IXTLRuntime</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="libid_msxml2.html" class="cref">LIBID_MSXML2</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="msxml2majorversion.html" class="cref">MSXML2MajorVersion</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="msxml2minorversion.html" class="cref">MSXML2MinorVersion</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="node_attribute.html" class="cref">NODE_ATTRIBUTE</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="node_cdata_section.html" class="cref">NODE_CDATA_SECTION</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="node_comment.html" class="cref">NODE_COMMENT</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="node_document.html" class="cref">NODE_DOCUMENT</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="node_document_fragment.html" class="cref">NODE_DOCUMENT_FRAGMENT</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="node_document_type.html" class="cref">NODE_DOCUMENT_TYPE</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="node_element.html" class="cref">NODE_ELEMENT</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="node_entity.html" class="cref">NODE_ENTITY</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="node_entity_reference.html" class="cref">NODE_ENTITY_REFERENCE</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="node_invalid.html" class="cref">NODE_INVALID</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="node_notation.html" class="cref">NODE_NOTATION</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="node_processing_instruction.html" class="cref">NODE_PROCESSING_INSTRUCTION</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="node_text.html" class="cref">NODE_TEXT</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="schemacontenttype_elementonly.html" class="cref">SCHEMACONTENTTYPE_ELEMENTONLY</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="schemacontenttype_empty.html" class="cref">SCHEMACONTENTTYPE_EMPTY</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="schemacontenttype_mixed.html" class="cref">SCHEMACONTENTTYPE_MIXED</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="schemacontenttype_textonly.html" class="cref">SCHEMACONTENTTYPE_TEXTONLY</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="schemaderivationmethod_all.html" class="cref">SCHEMADERIVATIONMETHOD_ALL</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="schemaderivationmethod_empty.html" class="cref">SCHEMADERIVATIONMETHOD_EMPTY</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="schemaderivationmethod_extension.html" class="cref">SCHEMADERIVATIONMETHOD_EXTENSION</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="schemaderivationmethod_list.html" class="cref">SCHEMADERIVATIONMETHOD_LIST</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="schemaderivationmethod_none.html" class="cref">SCHEMADERIVATIONMETHOD_NONE</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="schemaderivationmethod_restriction.html" class="cref">SCHEMADERIVATIONMETHOD_RESTRICTION</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="schemaderivationmethod_substitution.html" class="cref">SCHEMADERIVATIONMETHOD_SUBSTITUTION</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="schemaderivationmethod_union.html" class="cref">SCHEMADERIVATIONMETHOD_UNION</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="schemaprocesscontents_lax.html" class="cref">SCHEMAPROCESSCONTENTS_LAX</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="schemaprocesscontents_none.html" class="cref">SCHEMAPROCESSCONTENTS_NONE</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="schemaprocesscontents_skip.html" class="cref">SCHEMAPROCESSCONTENTS_SKIP</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="schemaprocesscontents_strict.html" class="cref">SCHEMAPROCESSCONTENTS_STRICT</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="schematypevariety_atomic.html" class="cref">SCHEMATYPEVARIETY_ATOMIC</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="schematypevariety_list.html" class="cref">SCHEMATYPEVARIETY_LIST</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="schematypevariety_none.html" class="cref">SCHEMATYPEVARIETY_NONE</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="schematypevariety_union.html" class="cref">SCHEMATYPEVARIETY_UNION</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="schemause_optional.html" class="cref">SCHEMAUSE_OPTIONAL</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="schemause_prohibited.html" class="cref">SCHEMAUSE_PROHIBITED</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="schemause_required.html" class="cref">SCHEMAUSE_REQUIRED</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="schemawhitespace_collapse.html" class="cref">SCHEMAWHITESPACE_COLLAPSE</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="schemawhitespace_none.html" class="cref">SCHEMAWHITESPACE_NONE</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="schemawhitespace_preserve.html" class="cref">SCHEMAWHITESPACE_PRESERVE</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="schemawhitespace_replace.html" class="cref">SCHEMAWHITESPACE_REPLACE</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_all.html" class="cref">SOMITEM_ALL</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_annotation.html" class="cref">SOMITEM_ANNOTATION</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_any.html" class="cref">SOMITEM_ANY</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_anyattribute.html" class="cref">SOMITEM_ANYATTRIBUTE</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_anytype.html" class="cref">SOMITEM_ANYTYPE</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_attribute.html" class="cref">SOMITEM_ATTRIBUTE</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_attributegroup.html" class="cref">SOMITEM_ATTRIBUTEGROUP</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_choice.html" class="cref">SOMITEM_CHOICE</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_complextype.html" class="cref">SOMITEM_COMPLEXTYPE</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype.html" class="cref">SOMITEM_DATATYPE</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_anysimpletype.html" class="cref">SOMITEM_DATATYPE_ANYSIMPLETYPE</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_anytype.html" class="cref">SOMITEM_DATATYPE_ANYTYPE</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_anyuri.html" class="cref">SOMITEM_DATATYPE_ANYURI</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_base64binary.html" class="cref">SOMITEM_DATATYPE_BASE64BINARY</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_boolean.html" class="cref">SOMITEM_DATATYPE_BOOLEAN</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_byte.html" class="cref">SOMITEM_DATATYPE_BYTE</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_date.html" class="cref">SOMITEM_DATATYPE_DATE</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_datetime.html" class="cref">SOMITEM_DATATYPE_DATETIME</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_day.html" class="cref">SOMITEM_DATATYPE_DAY</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_decimal.html" class="cref">SOMITEM_DATATYPE_DECIMAL</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_double.html" class="cref">SOMITEM_DATATYPE_DOUBLE</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_duration.html" class="cref">SOMITEM_DATATYPE_DURATION</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_entities.html" class="cref">SOMITEM_DATATYPE_ENTITIES</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_entity.html" class="cref">SOMITEM_DATATYPE_ENTITY</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_float.html" class="cref">SOMITEM_DATATYPE_FLOAT</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_hexbinary.html" class="cref">SOMITEM_DATATYPE_HEXBINARY</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_id.html" class="cref">SOMITEM_DATATYPE_ID</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_idref.html" class="cref">SOMITEM_DATATYPE_IDREF</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_idrefs.html" class="cref">SOMITEM_DATATYPE_IDREFS</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_int.html" class="cref">SOMITEM_DATATYPE_INT</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_integer.html" class="cref">SOMITEM_DATATYPE_INTEGER</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_language.html" class="cref">SOMITEM_DATATYPE_LANGUAGE</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_long.html" class="cref">SOMITEM_DATATYPE_LONG</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_month.html" class="cref">SOMITEM_DATATYPE_MONTH</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_monthday.html" class="cref">SOMITEM_DATATYPE_MONTHDAY</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_name.html" class="cref">SOMITEM_DATATYPE_NAME</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_ncname.html" class="cref">SOMITEM_DATATYPE_NCNAME</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_negativeinteger.html" class="cref">SOMITEM_DATATYPE_NEGATIVEINTEGER</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_nmtoken.html" class="cref">SOMITEM_DATATYPE_NMTOKEN</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_nmtokens.html" class="cref">SOMITEM_DATATYPE_NMTOKENS</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_nonnegativeinteger.html" class="cref">SOMITEM_DATATYPE_NONNEGATIVEINTEGER</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_nonpositiveinteger.html" class="cref">SOMITEM_DATATYPE_NONPOSITIVEINTEGER</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_normalizedstring.html" class="cref">SOMITEM_DATATYPE_NORMALIZEDSTRING</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_notation.html" class="cref">SOMITEM_DATATYPE_NOTATION</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_positiveinteger.html" class="cref">SOMITEM_DATATYPE_POSITIVEINTEGER</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_qname.html" class="cref">SOMITEM_DATATYPE_QNAME</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_short.html" class="cref">SOMITEM_DATATYPE_SHORT</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_string.html" class="cref">SOMITEM_DATATYPE_STRING</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_time.html" class="cref">SOMITEM_DATATYPE_TIME</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_token.html" class="cref">SOMITEM_DATATYPE_TOKEN</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_unsignedbyte.html" class="cref">SOMITEM_DATATYPE_UNSIGNEDBYTE</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_unsignedint.html" class="cref">SOMITEM_DATATYPE_UNSIGNEDINT</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_unsignedlong.html" class="cref">SOMITEM_DATATYPE_UNSIGNEDLONG</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_unsignedshort.html" class="cref">SOMITEM_DATATYPE_UNSIGNEDSHORT</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_year.html" class="cref">SOMITEM_DATATYPE_YEAR</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_datatype_yearmonth.html" class="cref">SOMITEM_DATATYPE_YEARMONTH</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_element.html" class="cref">SOMITEM_ELEMENT</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_emptyparticle.html" class="cref">SOMITEM_EMPTYPARTICLE</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_group.html" class="cref">SOMITEM_GROUP</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_identityconstraint.html" class="cref">SOMITEM_IDENTITYCONSTRAINT</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_key.html" class="cref">SOMITEM_KEY</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_keyref.html" class="cref">SOMITEM_KEYREF</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_notation.html" class="cref">SOMITEM_NOTATION</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_null.html" class="cref">SOMITEM_NULL</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_null_any.html" class="cref">SOMITEM_NULL_ANY</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_null_anyattribute.html" class="cref">SOMITEM_NULL_ANYATTRIBUTE</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_null_element.html" class="cref">SOMITEM_NULL_ELEMENT</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_null_type.html" class="cref">SOMITEM_NULL_TYPE</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_particle.html" class="cref">SOMITEM_PARTICLE</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_schema.html" class="cref">SOMITEM_SCHEMA</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_sequence.html" class="cref">SOMITEM_SEQUENCE</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_simpletype.html" class="cref">SOMITEM_SIMPLETYPE</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="somitem_unique.html" class="cref">SOMITEM_UNIQUE</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="sxh_option_escape_percent_in_url.html" class="cref">SXH_OPTION_ESCAPE_PERCENT_IN_URL</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="sxh_option_ignore_server_ssl_cert_error_flags.html" class="cref">SXH_OPTION_IGNORE_SERVER_SSL_CERT_ERROR_FLAGS</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="sxh_option_select_client_ssl_cert.html" class="cref">SXH_OPTION_SELECT_CLIENT_SSL_CERT</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="sxh_option_url.html" class="cref">SXH_OPTION_URL</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="sxh_option_url_codepage.html" class="cref">SXH_OPTION_URL_CODEPAGE</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="sxh_proxy_set_default.html" class="cref">SXH_PROXY_SET_DEFAULT</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="sxh_proxy_set_direct.html" class="cref">SXH_PROXY_SET_DIRECT</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="sxh_proxy_set_preconfig.html" class="cref">SXH_PROXY_SET_PRECONFIG</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="sxh_proxy_set_proxy.html" class="cref">SXH_PROXY_SET_PROXY</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="sxh_server_cert_ignore_all_server_errors.html" class="cref">SXH_SERVER_CERT_IGNORE_ALL_SERVER_ERRORS</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="sxh_server_cert_ignore_cert_cn_invalid.html" class="cref">SXH_SERVER_CERT_IGNORE_CERT_CN_INVALID</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="sxh_server_cert_ignore_cert_date_invalid.html" class="cref">SXH_SERVER_CERT_IGNORE_CERT_DATE_INVALID</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="sxh_server_cert_ignore_unknown_ca.html" class="cref">SXH_SERVER_CERT_IGNORE_UNKNOWN_CA</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="sxh_server_cert_ignore_wrong_usage.html" class="cref">SXH_SERVER_CERT_IGNORE_WRONG_USAGE</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+      </div>
+
+    </article>
+  </main>
+
+  <aside id="layout-body-aside" class="layout-body-aside" aria-label="Page Outline">
+    <div id="additional-resources" class="right-container padding-sm display-none display-block-desktop height-full"
+      role="complementary" aria-label="Additional resources">
+      <div id="affixed-right-container" class="position-sticky">
+        <nav id="side-doc-outline" class="doc-outline padding-bottom-xs margin-bottom-xs" aria-label="On this page">
+          <h2 class="title is-6 margin-top-xxs margin-bottom-xs">
+            On this page
+          </h2>
+          <ol id="right-rail-on-this-page-list">
+  <li class="border-left-md padding-left-xxs border-color-primary">
+    <a href="#classes" class="font-weight-semibold color-text">Classes</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#interfaces" class="color-text-subtle">Interfaces</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#types" class="color-text-subtle">Types</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#constants" class="color-text-subtle">Constants</a>
+  </li>
+</ol>
+        </nav>
+      </div>
+    </div>
+  </aside>
+
+
+  <footer id="footer" class="layout-body-footer footer-layout uhf-container  has-padding
+    border-top" role="contentinfo">
+    <p class="color-text-subtle">Unofficial DocInsight showcase for <a href="https://delphi.dev" data-external="true">DPM</a>. This showcase is not affiliated with, sponsored by, or endorsed by the <a href="https://github.com/DelphiPackageManager" data-external="true">DPM Dev Team</a> or <a href="https://www.finalbuilder.com/" data-external="true">VSoft Technologies Pty Ltd</a>.<br>DPM source and documentation are copyright © 2023–present DPM Dev Team and licensed under the Apache License 2.0.<br>Built with <a href="https://docinsight.dev/" data-external="true">DocInsight</a>. View the <a href="https://github.com/docinsight/dpm/" data-external="true">showcase repository</a>.</p>
+  </footer>
+
+</body>
+
+</html>

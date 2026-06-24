@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html class="layout layout-holy-grail" lang="en-US"
+  dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Publishing Packages | DocInsight Showcase</title>
+  <meta name="description" content="Unofficial DocInsight documentation showcase for DPM, an open-source package manager for Delphi." />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="generator" content="DocInsight" />
+  <meta name="toc-key" content="__root" />
+  <meta name="uid" content="dpm.guide/getting-started/publishing-packages" />
+  <meta name="search-index" content="../_static/themes/learn/search/root.js" />
+  <meta name="robots" content="noindex,follow" />
+  <link rel="icon" href="../favicon.ico" type="image/x-icon" sizes="any" />
+  <link rel="stylesheet" href="../_static/themes/learn/assets/learn.08b892543dc6.css" />
+  <script src="../_static/themes/learn/toc/root.js"></script>
+  <script src="../_static/themes/learn/assets/learn.429029d00211.js" defer></script>
+</head>
+
+<body id="body" class="layout-body">
+
+  <header id="header" class="layout-body-header background-color-body-medium">
+    <div class="site-header display-flex align-items-center ">
+      <a href="../index.html" class="site-header-brand padding-left-none">
+        <span>DPM Showcase</span>
+      </a>
+
+      <nav aria-label="site header nav" class="site-header-nav display-flex align-items-center gap-xxs">
+        <ul class="display-none display-flex-tablet justify-content-space-between gap-none">
+          <li>
+            <a class="site-header-button font-weight-semibold" href="../index.html"><span>Guide</span></a>
+          </li>
+          <li>
+            <a class="site-header-button" href="../reference/dpm/index.html"><span>Code Reference</span></a>
+          </li>
+        </ul>
+
+        <form role="search" aria-label="Search" id="search-container" class="margin-left-xss margin-left-lg-tablet">
+          <div class="autocomplete display-block">
+            <div class="position-relative">
+              <input class="input input-icon input-sm" type="text" placeholder="Search Guide" aria-expanded="false"
+                aria-activedescendant="">
+              <span class="icon search" aria-hidden="true"></span>
+            </div>
+            <ul role="listbox" id="search-suggestions"
+              class="autocomplete-suggestions is-vertically-scrollable padding-xxs" aria-label="Suggestions" hidden>
+            </ul>
+          </div>
+        </form>
+
+        <div class="display-flex flex-wrap-no-wrap margin-left-auto">
+          <button id="color-mode-toggle" title="Toggle color mode" aria-label="Toggle color mode" class="button button-clear">
+            <span class="icon color-mode" aria-hidden="true">
+            </span>
+          </button>
+          <a aria-label="Visit repository" class="button button-clear" href="https://github.com/DelphiPackageManager/DPM" data-external="true" target="_blank" rel="noopener">
+            <span class="icon repository github" aria-hidden="true">
+            </span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section id="layout-body-menu" class="layout-body-menu border-right display-flex background-color-body-medium">
+    <div id="left-container"
+      class="left-container display-none display-block-tablet padding-inline-sm padding-bottom-sm width-full">
+      <nav id="affixed-left-container" class="margin-top-sm-tablet position-sticky display-flex flex-direction-column"
+        aria-label="Primary">
+      </nav>
+    </div>
+  </section>
+
+  <main id="main" role="main" class="layout-body-main">
+    <article class="reading-width margin-inline-auto padding-sm padding-top-none padding-top-sm-tablet">
+      <div id="article-header"
+        class="align-items-center display-flex background-color-body margin-bottom-xs display-none-print">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumbs">
+            <li
+              class="breadcrumbs-item">
+              Getting Started
+            </li>
+            <li
+              class="breadcrumbs-item breadcrumbs-item-slashless">
+              Publishing Packages
+            </li>
+          </ol>
+        </nav>
+
+        <div id="page-actions" class="display-flex flex-wrap-no-wrap margin-left-auto">
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="heading-wrapper" data-heading-level="h1">
+          <a class="anchor-link" href="publishing-packages.html" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+          <h1>  Publishing Packages</h1>
+        </div>
+
+        <nav id="center-doc-outline" class="doc-outline is-hidden-desktop display-none-print margin-bottom-sm"
+          aria-label="On this page">
+          <h2 id="on-this-page" class="title is-6 margin-block-xs">
+            On this page
+          </h2>
+          <ol id="content-well-in-this-article-list2" class="border-left padding-left-xxs">
+  <li>
+    <a href="#before-you-push">Before you push</a>
+  </li>
+  <li>
+    <a href="#api-keys">API keys</a>
+  </li>
+  <li>
+    <a href="#pushing-to-a-folder-source">Pushing to a folder source</a>
+  </li>
+  <li>
+    <a href="#pushing-to-a-server-source">Pushing to a server source</a>
+  </li>
+  <li>
+    <a href="#pushing-multiple-files">Pushing multiple files</a>
+  </li>
+  <li>
+    <a href="#re-publishing-and-versions">Re-publishing and versions</a>
+  </li>
+  <li>
+    <a href="#see-also">See also</a>
+  </li>
+</ol>
+        </nav>
+
+        <p>  Once you have built a package with <a href="../commands/pack-command.html"><code>dpm pack</code></a>  , you can publish it to a <a href="../concepts/package-sources.html">  package source</a>   so that others (or your own projects) can install it. Publishing is done with the <a href="../commands/push-command.html"><code>dpm push</code></a>   command.</p><p>  DPM supports three kinds of package sources:</p><ul><li><p>  A   <strong>folder source</strong>   (local or UNC path) - <code>dpm push</code>   simply copies the <code>.dpkg</code>   file into the source folder.</p></li><li><p>  A   <strong>server source</strong>   (an HTTPS DPM server such as <code>https:&#x2f;&#x2f;delphi.dev</code>  ) - <code>dpm push</code>   uploads the file over HTTP and the server publishes it.</p></li><li><p>  A   <strong>Git Repository</strong>   registry - a repository with package dspec.yaml files that point to other git repositories. See <a href="git-registry-packages.html">  git registry packages</a></p></li></ul>  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#before-you-push" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="before-you-push">  Before you push</h2>
+  </div>
+<ol start="1"><li><p>  <strong>Build the package.</strong>   <code>dpm pack</code>   produces one <code>.dpkg</code>   file per compiler in your spec, for example <code>VSoft.CommandLine.1.0.1.dpkg</code>  .</p></li><li><p>  <strong>Sign the package (optional but recommended).</strong>   For server sources you will usually want to <a href="../commands/sign-command.html">  sign</a>   the package first so consumers can verify its origin and integrity. See <a href="../concepts/package-signing.html">  Package Signing</a>   for background.</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">bat</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-bat" dir="ltr">dpm sign .\VSoft.CommandLine.1.0.1.dpkg --thumbprint=AB12CD34EF56
+</code></pre></li><li><p>  <strong>Make sure the target source is registered.</strong>   Pushing uses a source by name (or url). Add one with the <a href="../commands/sources-command.html">  sources command</a>   if you have not already:</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">bat</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-bat" dir="ltr">dpm sources add -name=local -source=\\myserver\dpmsource
+</code></pre></li></ol><p>  The public repository is automatically enabled when you first use dpm.</p>  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#api-keys" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="api-keys">  API keys</h2>
+  </div>
+<p>  A server source requires an API key to authorise the upload. Folder sources do not.</p><p>  The key can be supplied in two ways:</p><ul><li><p>  Per command, with the <code>-apiKey</code>   option.</p></li><li><p>  Stored against the source in your <a href="../concepts/config-files.html">  dpm.config</a>   file (the <code>apiKey</code>   property of the package source).</p></li></ul>  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#pushing-to-a-folder-source" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="pushing-to-a-folder-source">  Pushing to a folder source</h2>
+  </div>
+<p>  For a folder or UNC source, the package file is copied into the source folder. No API key is needed, however you do need write permissions to the folder.</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">bat</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-bat" dir="ltr">dpm push .\VSoft.CommandLine.1.0.1.dpkg -source=local
+</code></pre>  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#pushing-to-a-server-source" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="pushing-to-a-server-source">  Pushing to a server source</h2>
+  </div>
+<p>  For an HTTPS server source, the package is uploaded over HTTPS. An API key is required.</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">bat</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-bat" dir="ltr">dpm push .\VSoft.CommandLine.1.0.1.dpkg -source=dpm -apiKey=abcdef
+</code></pre>  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#pushing-multiple-files" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="pushing-multiple-files">  Pushing multiple files</h2>
+  </div>
+<p><code>dpm pack</code>   typically produces several <code>.dpkg</code>   files (one per compiler &#x2f; platform). Each must be pushed. On the command line you can loop over the output folder:</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">bat</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-bat" dir="ltr">for %f in (.\output\*.dpkg) do dpm push &quot;%f&quot; -source=dpm
+</code></pre><p>  If a package and version already exist on the source, use <code>-skipDuplicate</code>   so the push skips it instead of failing - handy when re-running a publish step:</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">bat</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-bat" dir="ltr">dpm push .\output\*.dpkg -source=dpm -skipDuplicate
+</code></pre>  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#re-publishing-and-versions" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="re-publishing-and-versions">  Re-publishing and versions</h2>
+  </div>
+<p>  Package sources treat a published <code>id</code>   + <code>version</code>   as immutable. To publish a change you must bump the <a href="../concepts/package-versioning.html">  version</a>   and pack again - you cannot overwrite an existing version. Use <code>dpm pack -version=...</code>   to set the version at pack time if you do not want to edit the spec.</p>  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#see-also" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="see-also">  See also</h2>
+  </div>
+<ul><li><p><a href="../commands/push-command.html">  push command</a>   - full option reference.</p></li><li><p><a href="../commands/pack-command.html">  pack command</a>   - build <code>.dpkg</code>   files from a spec.</p></li><li><p><a href="../commands/sign-command.html">  sign command</a>   - sign a package before publishing.</p></li><li><p><a href="../commands/sources-command.html">  sources command</a>   - register and manage package sources.</p></li><li><p><a href="../concepts/package-sources.html">  Package Sources</a>   - folder vs server sources.</p></li><li><p><a href="../concepts/config-files.html">  Config Files</a>   - where API keys and sources are stored.</p></li></ul>
+      </div>
+
+    </article>
+  </main>
+
+  <aside id="layout-body-aside" class="layout-body-aside" aria-label="Page Outline">
+    <div id="additional-resources" class="right-container padding-sm display-none display-block-desktop height-full"
+      role="complementary" aria-label="Additional resources">
+      <div id="affixed-right-container" class="position-sticky">
+        <nav id="side-doc-outline" class="doc-outline padding-bottom-xs margin-bottom-xs" aria-label="On this page">
+          <h2 class="title is-6 margin-top-xxs margin-bottom-xs">
+            On this page
+          </h2>
+          <ol id="right-rail-on-this-page-list">
+  <li class="border-left-md padding-left-xxs border-color-primary">
+    <a href="#before-you-push" class="font-weight-semibold color-text">Before you push</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#api-keys" class="color-text-subtle">API keys</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#pushing-to-a-folder-source" class="color-text-subtle">Pushing to a folder source</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#pushing-to-a-server-source" class="color-text-subtle">Pushing to a server source</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#pushing-multiple-files" class="color-text-subtle">Pushing multiple files</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#re-publishing-and-versions" class="color-text-subtle">Re-publishing and versions</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#see-also" class="color-text-subtle">See also</a>
+  </li>
+</ol>
+        </nav>
+      </div>
+    </div>
+  </aside>
+
+
+  <footer id="footer" class="layout-body-footer footer-layout uhf-container  has-padding
+    border-top" role="contentinfo">
+    <p class="color-text-subtle">Unofficial DocInsight showcase for <a href="https://delphi.dev" data-external="true">DPM</a>. This showcase is not affiliated with, sponsored by, or endorsed by the <a href="https://github.com/DelphiPackageManager" data-external="true">DPM Dev Team</a> or <a href="https://www.finalbuilder.com/" data-external="true">VSoft Technologies Pty Ltd</a>.<br>DPM source and documentation are copyright © 2023–present DPM Dev Team and licensed under the Apache License 2.0.<br>Built with <a href="https://docinsight.dev/" data-external="true">DocInsight</a>. View the <a href="https://github.com/docinsight/dpm/" data-external="true">showcase repository</a>.</p>
+  </footer>
+
+</body>
+
+</html>

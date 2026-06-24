@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html class="layout layout-holy-grail" lang="en-US"
+  dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IPackageSearchResultItem Interface | DocInsight Showcase</title>
+  <meta name="description" content="Unofficial DocInsight documentation showcase for DPM, an open-source package manager for Delphi." />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="generator" content="DocInsight" />
+  <meta name="toc-key" content="reference:project/dpm" />
+  <meta name="uid" content="dpm.reference/dpm/dpm.core.package.interfaces/ipackagesearchresultitem" />
+  <meta name="search-index" content="../../_static/themes/learn/search/reference.js" />
+  <meta name="robots" content="noindex,follow" />
+  <link rel="icon" href="../../favicon.ico" type="image/x-icon" sizes="any" />
+  <link rel="stylesheet" href="../../_static/themes/learn/assets/learn.08b892543dc6.css" />
+  <script src="../../_static/themes/learn/toc/reference-project-dpm.js"></script>
+  <script src="../../_static/themes/learn/assets/learn.429029d00211.js" defer></script>
+</head>
+
+<body id="body" class="layout-body">
+
+  <header id="header" class="layout-body-header background-color-body-medium">
+    <div class="site-header display-flex align-items-center ">
+      <a href="../../index.html" class="site-header-brand padding-left-none">
+        <span>DPM Showcase</span>
+      </a>
+
+      <nav aria-label="site header nav" class="site-header-nav display-flex align-items-center gap-xxs">
+        <ul class="display-none display-flex-tablet justify-content-space-between gap-none">
+          <li>
+            <a class="site-header-button" href="../../index.html"><span>Guide</span></a>
+          </li>
+          <li>
+            <a class="site-header-button font-weight-semibold" href="../dpm/index.html"><span>Code Reference</span></a>
+          </li>
+        </ul>
+
+        <form role="search" aria-label="Search" id="search-container" class="margin-left-xss margin-left-lg-tablet">
+          <div class="autocomplete display-block">
+            <div class="position-relative">
+              <input class="input input-icon input-sm" type="text" placeholder="Search Code Reference" aria-expanded="false"
+                aria-activedescendant="">
+              <span class="icon search" aria-hidden="true"></span>
+            </div>
+            <ul role="listbox" id="search-suggestions"
+              class="autocomplete-suggestions is-vertically-scrollable padding-xxs" aria-label="Suggestions" hidden>
+            </ul>
+          </div>
+        </form>
+
+        <div class="display-flex flex-wrap-no-wrap margin-left-auto">
+          <button id="color-mode-toggle" title="Toggle color mode" aria-label="Toggle color mode" class="button button-clear">
+            <span class="icon color-mode" aria-hidden="true">
+            </span>
+          </button>
+          <a aria-label="Visit repository" class="button button-clear" href="https://github.com/DelphiPackageManager/DPM" data-external="true" target="_blank" rel="noopener">
+            <span class="icon repository github" aria-hidden="true">
+            </span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section id="layout-body-menu" class="layout-body-menu border-right display-flex background-color-body-medium">
+    <div id="left-container"
+      class="left-container display-none display-block-tablet padding-inline-sm padding-bottom-sm width-full">
+      <nav id="affixed-left-container" class="margin-top-sm-tablet position-sticky display-flex flex-direction-column"
+        aria-label="Primary">
+      </nav>
+    </div>
+  </section>
+
+  <main id="main" role="main" class="layout-body-main">
+    <article class="reading-width margin-inline-auto padding-sm padding-top-none padding-top-sm-tablet">
+      <div id="article-header"
+        class="align-items-center display-flex background-color-body margin-bottom-xs display-none-print">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumbs">
+            <li
+              class="breadcrumbs-item">
+              <a href="../dpm/index.html" class="cref">dpm</a>
+            </li>
+            <li
+              class="breadcrumbs-item">
+              <a href="index.html" class="cref">DPM.Core.Package.Interfaces</a>
+            </li>
+            <li
+              class="breadcrumbs-item breadcrumbs-item-slashless">
+              IPackageSearchResultItem
+            </li>
+          </ol>
+        </nav>
+
+        <div id="page-actions" class="display-flex flex-wrap-no-wrap margin-left-auto">
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="heading-wrapper" data-heading-level="h1">
+          <a class="anchor-link" href="ipackagesearchresultitem.html" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+          <h1>  IPackageSearchResultItem Interface</h1>
+        </div>
+
+        <nav id="center-doc-outline" class="doc-outline is-hidden-desktop display-none-print margin-bottom-sm"
+          aria-label="On this page">
+          <h2 id="on-this-page" class="title is-6 margin-block-xs">
+            On this page
+          </h2>
+          <ol id="content-well-in-this-article-list2" class="border-left padding-left-xxs">
+  <li>
+    <a href="#definition">Definition</a>
+  </li>
+  <li>
+    <a href="#properties">Properties</a>
+  </li>
+  <li>
+    <a href="#methods">Methods</a>
+  </li>
+</ol>
+        </nav>
+
+        <div class="heading-wrapper" data-heading-level="h2">
+  <a class="anchor-link" href="#definition" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+  <h2 id="definition">Definition</h2>
+</div>
+
+<div class="metadata">
+  <dl class="attributeList">
+    <dt>Unit:</dt>
+    <dd>
+      <span class="break-text">
+          DPM.Core.Package.Interfaces
+      </span>
+    </dd>
+  </dl>
+  <dl class="attributeList">
+    <dt>Package:</dt>
+    <dd>
+      <span class="break-text">
+          dpm
+      </span>
+    </dd>
+  </dl>
+</div>
+
+
+<div class="summaryHolder">
+  <div class="summary clearFix has-text-wrap">
+    <p>  What a package repository returns for the UI.
+  Extends IPackageMetadata with server-only fields (download count, file hash,
+  published date, reserved-prefix flag, report url) and IDE-mutable UI state
+  (installed flag, latest-version cache, transitive flag, selected version range).</p>
+  </div>
+</div>
+
+
+<div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">Delphi</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+<pre class="wrap has-inner-focus"><code class="language-Delphi" dir="ltr">type IPackageSearchResultItem = interface(IPackageMetadata)</code></pre>
+
+
+
+
+
+
+<dl class="attributeList stack">
+  <dt>Inheritance</dt>
+  <dd>
+    <div class="pdlHolder">
+      <div class="pdl">
+        IInterface
+      </div>
+      <div class="pdl">
+        <a href="ipackageidentity.html" data-linktype="relative-path">IPackageIdentity</a>
+      </div>
+      <div class="pdl">
+        <a href="ipackageinfo.html" data-linktype="relative-path">IPackageInfo</a>
+      </div>
+      <div class="pdl">
+        <a href="ipackagemetadata.html" data-linktype="relative-path">IPackageMetadata</a>
+      </div>
+      <span>IPackageSearchResultItem</span>
+    </div>
+  </dd>
+</dl>
+
+<dl id="derived" class="attributeList stack">
+  <dt>Derived</dt>
+  <dd>
+    <div>
+      <span class="break-text">
+        <a href="../dpm.core.package.searchresults/tdpmpackagesearchresultitem.html" data-linktype="relative-path">TDPMPackageSearchResultItem</a>
+      </span>
+    </div>
+  </dd>
+</dl>
+
+
+
+
+
+
+
+<section class="member-group">
+  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#properties" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="properties">Properties</h2>
+  </div>
+  <div class="has-inner-focus">
+    <table class="table table-sm margin-top-none">
+      <tbody>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackagemetadata.authors.html" class="cref">Authors</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackagemetadata.html" data-linktype="relative-path">IPackageMetadata</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackageidentity.compilerversion.html" class="cref">CompilerVersion</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackageidentity.html" data-linktype="relative-path">IPackageIdentity</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackagemetadata.copyright.html" class="cref">Copyright</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackagemetadata.html" data-linktype="relative-path">IPackageMetadata</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackageinfo.dependencies.html" class="cref">Dependencies</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackageinfo.html" data-linktype="relative-path">IPackageInfo</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackagemetadata.description.html" class="cref">Description</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackagemetadata.html" data-linktype="relative-path">IPackageMetadata</a>)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagesearchresultitem.downloads.html" class="cref">Downloads</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagesearchresultitem.filehash.html" class="cref">FileHash</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackagemetadata.frameworks.html" class="cref">Frameworks</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackagemetadata.html" data-linktype="relative-path">IPackageMetadata</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackageinfo.hash.html" class="cref">Hash</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackageinfo.html" data-linktype="relative-path">IPackageInfo</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackageinfo.hashalgorithm.html" class="cref">HashAlgorithm</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackageinfo.html" data-linktype="relative-path">IPackageInfo</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackagemetadata.icon.html" class="cref">Icon</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackagemetadata.html" data-linktype="relative-path">IPackageMetadata</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackageidentity.id.html" class="cref">Id</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackageidentity.html" data-linktype="relative-path">IPackageIdentity</a>)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagesearchresultitem.installed.html" class="cref">Installed</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackagemetadata.iscommercial.html" class="cref">IsCommercial</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackagemetadata.html" data-linktype="relative-path">IPackageMetadata</a>)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagesearchresultitem.iserror.html" class="cref">IsError</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagesearchresultitem.islateststableversion.html" class="cref">IsLatestStableVersion</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagesearchresultitem.islatestversion.html" class="cref">IsLatestVersion</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagesearchresultitem.isreservedprefix.html" class="cref">IsReservedPrefix</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackageinfo.issigned.html" class="cref">IsSigned</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackageinfo.html" data-linktype="relative-path">IPackageInfo</a>)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagesearchresultitem.istransitive.html" class="cref">IsTransitive</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackagemetadata.istrial.html" class="cref">IsTrial</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackagemetadata.html" data-linktype="relative-path">IPackageMetadata</a>)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagesearchresultitem.lateststableversion.html" class="cref">LatestStableVersion</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagesearchresultitem.latestversion.html" class="cref">LatestVersion</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackagemetadata.license.html" class="cref">License</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackagemetadata.html" data-linktype="relative-path">IPackageMetadata</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackagemetadata.projecturl.html" class="cref">ProjectUrl</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackagemetadata.html" data-linktype="relative-path">IPackageMetadata</a>)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagesearchresultitem.publisheddate.html" class="cref">PublishedDate</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackagemetadata.readme.html" class="cref">ReadMe</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackagemetadata.html" data-linktype="relative-path">IPackageMetadata</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackagemetadata.releasenotes.html" class="cref">ReleaseNotes</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackagemetadata.html" data-linktype="relative-path">IPackageMetadata</a>)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagesearchresultitem.reporturl.html" class="cref">ReportUrl</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagesearchresultitem.repositorybranch.html" class="cref">RepositoryBranch</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagesearchresultitem.repositorycommit.html" class="cref">RepositoryCommit</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagesearchresultitem.repositorytype.html" class="cref">RepositoryType</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagesearchresultitem.repositoryurl.html" class="cref">RepositoryUrl</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackagemetadata.searchpaths.html" class="cref">SearchPaths</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackagemetadata.html" data-linktype="relative-path">IPackageMetadata</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackageinfo.signedby.html" class="cref">SignedBy</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackageinfo.html" data-linktype="relative-path">IPackageInfo</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackageidentity.sourcename.html" class="cref">SourceName</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackageidentity.html" data-linktype="relative-path">IPackageIdentity</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackageinfo.supportedplatforms.html" class="cref">SupportedPlatforms</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackageinfo.html" data-linktype="relative-path">IPackageInfo</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackagemetadata.tags.html" class="cref">Tags</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackagemetadata.html" data-linktype="relative-path">IPackageMetadata</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackageinfo.usesource.html" class="cref">UseSource</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackageinfo.html" data-linktype="relative-path">IPackageInfo</a>)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagesearchresultitem.version.html" class="cref">Version</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagesearchresultitem.versionrange.html" class="cref">VersionRange</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section class="member-group">
+  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#methods" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="methods">Methods</h2>
+  </div>
+  <div class="has-inner-focus">
+    <table class="table table-sm margin-top-none">
+      <tbody>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackagemetadata.getauthors.html" class="cref">GetAuthors</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackagemetadata.html" data-linktype="relative-path">IPackageMetadata</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackageidentity.getcompilerversion.html" class="cref">GetCompilerVersion</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackageidentity.html" data-linktype="relative-path">IPackageIdentity</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackagemetadata.getcopyright.html" class="cref">GetCopyright</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackagemetadata.html" data-linktype="relative-path">IPackageMetadata</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackageinfo.getdependencies.html" class="cref">GetDependencies</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackageinfo.html" data-linktype="relative-path">IPackageInfo</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackagemetadata.getdescription.html" class="cref">GetDescription</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackagemetadata.html" data-linktype="relative-path">IPackageMetadata</a>)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagesearchresultitem.getdownloadcount.html" class="cref">GetDownloadCount</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagesearchresultitem.getfilehash.html" class="cref">GetFileHash</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackagemetadata.getframeworks.html" class="cref">GetFrameworks</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackagemetadata.html" data-linktype="relative-path">IPackageMetadata</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackageinfo.gethash.html" class="cref">GetHash</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackageinfo.html" data-linktype="relative-path">IPackageInfo</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackageinfo.gethashalgorithm.html" class="cref">GetHashAlgorithm</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackageinfo.html" data-linktype="relative-path">IPackageInfo</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackagemetadata.geticon.html" class="cref">GetIcon</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackagemetadata.html" data-linktype="relative-path">IPackageMetadata</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackageidentity.getid.html" class="cref">GetId</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackageidentity.html" data-linktype="relative-path">IPackageIdentity</a>)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagesearchresultitem.getinstalled.html" class="cref">GetInstalled</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackagemetadata.getiscommercial.html" class="cref">GetIsCommercial</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackagemetadata.html" data-linktype="relative-path">IPackageMetadata</a>)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagesearchresultitem.getiserror.html" class="cref">GetIsError</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagesearchresultitem.getislateststableversion.html" class="cref">GetIsLatestStableVersion</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagesearchresultitem.getislatestversion.html" class="cref">GetIsLatestVersion</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagesearchresultitem.getisreservedprefix.html" class="cref">GetIsReservedPrefix</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackageinfo.getissigned.html" class="cref">GetIsSigned</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackageinfo.html" data-linktype="relative-path">IPackageInfo</a>)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagesearchresultitem.getistransitive.html" class="cref">GetIsTransitive</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackagemetadata.getistrial.html" class="cref">GetIsTrial</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackagemetadata.html" data-linktype="relative-path">IPackageMetadata</a>)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagesearchresultitem.getlateststableversion.html" class="cref">GetLatestStableVersion</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagesearchresultitem.getlatestversion.html" class="cref">GetLatestVersion</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackagemetadata.getlicense.html" class="cref">GetLicense</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackagemetadata.html" data-linktype="relative-path">IPackageMetadata</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackagemetadata.getprojecturl.html" class="cref">GetProjectUrl</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackagemetadata.html" data-linktype="relative-path">IPackageMetadata</a>)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagesearchresultitem.getpublisheddate.html" class="cref">GetPublishedDate</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackagemetadata.getreadme.html" class="cref">GetReadMe</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackagemetadata.html" data-linktype="relative-path">IPackageMetadata</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackagemetadata.getreleasenotes.html" class="cref">GetReleaseNotes</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackagemetadata.html" data-linktype="relative-path">IPackageMetadata</a>)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagesearchresultitem.getreporturl.html" class="cref">GetReportUrl</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackagemetadata.getrepositorybranch.html" class="cref">GetRepositoryBranch</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackagemetadata.html" data-linktype="relative-path">IPackageMetadata</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackagemetadata.getrepositorycommit.html" class="cref">GetRepositoryCommit</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackagemetadata.html" data-linktype="relative-path">IPackageMetadata</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackagemetadata.getrepositorytype.html" class="cref">GetRepositoryType</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackagemetadata.html" data-linktype="relative-path">IPackageMetadata</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackagemetadata.getrepositoryurl.html" class="cref">GetRepositoryUrl</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackagemetadata.html" data-linktype="relative-path">IPackageMetadata</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackagemetadata.getsearchpaths.html" class="cref">GetSearchPaths</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackagemetadata.html" data-linktype="relative-path">IPackageMetadata</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackageinfo.getsignedby.html" class="cref">GetSignedBy</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackageinfo.html" data-linktype="relative-path">IPackageInfo</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackageidentity.getsourcename.html" class="cref">GetSourceName</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackageidentity.html" data-linktype="relative-path">IPackageIdentity</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackageinfo.getsupportedplatforms.html" class="cref">GetSupportedPlatforms</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackageinfo.html" data-linktype="relative-path">IPackageInfo</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackagemetadata.gettags.html" class="cref">GetTags</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackagemetadata.html" data-linktype="relative-path">IPackageMetadata</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackageinfo.getusesource.html" class="cref">GetUseSource</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackageinfo.html" data-linktype="relative-path">IPackageInfo</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackageidentity.getversion.html" class="cref">GetVersion</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackageidentity.html" data-linktype="relative-path">IPackageIdentity</a>)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagesearchresultitem.getversionrange.html" class="cref">GetVersionRange</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagesearchresultitem.setinstalled.html" class="cref">SetInstalled(Boolean)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagesearchresultitem.setistransitive.html" class="cref">SetIsTransitive(Boolean)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagesearchresultitem.setlateststableversion.html" class="cref">SetLatestStableVersion(TPackageVersion)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagesearchresultitem.setlatestversion.html" class="cref">SetLatestVersion(TPackageVersion)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagesearchresultitem.setpublisheddate.html" class="cref">SetPublishedDate(string)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagesearchresultitem.setreporturl.html" class="cref">SetReportUrl(string)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagesearchresultitem.setrepositorybranch.html" class="cref">SetRepositoryBranch(string)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagesearchresultitem.setrepositorycommit.html" class="cref">SetRepositoryCommit(string)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagesearchresultitem.setrepositorytype.html" class="cref">SetRepositoryType(string)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagesearchresultitem.setrepositoryurl.html" class="cref">SetRepositoryUrl(string)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackageinfo.setsupportedplatforms.html" class="cref">SetSupportedPlatforms(TDPMPlatforms)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackageinfo.html" data-linktype="relative-path">IPackageInfo</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackageinfo.setusesource.html" class="cref">SetUseSource(Boolean)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackageinfo.html" data-linktype="relative-path">IPackageInfo</a>)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagesearchresultitem.setversion.html" class="cref">SetVersion(TPackageVersion)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagesearchresultitem.setversionrange.html" class="cref">SetVersionRange(TVersionRange)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackageidentity.toidversionstring.html" class="cref">ToIdVersionString</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackageidentity.html" data-linktype="relative-path">IPackageIdentity</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ipackageidentity.tostring.html" class="cref">ToString</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ipackageidentity.html" data-linktype="relative-path">IPackageIdentity</a>)
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+      </div>
+
+    </article>
+  </main>
+
+  <aside id="layout-body-aside" class="layout-body-aside" aria-label="Page Outline">
+    <div id="additional-resources" class="right-container padding-sm display-none display-block-desktop height-full"
+      role="complementary" aria-label="Additional resources">
+      <div id="affixed-right-container" class="position-sticky">
+        <nav id="side-doc-outline" class="doc-outline padding-bottom-xs margin-bottom-xs" aria-label="On this page">
+          <h2 class="title is-6 margin-top-xxs margin-bottom-xs">
+            On this page
+          </h2>
+          <ol id="right-rail-on-this-page-list">
+  <li class="border-left-md padding-left-xxs border-color-primary">
+    <a href="#definition" class="font-weight-semibold color-text">Definition</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#properties" class="color-text-subtle">Properties</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#methods" class="color-text-subtle">Methods</a>
+  </li>
+</ol>
+        </nav>
+      </div>
+    </div>
+  </aside>
+
+
+  <footer id="footer" class="layout-body-footer footer-layout uhf-container  has-padding
+    border-top" role="contentinfo">
+    <p class="color-text-subtle">Unofficial DocInsight showcase for <a href="https://delphi.dev" data-external="true">DPM</a>. This showcase is not affiliated with, sponsored by, or endorsed by the <a href="https://github.com/DelphiPackageManager" data-external="true">DPM Dev Team</a> or <a href="https://www.finalbuilder.com/" data-external="true">VSoft Technologies Pty Ltd</a>.<br>DPM source and documentation are copyright © 2023–present DPM Dev Team and licensed under the Apache License 2.0.<br>Built with <a href="https://docinsight.dev/" data-external="true">DocInsight</a>. View the <a href="https://github.com/docinsight/dpm/" data-external="true">showcase repository</a>.</p>
+  </footer>
+
+</body>
+
+</html>

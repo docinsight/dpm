@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html class="layout layout-holy-grail" lang="en-US"
+  dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Creating Packages | DocInsight Showcase</title>
+  <meta name="description" content="Unofficial DocInsight documentation showcase for DPM, an open-source package manager for Delphi." />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="generator" content="DocInsight" />
+  <meta name="toc-key" content="__root" />
+  <meta name="uid" content="dpm.guide/getting-started/creating-packages" />
+  <meta name="search-index" content="../_static/themes/learn/search/root.js" />
+  <meta name="robots" content="noindex,follow" />
+  <link rel="icon" href="../favicon.ico" type="image/x-icon" sizes="any" />
+  <link rel="stylesheet" href="../_static/themes/learn/assets/learn.08b892543dc6.css" />
+  <script src="../_static/themes/learn/toc/root.js"></script>
+  <script src="../_static/themes/learn/assets/learn.429029d00211.js" defer></script>
+</head>
+
+<body id="body" class="layout-body">
+
+  <header id="header" class="layout-body-header background-color-body-medium">
+    <div class="site-header display-flex align-items-center ">
+      <a href="../index.html" class="site-header-brand padding-left-none">
+        <span>DPM Showcase</span>
+      </a>
+
+      <nav aria-label="site header nav" class="site-header-nav display-flex align-items-center gap-xxs">
+        <ul class="display-none display-flex-tablet justify-content-space-between gap-none">
+          <li>
+            <a class="site-header-button font-weight-semibold" href="../index.html"><span>Guide</span></a>
+          </li>
+          <li>
+            <a class="site-header-button" href="../reference/dpm/index.html"><span>Code Reference</span></a>
+          </li>
+        </ul>
+
+        <form role="search" aria-label="Search" id="search-container" class="margin-left-xss margin-left-lg-tablet">
+          <div class="autocomplete display-block">
+            <div class="position-relative">
+              <input class="input input-icon input-sm" type="text" placeholder="Search Guide" aria-expanded="false"
+                aria-activedescendant="">
+              <span class="icon search" aria-hidden="true"></span>
+            </div>
+            <ul role="listbox" id="search-suggestions"
+              class="autocomplete-suggestions is-vertically-scrollable padding-xxs" aria-label="Suggestions" hidden>
+            </ul>
+          </div>
+        </form>
+
+        <div class="display-flex flex-wrap-no-wrap margin-left-auto">
+          <button id="color-mode-toggle" title="Toggle color mode" aria-label="Toggle color mode" class="button button-clear">
+            <span class="icon color-mode" aria-hidden="true">
+            </span>
+          </button>
+          <a aria-label="Visit repository" class="button button-clear" href="https://github.com/DelphiPackageManager/DPM" data-external="true" target="_blank" rel="noopener">
+            <span class="icon repository github" aria-hidden="true">
+            </span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section id="layout-body-menu" class="layout-body-menu border-right display-flex background-color-body-medium">
+    <div id="left-container"
+      class="left-container display-none display-block-tablet padding-inline-sm padding-bottom-sm width-full">
+      <nav id="affixed-left-container" class="margin-top-sm-tablet position-sticky display-flex flex-direction-column"
+        aria-label="Primary">
+      </nav>
+    </div>
+  </section>
+
+  <main id="main" role="main" class="layout-body-main">
+    <article class="reading-width margin-inline-auto padding-sm padding-top-none padding-top-sm-tablet">
+      <div id="article-header"
+        class="align-items-center display-flex background-color-body margin-bottom-xs display-none-print">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumbs">
+            <li
+              class="breadcrumbs-item">
+              Getting Started
+            </li>
+            <li
+              class="breadcrumbs-item breadcrumbs-item-slashless">
+              Creating Packages
+            </li>
+          </ol>
+        </nav>
+
+        <div id="page-actions" class="display-flex flex-wrap-no-wrap margin-left-auto">
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="heading-wrapper" data-heading-level="h1">
+          <a class="anchor-link" href="creating-packages.html" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+          <h1>  Creating Packages</h1>
+        </div>
+
+        <nav id="center-doc-outline" class="doc-outline is-hidden-desktop display-none-print margin-bottom-sm"
+          aria-label="On this page">
+          <h2 id="on-this-page" class="title is-6 margin-block-xs">
+            On this page
+          </h2>
+          <ol id="content-well-in-this-article-list2" class="border-left padding-left-xxs">
+  <li>
+    <a href="#root-structure">Root structure</a>
+  </li>
+  <li>
+    <a href="#metadata">metadata</a>
+    <ol>
+  <li>
+    <a href="#package-id-rules">Package id rules</a>
+  </li>
+</ol>
+  </li>
+  <li>
+    <a href="#targetplatforms">targetPlatforms</a>
+    <ol>
+  <li>
+    <a href="#supported-compiler-versions">Supported compiler versions</a>
+  </li>
+  <li>
+    <a href="#supported-platforms">Supported platforms</a>
+  </li>
+</ol>
+  </li>
+  <li>
+    <a href="#templates">templates</a>
+    <ol>
+  <li>
+    <a href="#dependencies">dependencies</a>
+  </li>
+  <li>
+    <a href="#source">source</a>
+  </li>
+  <li>
+    <a href="#build">build</a>
+  </li>
+  <li>
+    <a href="#design">design</a>
+  </li>
+  <li>
+    <a href="#package-definitions">package definitions</a>
+  </li>
+  <li>
+    <a href="#environment-variables">environment variables</a>
+  </li>
+</ol>
+  </li>
+  <li>
+    <a href="#variables">variables</a>
+  </li>
+  <li>
+    <a href="#built-in-variables">Built in variables</a>
+  </li>
+  <li>
+    <a href="#complete-example">Complete example</a>
+  </li>
+  <li>
+    <a href="#see-also">See also</a>
+  </li>
+</ol>
+        </nav>
+
+        <p>  DPM packages are defined by a YAML spec file with the extension <code>.dspec.yaml</code>  . The spec describes the package, the compiler &#x2f; platform combinations it supports, the source files and projects to include, and any dependencies on other packages.</p><p>  Scaffold a starter spec with <a href="../commands/spec-command.html"><code>dpm spec</code></a>   and build it with <a href="../commands/pack-command.html"><code>dpm pack</code></a>  :</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">bat</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-bat" dir="ltr">dpm spec VSoft.CommandLine
+
+dpm pack VSoft.CommandLine.dspec.yaml -o=i:\dpmfeed
+</code></pre><p><code>dpm pack</code>   produces one <code>.dpkg</code>   file per compiler &#x2f; platform combination defined in <code>targetPlatforms</code>  .</p>  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#root-structure" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="root-structure">  Root structure</h2>
+  </div>
+<table class="table table-sm">
+    <thead>
+      <tr>
+        <th><p>  Key</p></th>
+        <th><p>  Required</p></th>
+        <th><p>  Description</p></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><p><code>min dpm client version</code></p></td>
+        <td><p>  no</p></td>
+        <td><p>  Minimum DPM client version required to install or build this package. Note the literal spaces in the key.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>packageKind</code></p></td>
+        <td><p>  no</p></td>
+        <td><p>  Package kind: <code>dpm</code>   (default) for standard pre-built packages, or <code>git</code>   for packages built from source via a git registry. See <a href="git-registry-packages.html">  Git Registry Packages</a>  .</p></td>
+      </tr>
+      <tr>
+        <td><p><code>metadata</code></p></td>
+        <td><p>  yes</p></td>
+        <td><p>  Package identity and descriptive metadata.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>variables</code></p></td>
+        <td><p>  no</p></td>
+        <td><p>  Spec-wide variables, referenced as <code>$name$</code>   (see <a href="#variables">  variables</a>  ).</p></td>
+      </tr>
+      <tr>
+        <td><p><code>targetPlatforms</code></p></td>
+        <td><p>  yes</p></td>
+        <td><p>  Sequence of compiler &#x2f; platform combinations this package supports.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>templates</code></p></td>
+        <td><p>  yes</p></td>
+        <td><p>  Sequence of build templates referenced by <code>targetPlatforms</code>  .</p></td>
+      </tr>
+    </tbody>
+  </table><p>  Skeleton:</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">yaml</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-yaml" dir="ltr">min dpm client version: 1.0
+metadata:
+  ...
+variables:
+  ...
+targetPlatforms:
+  - ...
+templates:
+  - name: default
+    ...
+</code></pre>  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#metadata" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="metadata">  metadata</h2>
+  </div>
+<p>  The <code>metadata</code>   section identifies the package and provides descriptive information shown by clients and on the server ui.</p><table class="table table-sm">
+    <thead>
+      <tr>
+        <th><p>  Field</p></th>
+        <th><p>  Required</p></th>
+        <th><p>  Description</p></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><p><code>id</code></p></td>
+        <td><p>  yes</p></td>
+        <td><p>  Package id, e.g. <code>VSoft.CommandLine</code>  . Must follow the <a href="#package-id-rules">  package id rules</a>  .</p></td>
+      </tr>
+      <tr>
+        <td><p><code>version</code></p></td>
+        <td><p>  yes</p></td>
+        <td><p>  Semantic version, e.g. <code>1.0.0</code>  .</p></td>
+      </tr>
+      <tr>
+        <td><p><code>description</code></p></td>
+        <td><p>  yes</p></td>
+        <td><p>  Short description of the package.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>authors</code></p></td>
+        <td><p>  yes</p></td>
+        <td><p>  Sequence of author names.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>projectUrl</code></p></td>
+        <td><p>  no</p></td>
+        <td><p>  URL of the project home page.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>repositoryUrl</code></p></td>
+        <td><p>  no</p></td>
+        <td><p>  URL of the source code repository.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>repositoryType</code></p></td>
+        <td><p>  no</p></td>
+        <td><p>  Repository type, e.g. <code>git</code>  .</p></td>
+      </tr>
+      <tr>
+        <td><p><code>repositoryBranch</code></p></td>
+        <td><p>  no</p></td>
+        <td><p>  Default branch name in the repository.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>repositoryCommit</code></p></td>
+        <td><p>  no</p></td>
+        <td><p>  Specific commit hash, or <code>#HASH#</code>   to be substituted at pack time.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>license</code></p></td>
+        <td><p>  no</p></td>
+        <td><p>  SPDX license identifier, e.g. <code>Apache-2.0</code>  . See <a href="https://spdx.org/licenses/" data-external="true">  SPDX License List</a>  .</p></td>
+      </tr>
+      <tr>
+        <td><p><code>copyright</code></p></td>
+        <td><p>  no</p></td>
+        <td><p>  Copyright notice.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>icon</code></p></td>
+        <td><p>  no</p></td>
+        <td><p>  Path inside the package to a 64x64 image (PNG with transparent background) shown in the UI.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>readme</code></p></td>
+        <td><p>  no</p></td>
+        <td><p>  Path to a README file inside the package.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>releaseNotes</code></p></td>
+        <td><p>  no</p></td>
+        <td><p>  Release notes text or a path to a release notes file.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>tags</code></p></td>
+        <td><p>  no</p></td>
+        <td><p>  Sequence of searchable tags.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>frameworks</code></p></td>
+        <td><p>  no</p></td>
+        <td><p>  Sequence of UI frameworks supported: <code>VCL</code>  , <code>FMX</code>  , or both.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>isTrial</code></p></td>
+        <td><p>  no</p></td>
+        <td><p><code>true</code>   if this is a trial release. Default <code>false</code>  .</p></td>
+      </tr>
+      <tr>
+        <td><p><code>isCommercial</code></p></td>
+        <td><p>  no</p></td>
+        <td><p><code>true</code>   if this is a commercial package. Default <code>false</code>  .</p></td>
+      </tr>
+    </tbody>
+  </table><p>  Example:</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">yaml</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-yaml" dir="ltr">metadata:
+  id: VSoft.VirtualListView
+  version: 1.0.0
+  description: Virtual List View control.
+  authors:
+    - Vincent Parrett
+  projectUrl: https:&#x2f;&#x2f;github.com&#x2f;VSoftTechnologies&#x2f;VSoft.VirtualListView
+  repositoryUrl: https:&#x2f;&#x2f;github.com&#x2f;VSoftTechnologies&#x2f;VSoft.VirtualListView
+  license: Apache-2.0
+  copyright: Vincent Parrett and contributors
+  tags:
+    - list
+    - virtual
+  frameworks:
+    - VCL
+</code></pre>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#package-id-rules" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="package-id-rules">  Package id rules</h3>
+  </div>
+<p>  The <code>id</code>   is validated when the spec is loaded (during <code>dpm pack</code>   and when a client reads the package). An invalid id causes the pack to fail. The rules are:</p><ul><li><p>  <strong>Dotted segments</strong>   - the id is two or more segments separated by dots (<code>.</code>  ), conventionally <code>Organisation.PackageName</code>   (e.g. <code>VSoft.CommandLine</code>  ). At least one dot is required.</p></li><li><p>  <strong>First segment</strong>   - must start with an ASCII letter and be at least   <strong>3 characters</strong>   long.</p></li><li><p>  <strong>Allowed characters</strong>   - ASCII letters (<code>A</code>  -<code>Z</code>  , <code>a</code>  -<code>z</code>  ), digits (<code>0</code>  -<code>9</code>  ) and underscore (<code>_</code>  ) within each segment, with <code>.</code>   as the segment separator. Hyphens, spaces and other punctuation are not allowed.</p></li><li><p>  <strong>Subsequent segments</strong>   - each segment after a dot must be at least 1 character.</p></li><li><p>  <strong>Length</strong>   - 100 characters maximum.</p></li><li><p>  Matching is case-insensitive, though ids are conventionally PascalCase.</p></li></ul><table class="table table-sm">
+    <thead>
+      <tr>
+        <th><p>  Example</p></th>
+        <th><p>  Valid</p></th>
+        <th><p>  Reason</p></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><p><code>VSoft.CommandLine</code></p></td>
+        <td><p>  yes</p></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><p><code>Spring4D.Core</code></p></td>
+        <td><p>  yes</p></td>
+        <td><p>  digits are allowed within a segment</p></td>
+      </tr>
+      <tr>
+        <td><p><code>MyCompany.Sub.Package</code></p></td>
+        <td><p>  yes</p></td>
+        <td><p>  more than two segments are fine</p></td>
+      </tr>
+      <tr>
+        <td><p><code>Foo</code></p></td>
+        <td><p>  no</p></td>
+        <td><p>  no dot - needs at least two segments</p></td>
+      </tr>
+      <tr>
+        <td><p><code>AB.Core</code></p></td>
+        <td><p>  no</p></td>
+        <td><p>  first segment is shorter than 3 characters</p></td>
+      </tr>
+      <tr>
+        <td><p><code>4Pack.Core</code></p></td>
+        <td><p>  no</p></td>
+        <td><p>  must start with a letter</p></td>
+      </tr>
+      <tr>
+        <td><p><code>My-Company.Core</code></p></td>
+        <td><p>  no</p></td>
+        <td><p>  hyphen is not allowed</p></td>
+      </tr>
+    </tbody>
+  </table>  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#targetplatforms" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="targetplatforms">  targetPlatforms</h2>
+  </div>
+<p><code>targetPlatforms</code>   is a sequence of entries that each declare which compiler(s) and platform(s) the package supports. Each entry uses exactly   <strong>one</strong>   of three compiler-specification forms.</p><p>  <strong>Single compiler:</strong></p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">yaml</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-yaml" dir="ltr">targetPlatforms:
+  - compiler: 12.0
+    platforms: [Win32, Win64]
+    template: default
+</code></pre><p>  <strong>Compiler range (inclusive on both ends):</strong></p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">yaml</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-yaml" dir="ltr">targetPlatforms:
+  - compiler from: XE2
+    compiler to: 12.0
+    platforms: [Win32, Win64]
+    template: default
+</code></pre><p>  Note: <code>compiler from</code>   and <code>compiler to</code>   contain literal spaces - they are not camel case.</p><p>  <strong>Discrete list of compilers:</strong></p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">yaml</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-yaml" dir="ltr">targetPlatforms:
+  - compilers: [XE2, XE7, 12.0]
+    platforms: [Win32, Win64]
+    template: default
+</code></pre><p>  Per-entry fields:</p><table class="table table-sm">
+    <thead>
+      <tr>
+        <th><p>  Field</p></th>
+        <th><p>  Required</p></th>
+        <th><p>  Description</p></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><p><code>compiler</code></p></td>
+        <td><p>  one of the three</p></td>
+        <td><p>  A single compiler version.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>compiler from</code></p></td>
+        <td><p>  one of the three</p></td>
+        <td><p>  Lower bound of an inclusive compiler range. Used with <code>compiler to</code>  .</p></td>
+      </tr>
+      <tr>
+        <td><p><code>compiler to</code></p></td>
+        <td><p>  one of the three</p></td>
+        <td><p>  Upper bound of an inclusive compiler range. Used with <code>compiler from</code>  .</p></td>
+      </tr>
+      <tr>
+        <td><p><code>compilers</code></p></td>
+        <td><p>  one of the three</p></td>
+        <td><p>  Sequence of compiler versions.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>platforms</code></p></td>
+        <td><p>  yes</p></td>
+        <td><p>  Sequence of platforms supported by this entry. See the platform list below.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>template</code></p></td>
+        <td><p>  no</p></td>
+        <td><p>  Name of a <code>templates</code>   entry to use. Defaults to <code>default</code>  .</p></td>
+      </tr>
+      <tr>
+        <td><p><code>variables</code></p></td>
+        <td><p>  no</p></td>
+        <td><p>  Mapping of variable overrides applied only to this entry.</p></td>
+      </tr>
+    </tbody>
+  </table>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#supported-compiler-versions" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="supported-compiler-versions">  Supported compiler versions</h3>
+  </div>
+<table class="table table-sm">
+    <thead>
+      <tr>
+        <th><p>  Value</p></th>
+        <th><p>  Delphi version</p></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><p><code>XE2</code></p></td>
+        <td><p>  Delphi XE2</p></td>
+      </tr>
+      <tr>
+        <td><p><code>XE3</code></p></td>
+        <td><p>  Delphi XE3</p></td>
+      </tr>
+      <tr>
+        <td><p><code>XE4</code></p></td>
+        <td><p>  Delphi XE4</p></td>
+      </tr>
+      <tr>
+        <td><p><code>XE5</code></p></td>
+        <td><p>  Delphi XE5</p></td>
+      </tr>
+      <tr>
+        <td><p><code>XE6</code></p></td>
+        <td><p>  Delphi XE6</p></td>
+      </tr>
+      <tr>
+        <td><p><code>XE7</code></p></td>
+        <td><p>  Delphi XE7</p></td>
+      </tr>
+      <tr>
+        <td><p><code>XE8</code></p></td>
+        <td><p>  Delphi XE8</p></td>
+      </tr>
+      <tr>
+        <td><p><code>10.0</code></p></td>
+        <td><p>  Delphi 10 Seattle</p></td>
+      </tr>
+      <tr>
+        <td><p><code>10.1</code></p></td>
+        <td><p>  Delphi 10.1 Berlin</p></td>
+      </tr>
+      <tr>
+        <td><p><code>10.2</code></p></td>
+        <td><p>  Delphi 10.2 Tokyo</p></td>
+      </tr>
+      <tr>
+        <td><p><code>10.3</code></p></td>
+        <td><p>  Delphi 10.3 Rio</p></td>
+      </tr>
+      <tr>
+        <td><p><code>10.4</code></p></td>
+        <td><p>  Delphi 10.4 Sydney</p></td>
+      </tr>
+      <tr>
+        <td><p><code>11.0</code></p></td>
+        <td><p>  Delphi 11 Alexandria</p></td>
+      </tr>
+      <tr>
+        <td><p><code>12.0</code></p></td>
+        <td><p>  Delphi 12 Athens</p></td>
+      </tr>
+      <tr>
+        <td><p><code>13.0</code></p></td>
+        <td><p>  Delphi 13</p></td>
+      </tr>
+    </tbody>
+  </table>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#supported-platforms" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="supported-platforms">  Supported platforms</h3>
+  </div>
+<table class="table table-sm">
+    <thead>
+      <tr>
+        <th><p>  Value</p></th>
+        <th><p>  Description</p></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><p><code>Win32</code></p></td>
+        <td><p>  Windows 32-bit</p></td>
+      </tr>
+      <tr>
+        <td><p><code>Win64</code></p></td>
+        <td><p>  Windows 64-bit</p></td>
+      </tr>
+      <tr>
+        <td><p><code>WinARM64EC</code></p></td>
+        <td><p>  Windows on ARM64EC</p></td>
+      </tr>
+      <tr>
+        <td><p><code>MacOS32</code></p></td>
+        <td><p>  macOS 32-bit (legacy)</p></td>
+      </tr>
+      <tr>
+        <td><p><code>MacOS64</code></p></td>
+        <td><p>  macOS 64-bit Intel</p></td>
+      </tr>
+      <tr>
+        <td><p><code>MacOSARM64</code></p></td>
+        <td><p>  macOS ARM64 (Apple Silicon)</p></td>
+      </tr>
+      <tr>
+        <td><p><code>Android</code></p></td>
+        <td><p>  Android 32-bit</p></td>
+      </tr>
+      <tr>
+        <td><p><code>Android64</code></p></td>
+        <td><p>  Android 64-bit</p></td>
+      </tr>
+      <tr>
+        <td><p><code>iOS32</code></p></td>
+        <td><p>  iOS 32-bit (legacy)</p></td>
+      </tr>
+      <tr>
+        <td><p><code>iOS64</code></p></td>
+        <td><p>  iOS 64-bit</p></td>
+      </tr>
+      <tr>
+        <td><p><code>iOSSimulator</code></p></td>
+        <td><p>  iOS Simulator (Intel)</p></td>
+      </tr>
+      <tr>
+        <td><p><code>iOSSimARM64</code></p></td>
+        <td><p>  iOS Simulator (ARM64)</p></td>
+      </tr>
+      <tr>
+        <td><p><code>Linux64</code></p></td>
+        <td><p>  Linux 64-bit</p></td>
+      </tr>
+    </tbody>
+  </table><p>  Not every platform is valid for every compiler - older compilers only target Windows, and design-time packages are limited to <code>Win32</code>   and <code>Win64</code>   (plus <code>Win64</code>   from Delphi 12 onwards).</p>  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#templates" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="templates">  templates</h2>
+  </div>
+<p><code>templates</code>   is a sequence of named build templates. Each <code>targetPlatforms</code>   entry references a template by name (defaulting to <code>default</code>  ). A template describes the dependencies, source files, and projects that go into the package.</p><table class="table table-sm">
+    <thead>
+      <tr>
+        <th><p>  Field</p></th>
+        <th><p>  Description</p></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><p><code>name</code></p></td>
+        <td><p>  Template identifier. Required.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>dependencies</code></p></td>
+        <td><p>  Sequence of dependency entries.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>source</code></p></td>
+        <td><p>  Sequence of source-file entries to include in the package.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>build</code></p></td>
+        <td><p>  Sequence of runtime package projects to build.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>design</code></p></td>
+        <td><p>  Sequence of design-time package projects to build.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>package definitions</code></p></td>
+        <td><p>  Sequence of package projects for DPM to   <strong>generate</strong>   for source-only libraries that ship no <code>.dpk</code>   &#x2f; <code>.dproj</code>  . Note the literal spaces in the key.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>environmentVariables</code></p></td>
+        <td><p>  Mapping of IDE environment variables to set while the package is loaded in the IDE.</p></td>
+      </tr>
+    </tbody>
+  </table>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#dependencies" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="dependencies">  dependencies</h3>
+  </div>
+<p>  Each dependency declares another DPM package that must be installed alongside this one. Use the special token <code>$version$</code>   to pin to the current package&#x27;s own version.</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">yaml</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-yaml" dir="ltr">dependencies:
+  - id: Spring4D.Core
+    version: &quot;[2.0.0,)&quot;
+  - id: VSoft.SemanticVersion
+    version: &quot;[1.0.0,2.0.0]&quot;
+  - id: MyCompany.Shared
+    version: $version$
+  - id: Indy.System
+    version: bundled
+</code></pre><table class="table table-sm">
+    <thead>
+      <tr>
+        <th><p>  Field</p></th>
+        <th><p>  Required</p></th>
+        <th><p>  Description</p></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><p><code>id</code></p></td>
+        <td><p>  yes</p></td>
+        <td><p>  Dependency package id.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>version</code></p></td>
+        <td><p>  yes</p></td>
+        <td><p>  Version range, or the special token <code>bundled</code>  . See <a href="../concepts/version-range.html">  Version Range</a>   for the range syntax.</p></td>
+      </tr>
+    </tbody>
+  </table><blockquote>
+    <p>  The special version <code>bundled</code>   declares a dependency on a library that ships with the Delphi IDE (such as Indy) and has no DPM package. See <a href="../concepts/bundled-dependencies.html">  Bundled Dependencies</a>  .</p>
+  </blockquote>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#source" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="source">  source</h3>
+  </div>
+<p><code>source</code>   Each entry maps one or more files from the project&#x27;s working tree into the package archive.</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">yaml</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-yaml" dir="ltr">source:
+  - src: .&#x2f;src&#x2f;*.pas
+    dest: src
+    exclude:
+      - &quot;*.dcu&quot;
+      - &quot;Test*.pas&quot;
+  - src: .&#x2f;inc&#x2f;*.inc
+    dest: inc
+  - src: .&#x2f;resources&#x2f;*.res
+    dest: src
+    copyToLib: true
+  - src: .&#x2f;bin&#x2f;Win32&#x2f;*.dll
+    copyToBin: Win32
+</code></pre><table class="table table-sm">
+    <thead>
+      <tr>
+        <th><p>  Field</p></th>
+        <th><p>  Required</p></th>
+        <th><p>  Description</p></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><p><code>src</code></p></td>
+        <td><p>  yes</p></td>
+        <td><p>  Relative path or glob describing which files to include. Supports <code>*</code>  , <code>**</code>  , and <code>*.ext</code>  .</p></td>
+      </tr>
+      <tr>
+        <td><p><code>dest</code></p></td>
+        <td><p>  no</p></td>
+        <td><p>  Destination folder within the package. If omitted, the relative directory structure is preserved.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>exclude</code></p></td>
+        <td><p>  no</p></td>
+        <td><p>  Sequence of glob patterns to exclude from this <code>src</code>  .</p></td>
+      </tr>
+      <tr>
+        <td><p><code>copyToLib</code></p></td>
+        <td><p>  no</p></td>
+        <td><p>  When <code>true</code>  , the matched files are also copied into the <code>lib\{platform}</code>   folder during install. Typically needed for <code>.res</code>   and <code>.dfm</code>   files that must sit alongside the compiled units. Defaults to <code>false</code>  .</p></td>
+      </tr>
+      <tr>
+        <td><p><code>copyToBin</code></p></td>
+        <td><p>  no</p></td>
+        <td><p>  A platform name, e.g. <code>Win32</code>  . The matched files are copied into the <code>bpl\{platform}</code>   folder during install (e.g. <code>bpl\win32</code>  ) - used for DLLs and other files needed when the package is loaded.</p></td>
+      </tr>
+    </tbody>
+  </table>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#build" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="build">  build</h3>
+  </div>
+<p><code>build</code>   lists runtime package projects (<code>.dpk</code>   &#x2f; <code>.dproj</code>  ) to compile into the package.</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">yaml</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-yaml" dir="ltr">build:
+  - project: .&#x2f;packages&#x2f;$packageSource$&#x2f;MyPackage.dproj
+    platforms: [Win32, Win64]
+    defines: RELEASE;DPM
+</code></pre><table class="table table-sm">
+    <thead>
+      <tr>
+        <th><p>  Field</p></th>
+        <th><p>  Required</p></th>
+        <th><p>  Description</p></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><p><code>project</code></p></td>
+        <td><p>  yes</p></td>
+        <td><p>  Path to a <code>.dpk</code>   or <code>.dproj</code>   file.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>platforms</code></p></td>
+        <td><p>  no</p></td>
+        <td><p>  Sequence of platforms to build. Defaults to the platforms of the enclosing <code>targetPlatforms</code>   entry.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>defines</code></p></td>
+        <td><p>  no</p></td>
+        <td><p>  Semicolon-separated additional compiler defines.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>references</code></p></td>
+        <td><p>  no</p></td>
+        <td><p>  Extra package names (e.g. <code>vcl</code>  , or sibling runtime packages) added to the generated package&#x27;s <code>requires</code>   clause and emitted as <code>&lt;DCCReference&gt;</code>   entries when DPM generates the project (see <a href="../commands/prepare-command.html">  prepare</a>  ).</p></td>
+      </tr>
+    </tbody>
+  </table>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#design" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="design">  design</h3>
+  </div>
+<p><code>design</code>   lists design-time package projects to build. Design-time packages are installed into the IDE and so are limited to <code>Win32</code>   (and <code>Win64</code>   from Delphi 12 onwards).</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">yaml</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-yaml" dir="ltr">design:
+  - project: .&#x2f;packages&#x2f;$packageSource$&#x2f;MyPackageDesign.dproj
+    platforms: [Win32]
+    defines: DESIGNTIME
+    libPrefix: dcl
+    libSuffix: &quot;280&quot;
+</code></pre><table class="table table-sm">
+    <thead>
+      <tr>
+        <th><p>  Field</p></th>
+        <th><p>  Required</p></th>
+        <th><p>  Description</p></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><p><code>project</code></p></td>
+        <td><p>  yes</p></td>
+        <td><p>  Path to a design-time <code>.dpk</code>   or <code>.dproj</code>  .</p></td>
+      </tr>
+      <tr>
+        <td><p><code>platforms</code></p></td>
+        <td><p>  no</p></td>
+        <td><p>  Defaults to <code>Win32</code>   (plus <code>Win64</code>   from Delphi 12 onwards).</p></td>
+      </tr>
+      <tr>
+        <td><p><code>defines</code></p></td>
+        <td><p>  no</p></td>
+        <td><p>  Semicolon-separated compiler defines.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>references</code></p></td>
+        <td><p>  no</p></td>
+        <td><p>  Extra package names (e.g. <code>vcl</code>  , or sibling runtime packages) added to the generated package&#x27;s <code>requires</code>   clause and emitted as <code>&lt;DCCReference&gt;</code>   entries. <code>designide</code>   is added automatically for design packages.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>libPrefix</code></p></td>
+        <td><p>  no</p></td>
+        <td><p>  Override library prefix. Defaults to <code>dcl</code>  .</p></td>
+      </tr>
+      <tr>
+        <td><p><code>libSuffix</code></p></td>
+        <td><p>  no</p></td>
+        <td><p>  Override library suffix, e.g. <code>280</code>   for Delphi 12.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>libVersion</code></p></td>
+        <td><p>  no</p></td>
+        <td><p>  Override library version string.</p></td>
+      </tr>
+    </tbody>
+  </table>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#package-definitions" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="package-definitions">  package definitions</h3>
+  </div>
+<p>  Some libraries ship only <code>.pas</code>   source and no Delphi package projects (<code>.dpk</code>   &#x2f; <code>.dproj</code>  ) - this is common for <code>packageKind: git</code>   source libraries. The <code>package definitions</code>   section describes the package projects DPM should   <strong>generate</strong>   for such a library. On install, DPM renders the <code>.dpk</code>   &#x2f; <code>.dproj</code>   into the package cache and the matching <code>build</code>   &#x2f; <code>design</code>   entry compiles them, so consumers still get precompiled, IDE-installable packages.</p><p>  Note the literal space in the <code>package definitions</code>   key - it is not camel case.</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">yaml</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-yaml" dir="ltr">package definitions:
+  - project: .&#x2f;packages&#x2f;MyLibR.dproj   # path + name to generate
+    kind: runtime                       # optional - inferred when omitted (see below)
+    requires:                           # extra requires beyond rtl
+      - vcl
+    files:                              # globs (same syntax as a source src)
+      - .&#x2f;src&#x2f;*.pas
+    exclude:                            # optional - file-name globs to drop
+      - &quot;*.Tests.pas&quot;
+    platforms: [Win32, Win64]           # optional - overrides targetPlatform platforms
+  - project: .&#x2f;packages&#x2f;MyLibDesign.dproj
+    kind: design
+    requires: [vcl, MyLibR]
+    files: [.&#x2f;design&#x2f;*.pas, .&#x2f;design&#x2f;*.dfm]
+</code></pre><table class="table table-sm">
+    <thead>
+      <tr>
+        <th><p>  Field</p></th>
+        <th><p>  Required</p></th>
+        <th><p>  Description</p></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><p><code>project</code></p></td>
+        <td><p>  yes</p></td>
+        <td><p>  Path + name of the <code>.dproj</code>   to generate. Must match the <code>build</code>   &#x2f; <code>design</code>   entry that compiles it, so both resolve to the same cached file.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>files</code></p></td>
+        <td><p>  yes</p></td>
+        <td><p>  Globs for the units to include (<code>.pas</code>   &#x2f; <code>.inc</code>   &#x2f; <code>.rc</code>   &#x2f; <code>.res</code>  ; matching <code>.dfm</code>   forms are pulled in automatically).</p></td>
+      </tr>
+      <tr>
+        <td><p><code>kind</code></p></td>
+        <td><p>  no</p></td>
+        <td><p><code>runtime</code>   or <code>design</code>  . When omitted, <code>design</code>   is inferred if <code>requires</code>   contains <code>designide</code>  , otherwise <code>runtime</code>  .</p></td>
+      </tr>
+      <tr>
+        <td><p><code>requires</code></p></td>
+        <td><p>  no</p></td>
+        <td><p>  Packages added to the dpk <code>requires</code>   clause. <code>rtl</code>   is always added; <code>designide</code>   is added for design packages.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>exclude</code></p></td>
+        <td><p>  no</p></td>
+        <td><p>  Glob patterns (matched against file names) removed from the matched <code>files</code>  .</p></td>
+      </tr>
+      <tr>
+        <td><p><code>platforms</code></p></td>
+        <td><p>  no</p></td>
+        <td><p>  Overrides the enclosing <code>targetPlatforms</code>   platforms; intersected with them when present.</p></td>
+      </tr>
+    </tbody>
+  </table><blockquote>
+    <p>  <strong>Note:</strong>   Because <code>kind</code>   inference keys off <code>designide</code>  , a design package that lists only <code>vcl</code>   &#x2f; <code>fmx</code>   in its requires should set <code>kind: design</code>   explicitly.</p>
+  </blockquote>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#environment-variables" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="environment-variables">  environment variables</h3>
+  </div>
+<p>  A template may declare IDE environment variables that DPM sets while the package is loaded in the IDE, and clears (restoring any previous value) when it is removed.</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">yaml</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-yaml" dir="ltr">templates:
+  - name: default
+    design:
+      - project: .&#x2f;packages&#x2f;MyLibDesign.dproj
+    environmentVariables:
+      MYLIBDIR: $packageDir$               # a custom variable pointing at the package
+      PATH: $packageDir$\Binary\Shared     # appended to PATH (never replaces it)
+</code></pre><p>  How they behave:</p><ul><li><p>  <strong>Process environment only.</strong>   DPM sets these on the running IDE   <em>process</em>  , so the compiler &#x2f; MSBuild and any DLLs the IDE loads inherit them. It does   <strong>not</strong>   write the IDE&#x27;s persistent registry environment variables, so they are not the same as Tools   | Options <code>$(Var)</code>   project macros. State is session-scoped and rebuilt each time the package is restored &#x2f; loaded.</p></li><li><p>  <strong>Distinct from </strong><code>variables</code>  <strong>.</strong>   The <a href="#variables">  variables</a>   section is pack-time text substitution baked into the spec when packing; <code>environmentVariables</code>   are applied on the consumer machine at install &#x2f; load time.</p></li><li><p><code>PATH</code>  <strong> is append-only.</strong>   The <code>PATH</code>   key (case-insensitive) is appended to (semicolon-separated directories supported) and reference counted - never replaced. Directories present on <code>PATH</code>   at IDE startup are never removed.</p></li><li><p>  <strong>Conflict policy.</strong>   For a non-<code>PATH</code>   variable that already exists in the process environment, its value is captured, overwritten, and restored when the last package that set it is removed.</p></li></ul><p>  Values are expanded in two stages:</p><table class="table table-sm">
+    <thead>
+      <tr>
+        <th><p>  Stage</p></th>
+        <th><p>  What is expanded</p></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><p>  Pack time</p></td>
+        <td><p>  Package- and <code>targetPlatforms</code>  -level <code>variables</code>  , plus the <a href="#built-in-variables">  built-in compiler variables</a>   (e.g. <code>$compiler$</code>  , <code>$bdsversion$</code>  ), resolved per compiler.</p></td>
+      </tr>
+      <tr>
+        <td><p>  Install time (IDE)</p></td>
+        <td><p><code>$packageDir$</code>   resolves to the package&#x27;s cache folder on the consumer machine. Use it to point a variable at a file shipped inside the package.</p></td>
+      </tr>
+    </tbody>
+  </table><blockquote>
+    <p><code>$packageDir$</code>  <strong> is exclusive to </strong><code>environmentVariables</code>  <strong> values.</strong>   They are the only values DPM processes at install time, so using <code>$packageDir$</code>   anywhere else in the spec (a <code>src</code>  , <code>project</code>  , <code>dest</code>  , regular <code>variables</code>   value, etc.) is an   <strong>error at pack time</strong>  .</p>
+  </blockquote><p>  For system stability and to prevent executable-hijack redirection, packing   <strong>fails</strong>   if a package declares any of a set of reserved variable names (compared case-insensitively). <code>PATH</code>   is allowed (append-only) and is not reserved. The reserved names are:</p><ul><li><p>  <strong>Executable redirection:</strong>   <code>PATHEXT</code>  , <code>COMSPEC</code>  , <code>SYSTEMROOT</code>  , <code>WINDIR</code>  , <code>SYSTEMDRIVE</code>  .</p></li><li><p>  <strong>OS &#x2f; user profile:</strong>   <code>TEMP</code>  , <code>TMP</code>  , <code>USERPROFILE</code>  , <code>PUBLIC</code>  , <code>HOMEDRIVE</code>  , <code>HOMEPATH</code>  , <code>APPDATA</code>  , <code>LOCALAPPDATA</code>  , <code>PROGRAMDATA</code>  , <code>ALLUSERSPROFILE</code>  , <code>PROGRAMFILES</code>  , <code>PROGRAMFILES(X86)</code>  , <code>PROGRAMW6432</code>  , <code>COMMONPROGRAMFILES</code>   (and <code>(X86)</code>   &#x2f; <code>W6432</code>  ), <code>USERNAME</code>  , <code>USERDOMAIN</code>  , <code>COMPUTERNAME</code>  , <code>LOGONSERVER</code>  , <code>OS</code>  , <code>NUMBER_OF_PROCESSORS</code>  , <code>PROCESSOR_ARCHITECTURE</code>   (and <code>W6432</code>  ), <code>PROCESSOR_IDENTIFIER</code>  .</p></li><li><p>  <strong>RAD Studio built-ins:</strong>   <code>BDS</code>  , <code>BDSBIN</code>  , <code>BDSINCLUDE</code>  , <code>BDSLIB</code>  , <code>BDSCOMMONDIR</code>  , <code>BDSUSERDIR</code>  , <code>BDSPROJECTSDIR</code>  , <code>BDSPLATFORMSDKSDIR</code>  , <code>BDSCATALOGREPOSITORY</code>   (and <code>ALLUSERS</code>  ), <code>DELPHI</code>  , <code>BCB</code>  , <code>FRAMEWORKDIR</code>  , <code>FRAMEWORKVERSION</code>  .</p></li></ul>  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#variables" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="variables">  variables</h2>
+  </div>
+<p><code>variables</code>   are reusable values you can reference anywhere in the spec using <code>$name$</code>   substitution. Use them to avoid repeating compiler-specific folder names or build flags.</p><p>  Variables can be declared at the spec root and overridden per <code>targetPlatforms</code>   entry:</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">yaml</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-yaml" dir="ltr">variables:
+  packageSource: &quot;Delphi $compilernoprefix$ $compilerCodeName$&quot;
+
+targetPlatforms:
+  - compiler: delphi10.0
+    platforms: [Win32, Win64]
+    # override for this compiler version
+    variables:
+      packageSource: &quot;Delphi 10 $compilerCodeName$&quot;
+</code></pre><p>  Variable values may themselves contain other variables (see below).</p>  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#built-in-variables" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="built-in-variables">  Built in variables</h2>
+  </div>
+<p><code>dpm pack</code>   expands <code>$name$</code>   references before processing the spec. Names are matched   <strong>case-insensitively</strong>  , and references may appear in paths, file globs, <code>defines</code>  , and other variable values.   <strong>An unknown name causes the pack to fail</strong>   - only the variables listed below (plus any you defined in <code>variables</code>   or supplied via <code>dpm pack -variables=name=value;...</code>  ) are valid.</p><p>  Example expansions are shown for Delphi 12.0 (Athens). The same variables work for every supported compiler.</p><table class="table table-sm">
+    <thead>
+      <tr>
+        <th><p>  Variable</p></th>
+        <th><p>  Expands to</p></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><p><code>$version$</code></p></td>
+        <td><p>  Package version. Defaults to <code>metadata.version</code>  ; overridden by <code>dpm pack -version=...</code>  .</p></td>
+      </tr>
+      <tr>
+        <td><p><code>$compiler$</code></p></td>
+        <td><p>  Compiler version (the lowercase enum name), e.g. <code>delphi12.0</code>  , <code>delphixe7</code>  .</p></td>
+      </tr>
+      <tr>
+        <td><p><code>$target$</code></p></td>
+        <td><p>  Alias for <code>$compiler$</code>  .</p></td>
+      </tr>
+      <tr>
+        <td><p><code>$compilernoprefix$</code></p></td>
+        <td><p>  Compiler version without the <code>delphi</code>   prefix, e.g. <code>12.0</code>  , <code>XE7</code>  .</p></td>
+      </tr>
+      <tr>
+        <td><p><code>$compilermajornoprefix$</code></p></td>
+        <td><p>  Major number only, with no prefix and no minor, e.g. <code>12</code>  , <code>XE7</code>  .</p></td>
+      </tr>
+      <tr>
+        <td><p><code>$compilernopoint$</code></p></td>
+        <td><p>  Compiler with the dot removed, e.g. <code>delphi120</code>  , <code>delphixe7</code>  .</p></td>
+      </tr>
+      <tr>
+        <td><p><code>$compilercodename$</code></p></td>
+        <td><p>  Delphi release code name from 10.0 onwards, e.g. <code>Athens</code>  . Empty string for XE-series compilers.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>$compilerwithcodename$</code></p></td>
+        <td><p><code>$compiler$</code>   plus a space and <code>$compilercodename$</code>  , e.g. <code>delphi12.0 Athens</code>  .</p></td>
+      </tr>
+      <tr>
+        <td><p><code>$compilerversion$</code></p></td>
+        <td><p>  Internal Delphi compiler version as an integer string, e.g. <code>36</code>  .</p></td>
+      </tr>
+      <tr>
+        <td><p><code>$compilershortversion$</code></p></td>
+        <td><p>  Simplified compiler version used by some - xe2-xe8, then 100, 101,102, 103,104,110,120,130</p></td>
+      </tr>
+      <tr>
+        <td><p><code>$libsuffix$</code></p></td>
+        <td><p>  DCC lib suffix for the compiler, e.g. <code>290</code>   for Delphi 12.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>$bdsversion$</code></p></td>
+        <td><p>  BDS &#x2f; RAD Studio product version, e.g. <code>23.0</code>   for Delphi 12.</p></td>
+      </tr>
+    </tbody>
+  </table><p>  Any name you define under <code>variables:</code>   (at the spec root or per <code>targetPlatforms</code>   entry) is also available as <code>$name$</code>  , and variable values may themselves reference other variables.</p>  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#complete-example" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="complete-example">  Complete example</h2>
+  </div>
+<div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">yaml</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-yaml" dir="ltr">min dpm client version: 1.0
+
+metadata:
+  id: Gabr42.OmniThreadLibrary
+  version: 3.7.12
+  description: A powerful threading library for Delphi.
+  authors:
+    - Primož Gabrijelčič
+  projectUrl: https:&#x2f;&#x2f;github.com&#x2f;gabr42&#x2f;OmniThreadLibrary
+  repositoryUrl: https:&#x2f;&#x2f;github.com&#x2f;gabr42&#x2f;OmniThreadLibrary
+  license: BSD-3-Clause
+  copyright: Primož Gabrijelčič
+  readme: README.md
+  tags:
+    - threading
+    - async
+
+variables:
+  packageSource: &quot;Delphi $compilernoprefix$ $compilerCodeName$&quot;
+
+targetPlatforms:
+  - compiler from: XE2
+    compiler to: XE8
+    platforms: [Win32, Win64]
+  - compiler: 10.0
+    platforms: [Win32, Win64]
+    variables:
+      packageSource: &quot;Delphi 10 $compilerCodeName$&quot;
+  - compiler from: 10.1
+    compiler to: 13.0
+    platforms: [Win32, Win64]
+
+templates:
+  - name: default
+    # Omnithread has all source in the root, so we specify dest to move it where we want it
+    source:
+      - src: .&#x2f;*.pas
+        dest: src
+      - src: .&#x2f;*.inc
+        dest: src
+      - src: .&#x2f;LICENSE.txt
+        dest: src
+      - src: .&#x2f;src&#x2f;**&#x2f;*.pas
+        dest: src&#x2f;src
+        exclude:
+          - .&#x2f;tests&#x2f;**
+          - .&#x2f;examples&#x2f;**
+      - src: .&#x2f;packages&#x2f;$packageSource$&#x2f;**
+        dest: src&#x2f;packages&#x2f;$packageSource$
+    build:
+      - project: .&#x2f;src&#x2f;packages&#x2f;$packageSource$&#x2f;OmniThreadLibraryRuntime.dproj
+    design:
+      - project: .&#x2f;src&#x2f;packages&#x2f;$packageSource$&#x2f;OmniThreadLibraryDesigntime.dproj
+</code></pre>  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#see-also" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="see-also">  See also</h2>
+  </div>
+<ul><li><p><a href="../commands/spec-command.html">  spec command</a>   - scaffold a new <code>.dspec.yaml</code>  .</p></li><li><p><a href="../commands/pack-command.html">  pack command</a>   - build <code>.dpkg</code>   files from a spec.</p></li><li><p><a href="../commands/prepare-command.html">  prepare command</a>   - generate per-compiler dpk&#x2f;dproj subfolders.</p></li><li><p><a href="../concepts/version-range.html">  Version Range</a>   - the dependency version range syntax.</p></li></ul>
+      </div>
+
+    </article>
+  </main>
+
+  <aside id="layout-body-aside" class="layout-body-aside" aria-label="Page Outline">
+    <div id="additional-resources" class="right-container padding-sm display-none display-block-desktop height-full"
+      role="complementary" aria-label="Additional resources">
+      <div id="affixed-right-container" class="position-sticky">
+        <nav id="side-doc-outline" class="doc-outline padding-bottom-xs margin-bottom-xs" aria-label="On this page">
+          <h2 class="title is-6 margin-top-xxs margin-bottom-xs">
+            On this page
+          </h2>
+          <ol id="right-rail-on-this-page-list">
+  <li class="border-left-md padding-left-xxs border-color-primary">
+    <a href="#root-structure" class="font-weight-semibold color-text">Root structure</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#metadata" class="color-text-subtle">metadata</a>
+    <ol>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#package-id-rules" class="color-text-subtle">Package id rules</a>
+  </li>
+</ol>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#targetplatforms" class="color-text-subtle">targetPlatforms</a>
+    <ol>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#supported-compiler-versions" class="color-text-subtle">Supported compiler versions</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#supported-platforms" class="color-text-subtle">Supported platforms</a>
+  </li>
+</ol>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#templates" class="color-text-subtle">templates</a>
+    <ol>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#dependencies" class="color-text-subtle">dependencies</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#source" class="color-text-subtle">source</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#build" class="color-text-subtle">build</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#design" class="color-text-subtle">design</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#package-definitions" class="color-text-subtle">package definitions</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#environment-variables" class="color-text-subtle">environment variables</a>
+  </li>
+</ol>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#variables" class="color-text-subtle">variables</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#built-in-variables" class="color-text-subtle">Built in variables</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#complete-example" class="color-text-subtle">Complete example</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#see-also" class="color-text-subtle">See also</a>
+  </li>
+</ol>
+        </nav>
+      </div>
+    </div>
+  </aside>
+
+
+  <footer id="footer" class="layout-body-footer footer-layout uhf-container  has-padding
+    border-top" role="contentinfo">
+    <p class="color-text-subtle">Unofficial DocInsight showcase for <a href="https://delphi.dev" data-external="true">DPM</a>. This showcase is not affiliated with, sponsored by, or endorsed by the <a href="https://github.com/DelphiPackageManager" data-external="true">DPM Dev Team</a> or <a href="https://www.finalbuilder.com/" data-external="true">VSoft Technologies Pty Ltd</a>.<br>DPM source and documentation are copyright © 2023–present DPM Dev Team and licensed under the Apache License 2.0.<br>Built with <a href="https://docinsight.dev/" data-external="true">DocInsight</a>. View the <a href="https://github.com/docinsight/dpm/" data-external="true">showcase repository</a>.</p>
+  </footer>
+
+</body>
+
+</html>

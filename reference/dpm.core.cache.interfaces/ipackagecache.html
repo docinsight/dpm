@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html class="layout layout-holy-grail" lang="en-US"
+  dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IPackageCache Interface | DocInsight Showcase</title>
+  <meta name="description" content="Unofficial DocInsight documentation showcase for DPM, an open-source package manager for Delphi." />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="generator" content="DocInsight" />
+  <meta name="toc-key" content="reference:project/dpm" />
+  <meta name="uid" content="dpm.reference/dpm/dpm.core.cache.interfaces/ipackagecache" />
+  <meta name="search-index" content="../../_static/themes/learn/search/reference.js" />
+  <meta name="robots" content="noindex,follow" />
+  <link rel="icon" href="../../favicon.ico" type="image/x-icon" sizes="any" />
+  <link rel="stylesheet" href="../../_static/themes/learn/assets/learn.08b892543dc6.css" />
+  <script src="../../_static/themes/learn/toc/reference-project-dpm.js"></script>
+  <script src="../../_static/themes/learn/assets/learn.429029d00211.js" defer></script>
+</head>
+
+<body id="body" class="layout-body">
+
+  <header id="header" class="layout-body-header background-color-body-medium">
+    <div class="site-header display-flex align-items-center ">
+      <a href="../../index.html" class="site-header-brand padding-left-none">
+        <span>DPM Showcase</span>
+      </a>
+
+      <nav aria-label="site header nav" class="site-header-nav display-flex align-items-center gap-xxs">
+        <ul class="display-none display-flex-tablet justify-content-space-between gap-none">
+          <li>
+            <a class="site-header-button" href="../../index.html"><span>Guide</span></a>
+          </li>
+          <li>
+            <a class="site-header-button font-weight-semibold" href="../dpm/index.html"><span>Code Reference</span></a>
+          </li>
+        </ul>
+
+        <form role="search" aria-label="Search" id="search-container" class="margin-left-xss margin-left-lg-tablet">
+          <div class="autocomplete display-block">
+            <div class="position-relative">
+              <input class="input input-icon input-sm" type="text" placeholder="Search Code Reference" aria-expanded="false"
+                aria-activedescendant="">
+              <span class="icon search" aria-hidden="true"></span>
+            </div>
+            <ul role="listbox" id="search-suggestions"
+              class="autocomplete-suggestions is-vertically-scrollable padding-xxs" aria-label="Suggestions" hidden>
+            </ul>
+          </div>
+        </form>
+
+        <div class="display-flex flex-wrap-no-wrap margin-left-auto">
+          <button id="color-mode-toggle" title="Toggle color mode" aria-label="Toggle color mode" class="button button-clear">
+            <span class="icon color-mode" aria-hidden="true">
+            </span>
+          </button>
+          <a aria-label="Visit repository" class="button button-clear" href="https://github.com/DelphiPackageManager/DPM" data-external="true" target="_blank" rel="noopener">
+            <span class="icon repository github" aria-hidden="true">
+            </span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section id="layout-body-menu" class="layout-body-menu border-right display-flex background-color-body-medium">
+    <div id="left-container"
+      class="left-container display-none display-block-tablet padding-inline-sm padding-bottom-sm width-full">
+      <nav id="affixed-left-container" class="margin-top-sm-tablet position-sticky display-flex flex-direction-column"
+        aria-label="Primary">
+      </nav>
+    </div>
+  </section>
+
+  <main id="main" role="main" class="layout-body-main">
+    <article class="reading-width margin-inline-auto padding-sm padding-top-none padding-top-sm-tablet">
+      <div id="article-header"
+        class="align-items-center display-flex background-color-body margin-bottom-xs display-none-print">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumbs">
+            <li
+              class="breadcrumbs-item">
+              <a href="../dpm/index.html" class="cref">dpm</a>
+            </li>
+            <li
+              class="breadcrumbs-item">
+              <a href="index.html" class="cref">DPM.Core.Cache.Interfaces</a>
+            </li>
+            <li
+              class="breadcrumbs-item breadcrumbs-item-slashless">
+              IPackageCache
+            </li>
+          </ol>
+        </nav>
+
+        <div id="page-actions" class="display-flex flex-wrap-no-wrap margin-left-auto">
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="heading-wrapper" data-heading-level="h1">
+          <a class="anchor-link" href="ipackagecache.html" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+          <h1>  IPackageCache Interface</h1>
+        </div>
+
+        <nav id="center-doc-outline" class="doc-outline is-hidden-desktop display-none-print margin-bottom-sm"
+          aria-label="On this page">
+          <h2 id="on-this-page" class="title is-6 margin-block-xs">
+            On this page
+          </h2>
+          <ol id="content-well-in-this-article-list2" class="border-left padding-left-xxs">
+  <li>
+    <a href="#definition">Definition</a>
+  </li>
+  <li>
+    <a href="#properties">Properties</a>
+  </li>
+  <li>
+    <a href="#methods">Methods</a>
+  </li>
+</ol>
+        </nav>
+
+        <div class="heading-wrapper" data-heading-level="h2">
+  <a class="anchor-link" href="#definition" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+  <h2 id="definition">Definition</h2>
+</div>
+
+<div class="metadata">
+  <dl class="attributeList">
+    <dt>Unit:</dt>
+    <dd>
+      <span class="break-text">
+          DPM.Core.Cache.Interfaces
+      </span>
+    </dd>
+  </dl>
+  <dl class="attributeList">
+    <dt>Package:</dt>
+    <dd>
+      <span class="break-text">
+          dpm
+      </span>
+    </dd>
+  </dl>
+</div>
+
+
+
+
+<div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">Delphi</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+<pre class="wrap has-inner-focus"><code class="language-Delphi" dir="ltr">type IPackageCache = interface(IInterface)</code></pre>
+
+
+
+
+
+
+<dl class="attributeList stack">
+  <dt>Inheritance</dt>
+  <dd>
+    <div class="pdlHolder">
+      <div class="pdl">
+        IInterface
+      </div>
+      <span>IPackageCache</span>
+    </div>
+  </dd>
+</dl>
+
+<dl id="derived" class="attributeList stack">
+  <dt>Derived</dt>
+  <dd>
+    <div>
+      <span class="break-text">
+        <a href="../dpm.core.cache/tpackagecache.html" data-linktype="relative-path">TPackageCache</a>
+      </span>
+    </div>
+  </dd>
+</dl>
+
+
+
+
+
+
+
+<section class="member-group">
+  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#properties" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="properties">Properties</h2>
+  </div>
+  <div class="has-inner-focus">
+    <table class="table table-sm margin-top-none">
+      <tbody>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagecache.location.html" class="cref">Location</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagecache.packagesfolder.html" class="cref">PackagesFolder</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section class="member-group">
+  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#methods" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="methods">Methods</h2>
+  </div>
+  <div class="has-inner-focus">
+    <table class="table table-sm margin-top-none">
+      <tbody>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagecache.clean.html" class="cref">Clean</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagecache.createpackagepath.html" class="cref">CreatePackagePath(IPackageIdentity)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagecache.ensurepackage.html" class="cref">EnsurePackage(IPackageIdentity)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            <p>  checks if the package is present as a folder, if not there but the file is
+ then it will call InstallPackage to extract it.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagecache.fullreverify.html" class="cref">FullReVerify(ICancellationToken)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            <p>  Re-hash every cached package against its manifest and re-run signature
+verification (V-34). Used by `dpm cache verify` and the IDE DPM menu.
+Logs per-package progress and honours cancellationToken between packages
+so a long-running verify can be interrupted. Returns the number of
+packages that failed verification.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagecache.getcachedpackageversionswithdependencies.html" class="cref">GetCachedPackageVersionsWithDependencies(ICancellationToken, string, TCompilerVersion, TVersionRange, Boolean)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            <p>  Returns IPackageInfo for any cached versions of the given (id, compilerVersion)
+ that satisfy versionRange. Used by the dependency resolver to avoid hitting
+ the repository for packages already on disk. Returns an empty list when no
+ cached version satisfies the range. Sorted descending by version. Prereleases
+ are excluded unless preRelease is true.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagecache.getcachedpackagesmatching.html" class="cref">GetCachedPackagesMatching(string, TCompilerVersion, string)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            <p>  Returns the cached package versions matching the filter, for `dpm cache
+ remove`. A blank version matches every cached version of the id; passing
+ UnknownVersion as compilerVersion matches every compiler folder. Unions
+ extracted version folders and raw .dpkg filenames so a downloaded-but-
+ never-extracted package is still found. Empty list when nothing matches.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagecache.getlocation.html" class="cref">GetLocation</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagecache.getpackagefilefolder.html" class="cref">GetPackageFileFolder(IPackageIdentity)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            <p>  Folder where the raw .dpkg file for the given package id lives -
+ {cache}&#x2f;{compiler}&#x2f;{id}. Sibling of the per-version extraction folders
+ returned by GetPackagePath. Does not create the folder.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagecache.getpackagehash.html" class="cref">GetPackageHash(IPackageIdentity)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            <p>  Resolves the SHA-256 hash of the package&#x27;s .dpkg file. Self-heals
+ missing sidecars: if the .sha256 file is absent but the .dpkg is in
+ the cache, computes the hash and persists the sidecar so subsequent
+ calls and any other tooling (SBOM, audits, signature verification)
+ can read it without recomputing. Returns empty if even the .dpkg
+ cannot be located.
+ The algorithm is always &#x27;sha256&#x27; (see cPackageHashAlgorithm).</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagecache.getpackageinfo.html" class="cref">GetPackageInfo(ICancellationToken, IPackageIdentity)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagecache.getpackagemetadata.html" class="cref">GetPackageMetadata(IPackageIdentity)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagecache.getpackagepath.html#M-dpm.core.cache.interfaces.ipackagecache.getpackagepath-ipackageidentity-" class="cref">GetPackagePath(IPackageIdentity)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagecache.getpackagepath.html#M-dpm.core.cache.interfaces.ipackagecache.getpackagepath-string-string-tcompilerversion-" class="cref">GetPackagePath(string, string, TCompilerVersion)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagecache.getpackageplatforms.html" class="cref">GetPackagePlatforms(IPackageIdentity)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagecache.getpackagespec.html" class="cref">GetPackageSpec(IPackageIdentity)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagecache.getpackagesfolder.html" class="cref">GetPackagesFolder</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagecache.installpackagefromfile.html" class="cref">InstallPackageFromFile(string)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagecache.removepackage.html" class="cref">RemovePackage(IPackageIdentity)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            <p>  Removes a single cached id-compiler-version: deletes its extracted
+ folder and the matching .dpkg + .sha256 sidecar so the next install
+ re-downloads, and drops the in-memory memo entry. Returns true if
+ anything was deleted.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagecache.setlocation.html" class="cref">SetLocation(string)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ipackagecache.trygetpackageicon.html" class="cref">TryGetPackageIcon(IPackageIdentity, IPackageIcon)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            <p>  Returns the package&#x27;s icon directly from the extracted cache folder
+ (icon.svg &#x2f; icon.png), avoiding a network call. Used by the IDE for
+ installed packages. Returns false (and icon = nil) when the package
+ is not in the cache or has no embedded icon.</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+      </div>
+
+    </article>
+  </main>
+
+  <aside id="layout-body-aside" class="layout-body-aside" aria-label="Page Outline">
+    <div id="additional-resources" class="right-container padding-sm display-none display-block-desktop height-full"
+      role="complementary" aria-label="Additional resources">
+      <div id="affixed-right-container" class="position-sticky">
+        <nav id="side-doc-outline" class="doc-outline padding-bottom-xs margin-bottom-xs" aria-label="On this page">
+          <h2 class="title is-6 margin-top-xxs margin-bottom-xs">
+            On this page
+          </h2>
+          <ol id="right-rail-on-this-page-list">
+  <li class="border-left-md padding-left-xxs border-color-primary">
+    <a href="#definition" class="font-weight-semibold color-text">Definition</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#properties" class="color-text-subtle">Properties</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#methods" class="color-text-subtle">Methods</a>
+  </li>
+</ol>
+        </nav>
+      </div>
+    </div>
+  </aside>
+
+
+  <footer id="footer" class="layout-body-footer footer-layout uhf-container  has-padding
+    border-top" role="contentinfo">
+    <p class="color-text-subtle">Unofficial DocInsight showcase for <a href="https://delphi.dev" data-external="true">DPM</a>. This showcase is not affiliated with, sponsored by, or endorsed by the <a href="https://github.com/DelphiPackageManager" data-external="true">DPM Dev Team</a> or <a href="https://www.finalbuilder.com/" data-external="true">VSoft Technologies Pty Ltd</a>.<br>DPM source and documentation are copyright © 2023–present DPM Dev Team and licensed under the Apache License 2.0.<br>Built with <a href="https://docinsight.dev/" data-external="true">DocInsight</a>. View the <a href="https://github.com/docinsight/dpm/" data-external="true">showcase repository</a>.</p>
+  </footer>
+
+</body>
+
+</html>

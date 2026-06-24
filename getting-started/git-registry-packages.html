@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html class="layout layout-holy-grail" lang="en-US"
+  dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Git Registry Packages | DocInsight Showcase</title>
+  <meta name="description" content="Unofficial DocInsight documentation showcase for DPM, an open-source package manager for Delphi." />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="generator" content="DocInsight" />
+  <meta name="toc-key" content="__root" />
+  <meta name="uid" content="dpm.guide/getting-started/git-registry-packages" />
+  <meta name="search-index" content="../_static/themes/learn/search/root.js" />
+  <meta name="robots" content="noindex,follow" />
+  <link rel="icon" href="../favicon.ico" type="image/x-icon" sizes="any" />
+  <link rel="stylesheet" href="../_static/themes/learn/assets/learn.08b892543dc6.css" />
+  <script src="../_static/themes/learn/toc/root.js"></script>
+  <script src="../_static/themes/learn/assets/learn.429029d00211.js" defer></script>
+</head>
+
+<body id="body" class="layout-body">
+
+  <header id="header" class="layout-body-header background-color-body-medium">
+    <div class="site-header display-flex align-items-center ">
+      <a href="../index.html" class="site-header-brand padding-left-none">
+        <span>DPM Showcase</span>
+      </a>
+
+      <nav aria-label="site header nav" class="site-header-nav display-flex align-items-center gap-xxs">
+        <ul class="display-none display-flex-tablet justify-content-space-between gap-none">
+          <li>
+            <a class="site-header-button font-weight-semibold" href="../index.html"><span>Guide</span></a>
+          </li>
+          <li>
+            <a class="site-header-button" href="../reference/dpm/index.html"><span>Code Reference</span></a>
+          </li>
+        </ul>
+
+        <form role="search" aria-label="Search" id="search-container" class="margin-left-xss margin-left-lg-tablet">
+          <div class="autocomplete display-block">
+            <div class="position-relative">
+              <input class="input input-icon input-sm" type="text" placeholder="Search Guide" aria-expanded="false"
+                aria-activedescendant="">
+              <span class="icon search" aria-hidden="true"></span>
+            </div>
+            <ul role="listbox" id="search-suggestions"
+              class="autocomplete-suggestions is-vertically-scrollable padding-xxs" aria-label="Suggestions" hidden>
+            </ul>
+          </div>
+        </form>
+
+        <div class="display-flex flex-wrap-no-wrap margin-left-auto">
+          <button id="color-mode-toggle" title="Toggle color mode" aria-label="Toggle color mode" class="button button-clear">
+            <span class="icon color-mode" aria-hidden="true">
+            </span>
+          </button>
+          <a aria-label="Visit repository" class="button button-clear" href="https://github.com/DelphiPackageManager/DPM" data-external="true" target="_blank" rel="noopener">
+            <span class="icon repository github" aria-hidden="true">
+            </span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section id="layout-body-menu" class="layout-body-menu border-right display-flex background-color-body-medium">
+    <div id="left-container"
+      class="left-container display-none display-block-tablet padding-inline-sm padding-bottom-sm width-full">
+      <nav id="affixed-left-container" class="margin-top-sm-tablet position-sticky display-flex flex-direction-column"
+        aria-label="Primary">
+      </nav>
+    </div>
+  </section>
+
+  <main id="main" role="main" class="layout-body-main">
+    <article class="reading-width margin-inline-auto padding-sm padding-top-none padding-top-sm-tablet">
+      <div id="article-header"
+        class="align-items-center display-flex background-color-body margin-bottom-xs display-none-print">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumbs">
+            <li
+              class="breadcrumbs-item">
+              Getting Started
+            </li>
+            <li
+              class="breadcrumbs-item breadcrumbs-item-slashless">
+              Git Registry Packages
+            </li>
+          </ol>
+        </nav>
+
+        <div id="page-actions" class="display-flex flex-wrap-no-wrap margin-left-auto">
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="heading-wrapper" data-heading-level="h1">
+          <a class="anchor-link" href="git-registry-packages.html" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+          <h1>  Git Registry Packages</h1>
+        </div>
+
+        <nav id="center-doc-outline" class="doc-outline is-hidden-desktop display-none-print margin-bottom-sm"
+          aria-label="On this page">
+          <h2 id="on-this-page" class="title is-6 margin-block-xs">
+            On this page
+          </h2>
+          <ol id="content-well-in-this-article-list2" class="border-left padding-left-xxs">
+  <li>
+    <a href="#for-consumers">For consumers</a>
+    <ol>
+  <li>
+    <a href="#adding-a-registry-source">Adding a registry source</a>
+  </li>
+  <li>
+    <a href="#installing">Installing</a>
+  </li>
+  <li>
+    <a href="#refreshing-a-registry">Refreshing a registry</a>
+  </li>
+  <li>
+    <a href="#trust-signing">Trust &#x2f; signing</a>
+  </li>
+</ol>
+  </li>
+  <li>
+    <a href="#for-registry-authors">For registry authors</a>
+    <ol>
+  <li>
+    <a href="#layout">Layout</a>
+  </li>
+  <li>
+    <a href="#the-registry-dspec">The registry dspec</a>
+  </li>
+  <li>
+    <a href="#search-paths-come-from-src-not-dest">Search paths come from src, not dest</a>
+  </li>
+  <li>
+    <a href="#versioning">Versioning</a>
+  </li>
+  <li>
+    <a href="#per-version-build-the-package-s-own-dspec">Per-version build &#x2f; the package&#x27;s own dspec</a>
+  </li>
+</ol>
+  </li>
+  <li>
+    <a href="#how-it-works-summary">How it works (summary)</a>
+  </li>
+</ol>
+        </nav>
+
+        <p>  DPM can consume packages whose definitions live in a   <strong>git registry</strong>   instead of   requiring pre-built <code>.dpkg</code>   files pushed to a DPM server.</p><p>  A registry is a collection of <code>.dspec.yaml</code>   files (one folder per package id). Each   dspec points at the package&#x27;s own git repository, using git tags for versions.</p><p>  On install, DPM clones that   repository at the resolved commit directly into the package cache and builds it (or,   for source-only packages, adds its source folders to the project search paths). No <code>.dpkg</code>   is produced and nothing is pushed to a server.</p><hr />  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#for-consumers" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="for-consumers">  For consumers</h2>
+  </div>
+  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#adding-a-registry-source" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="adding-a-registry-source">  Adding a registry source</h3>
+  </div>
+<p>  A registry source can be a   <strong>git URL</strong>   or a   <strong>local folder</strong>  :</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">text</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code dir="ltr">dpm sources add -name myregistry -source https:&#x2f;&#x2f;github.com&#x2f;acme&#x2f;dpm-registry.git
+dpm sources add -name localreg   -source C:\work\dpm-registry
+</code></pre><p>  DPM auto-detects the <code>GitDirectory</code>   source type when the source is a git URL   (<code>*.git</code>  , <code>git@…</code>  , <code>ssh:&#x2f;&#x2f;…</code>  ) or a folder already laid out as a registry (a   sub-folder containing an <code>&lt;id&gt;.dspec.yaml</code>  ). If auto-detection can&#x27;t tell (e.g. an   empty folder, or an <code>https</code>   URL without a <code>.git</code>   suffix), set it explicitly:</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">text</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code dir="ltr">dpm sources add -name myregistry -source https:&#x2f;&#x2f;example.com&#x2f;registry -type GitDirectory
+</code></pre><p><code>dpm sources</code>   shows the type so you can confirm:</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">text</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code dir="ltr">  1.  myregistry  [Enabled]  (Git Registry)
+      https:&#x2f;&#x2f;github.com&#x2f;acme&#x2f;dpm-registry.git
+</code></pre>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#installing" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="installing">  Installing</h3>
+  </div>
+<p>  Git packages install like any other:</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">text</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code dir="ltr">dpm install Acme.Widgets -projectPath MyApp.dproj
+dpm restore MyApp.dproj
+dpm cache add Acme.Widgets -compiler=13
+</code></pre><ul><li><p>  A package repo with   <strong>semver tags</strong>   (<code>v1.2.3</code>  , <code>1.2.3</code>  , <code>2.0.0-beta1</code>  ) exposes   those as versions. Prerelease tags require <code>-prerelease</code>  , as usual.</p></li><li><p>  A package repo with   <strong>no tags</strong>   is published as a stable <code>0.0.1</code>   that tracks   the default branch HEAD. It&#x27;s visible&#x2f;installable without <code>-prerelease</code>  , and DPM   re-clones it whenever the remote HEAD moves (on the next restore&#x2f;install).</p></li></ul>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#refreshing-a-registry" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="refreshing-a-registry">  Refreshing a registry</h3>
+  </div>
+<p>  For   <strong>git-URL</strong>   registries DPM keeps a local mirror under <code>%APPDATA%\.dpm\registries\&lt;name&gt;\</code>  , refreshed automatically when it&#x27;s older than a   TTL at the start of a <code>list</code>  &#x2f;<code>install</code>  &#x2f;<code>restore</code>  . To force an immediate pull:</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">text</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code dir="ltr">dpm sources refresh                # all git registries
+dpm sources refresh -name myreg    # just one
+</code></pre><p>  The TTL is a   <strong>global</strong>   setting in your DPM config file   (<code>%APPDATA%\.dpm\dpm.config.yaml</code>  ), applied to every git-URL registry:</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">yaml</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-yaml" dir="ltr">registryRefreshIntervalMinutes: 60   # default
+#   0  -&gt; always pull on every catalog operation
+#  -1  -&gt; never auto-pull (only `dpm sources refresh`)
+</code></pre><p>  <strong>Folder</strong>   registries are read in place — there is no mirror and nothing to refresh.</p>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#trust-signing" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="trust-signing">  Trust &#x2f; signing</h3>
+  </div>
+<p>  Git packages are   <strong>built from source on your machine, so they are unsigned</strong>  . They   install under DPM&#x27;s permissive trust policy (the default). Under a strict policy,   unsigned packages — from any source — are rejected by design. Cloned packages carry   no <code>.dpkg</code>  , manifest, or signing receipt; DPM identifies them in the cache by a <code>.dpm-git-commit</code>   marker and skips signing verification for them only.</p><p>  You cannot <code>dpm push</code>   to a git registry — versions come from the package repo&#x27;s git   history, not from uploaded artifacts.</p><hr />  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#for-registry-authors" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="for-registry-authors">  For registry authors</h2>
+  </div>
+  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#layout" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="layout">  Layout</h3>
+  </div>
+<p>  One folder per package id, each containing <code>&lt;id&gt;.dspec.yaml</code>  :</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">text</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code dir="ltr">dpm-registry&#x2f;
+  Acme.Widgets&#x2f;
+    Acme.Widgets.dspec.yaml
+  Acme.Core&#x2f;
+    Acme.Core.dspec.yaml
+</code></pre>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#the-registry-dspec" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="the-registry-dspec">  The registry dspec</h3>
+  </div>
+<p>  The registry dspec is the   <strong>full build spec</strong>  . It must declare <code>packageKind: git</code>   and include <code>repositoryUrl</code>   and the <code>targetPlatforms</code>   &#x2f; <code>templates</code>   (with <code>source</code>  ,   and <code>build</code>  &#x2f;<code>design</code>   if the package compiles to BPLs). A minimal source-only   example:</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">yaml</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-yaml" dir="ltr">packageKind: git
+metadata:
+  id: Acme.Widgets
+  description: Reusable VCL widgets
+  authors: [ Acme ]
+  license: MIT
+  repositoryUrl: https:&#x2f;&#x2f;github.com&#x2f;acme&#x2f;widgets.git
+targetPlatforms:
+  - compiler: delphi13.0
+    platforms: [ Win32, Win64 ]
+templates:
+  - name: default
+    source:
+      - src: .&#x2f;src&#x2f;*.pas
+</code></pre><p>  Notes:</p><ul><li><p><code>packageKind: git</code>  <strong> is required.</strong>   It&#x27;s a top-level field (a sibling of <code>metadata</code>   &#x2f; <code>targetPlatforms</code>  ). It&#x27;s what lets you omit <code>version</code>  : a normal   (<code>dpm</code>  ) dspec requires <code>metadata.version</code>  , but for a git registry the versions   come from the package repo&#x27;s git tags instead.</p></li><li><p>  <strong>Don&#x27;t set </strong><code>metadata.version</code>   — it&#x27;s ignored for git packages; versions are the   repo&#x27;s tags (or <code>0.0.1</code>   for an untagged HEAD).</p></li><li><p><code>repositoryUrl</code>  <strong> is required</strong>   — it&#x27;s the repo DPM clones.</p></li><li><p>  If a package compiles, add <code>build</code>  &#x2f;<code>design</code>   entries as in a normal dspec; their <code>project:</code>   paths are repo-relative. With no build&#x2f;design entries the package is   source-only and DPM just adds its source folders to the search paths.</p></li><li><p>  If the repo ships only <code>.pas</code>   source (no <code>.dpk</code>  &#x2f;<code>.dproj</code>  ) but you still want   compiled, IDE-installable packages, add a <code>package definitions</code>   section so DPM   generates the project files and compiles them. See <a href="creating-packages.html#package-definitions">  package definitions</a>  .</p></li></ul>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#search-paths-come-from-src-not-dest" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="search-paths-come-from-src-not-dest">  Search paths come from <code>src</code>  , not <code>dest</code></h3>
+  </div>
+<p>  Because git packages are cloned in place (no <code>src → dest</code>   copy step), DPM derives   search paths from each source entry&#x27;s <code>src</code>   glob, ignoring <code>dest</code>  . Author your <code>src</code>   patterns to match the repo layout:</p><table class="table table-sm">
+    <thead>
+      <tr>
+        <th><p><code>src</code>   pattern</p></th>
+        <th><p>  search path(s) added</p></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><p><code>.&#x2f;*.pas</code></p></td>
+        <td><p>  the repo root</p></td>
+      </tr>
+      <tr>
+        <td><p><code>.&#x2f;source&#x2f;*.pas</code></p></td>
+        <td><p><code>source</code></p></td>
+      </tr>
+      <tr>
+        <td><p><code>.&#x2f;source&#x2f;**&#x2f;*.pas</code></p></td>
+        <td><p><code>source</code>     <strong>and</strong>   every subfolder under it with <code>.pas</code>   files</p></td>
+      </tr>
+    </tbody>
+  </table><p>  (Delphi search paths aren&#x27;t recursive, so a <code>**</code>   pattern expands to each real   subfolder that contains source.)</p>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#versioning" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="versioning">  Versioning</h3>
+  </div>
+<ul><li><p>  Tag releases with semver tags (<code>v1.2.3</code>   or <code>1.2.3</code>  ; a leading <code>v</code>   is fine).   Prerelease tags (<code>2.0.0-beta1</code>  ) are honored under <code>-prerelease</code>  .</p></li><li><p>  An   <strong>untagged</strong>   repo is published as stable <code>0.0.1</code>  , tracking the default branch   HEAD. Add tags as soon as you have releases so consumers can pin versions.</p></li></ul>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#per-version-build-the-package-s-own-dspec" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="per-version-build-the-package-s-own-dspec">  Per-version build &#x2f; the package&#x27;s own dspec</h3>
+  </div>
+<p>  The registry dspec applies to all versions,   <strong>but if the cloned repo contains its</strong>   <strong>own </strong><code>*.dspec.yaml</code>  <strong> at the resolved commit, that one wins</strong>   for the build. The   registry dspec remains the fallback and is always the source DPM uses for   <strong>version</strong>   <strong>discovery and dependency resolution</strong>   (it can&#x27;t clone every candidate while   resolving). Keep the registry dspec&#x27;s <code>dependencies</code>   accurate even if the repo   provides its own build spec.</p><hr />  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#how-it-works-summary" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="how-it-works-summary">  How it works (summary)</h2>
+  </div>
+<table class="table table-sm">
+    <thead>
+      <tr>
+        <th><p>  Step</p></th>
+        <th><p>  What DPM does</p></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><p>  Discover</p></td>
+        <td><p>  Reads the registry catalog; lists versions from <code>git ls-remote --tags &lt;repositoryUrl&gt;</code>   (no tags → <code>0.0.1</code>  ).</p></td>
+      </tr>
+      <tr>
+        <td><p>  Resolve</p></td>
+        <td><p>  Builds dependency info from the registry dspec.</p></td>
+      </tr>
+      <tr>
+        <td><p>  Install</p></td>
+        <td><p>  Clones the repo at the resolved tag&#x2f;HEAD into <code>%APPDATA%\.dpm\package_cache\&lt;compiler&gt;\&lt;id&gt;\&lt;version&gt;\</code>  , writes <code>package.dspec.yaml</code>  , drops a <code>.dpm-git-commit</code>   marker.</p></td>
+      </tr>
+      <tr>
+        <td><p>  Build</p></td>
+        <td><p>  Compiles <code>build</code>  &#x2f;<code>design</code>   projects if present; otherwise adds the <code>src</code>   folders to the project search paths.</p></td>
+      </tr>
+    </tbody>
+  </table>
+      </div>
+
+    </article>
+  </main>
+
+  <aside id="layout-body-aside" class="layout-body-aside" aria-label="Page Outline">
+    <div id="additional-resources" class="right-container padding-sm display-none display-block-desktop height-full"
+      role="complementary" aria-label="Additional resources">
+      <div id="affixed-right-container" class="position-sticky">
+        <nav id="side-doc-outline" class="doc-outline padding-bottom-xs margin-bottom-xs" aria-label="On this page">
+          <h2 class="title is-6 margin-top-xxs margin-bottom-xs">
+            On this page
+          </h2>
+          <ol id="right-rail-on-this-page-list">
+  <li class="border-left-md padding-left-xxs border-color-primary">
+    <a href="#for-consumers" class="font-weight-semibold color-text">For consumers</a>
+    <ol>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#adding-a-registry-source" class="color-text-subtle">Adding a registry source</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#installing" class="color-text-subtle">Installing</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#refreshing-a-registry" class="color-text-subtle">Refreshing a registry</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#trust-signing" class="color-text-subtle">Trust &#x2f; signing</a>
+  </li>
+</ol>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#for-registry-authors" class="color-text-subtle">For registry authors</a>
+    <ol>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#layout" class="color-text-subtle">Layout</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#the-registry-dspec" class="color-text-subtle">The registry dspec</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#search-paths-come-from-src-not-dest" class="color-text-subtle">Search paths come from src, not dest</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#versioning" class="color-text-subtle">Versioning</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#per-version-build-the-package-s-own-dspec" class="color-text-subtle">Per-version build &#x2f; the package&#x27;s own dspec</a>
+  </li>
+</ol>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#how-it-works-summary" class="color-text-subtle">How it works (summary)</a>
+  </li>
+</ol>
+        </nav>
+      </div>
+    </div>
+  </aside>
+
+
+  <footer id="footer" class="layout-body-footer footer-layout uhf-container  has-padding
+    border-top" role="contentinfo">
+    <p class="color-text-subtle">Unofficial DocInsight showcase for <a href="https://delphi.dev" data-external="true">DPM</a>. This showcase is not affiliated with, sponsored by, or endorsed by the <a href="https://github.com/DelphiPackageManager" data-external="true">DPM Dev Team</a> or <a href="https://www.finalbuilder.com/" data-external="true">VSoft Technologies Pty Ltd</a>.<br>DPM source and documentation are copyright © 2023–present DPM Dev Team and licensed under the Apache License 2.0.<br>Built with <a href="https://docinsight.dev/" data-external="true">DocInsight</a>. View the <a href="https://github.com/docinsight/dpm/" data-external="true">showcase repository</a>.</p>
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html class="layout layout-holy-grail" lang="en-US"
+  dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction | DocInsight Showcase</title>
+  <meta name="description" content="Unofficial DocInsight documentation showcase for DPM, an open-source package manager for Delphi." />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="generator" content="DocInsight" />
+  <meta name="toc-key" content="__root" />
+  <meta name="uid" content="dpm.guide/index" />
+  <meta name="search-index" content="_static/themes/learn/search/root.js" />
+  <meta name="robots" content="noindex,follow" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="any" />
+  <link rel="stylesheet" href="_static/themes/learn/assets/learn.08b892543dc6.css" />
+  <script src="_static/themes/learn/toc/root.js"></script>
+  <script src="_static/themes/learn/assets/learn.429029d00211.js" defer></script>
+</head>
+
+<body id="body" class="layout-body">
+
+  <header id="header" class="layout-body-header background-color-body-medium">
+    <div class="site-header display-flex align-items-center ">
+      <a href="index.html" class="site-header-brand padding-left-none">
+        <span>DPM Showcase</span>
+      </a>
+
+      <nav aria-label="site header nav" class="site-header-nav display-flex align-items-center gap-xxs">
+        <ul class="display-none display-flex-tablet justify-content-space-between gap-none">
+          <li>
+            <a class="site-header-button font-weight-semibold" href="index.html"><span>Guide</span></a>
+          </li>
+          <li>
+            <a class="site-header-button" href="reference/dpm/index.html"><span>Code Reference</span></a>
+          </li>
+        </ul>
+
+        <form role="search" aria-label="Search" id="search-container" class="margin-left-xss margin-left-lg-tablet">
+          <div class="autocomplete display-block">
+            <div class="position-relative">
+              <input class="input input-icon input-sm" type="text" placeholder="Search Guide" aria-expanded="false"
+                aria-activedescendant="">
+              <span class="icon search" aria-hidden="true"></span>
+            </div>
+            <ul role="listbox" id="search-suggestions"
+              class="autocomplete-suggestions is-vertically-scrollable padding-xxs" aria-label="Suggestions" hidden>
+            </ul>
+          </div>
+        </form>
+
+        <div class="display-flex flex-wrap-no-wrap margin-left-auto">
+          <button id="color-mode-toggle" title="Toggle color mode" aria-label="Toggle color mode" class="button button-clear">
+            <span class="icon color-mode" aria-hidden="true">
+            </span>
+          </button>
+          <a aria-label="Visit repository" class="button button-clear" href="https://github.com/DelphiPackageManager/DPM" data-external="true" target="_blank" rel="noopener">
+            <span class="icon repository github" aria-hidden="true">
+            </span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section id="layout-body-menu" class="layout-body-menu border-right display-flex background-color-body-medium">
+    <div id="left-container"
+      class="left-container display-none display-block-tablet padding-inline-sm padding-bottom-sm width-full">
+      <nav id="affixed-left-container" class="margin-top-sm-tablet position-sticky display-flex flex-direction-column"
+        aria-label="Primary">
+      </nav>
+    </div>
+  </section>
+
+  <main id="main" role="main" class="layout-body-main">
+    <article class="reading-width margin-inline-auto padding-sm padding-top-none padding-top-sm-tablet">
+      <div id="article-header"
+        class="align-items-center display-flex background-color-body margin-bottom-xs display-none-print">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumbs">
+            <li
+              class="breadcrumbs-item">
+              Introduction
+            </li>
+            <li
+              class="breadcrumbs-item breadcrumbs-item-slashless">
+              Introduction
+            </li>
+          </ol>
+        </nav>
+
+        <div id="page-actions" class="display-flex flex-wrap-no-wrap margin-left-auto">
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="heading-wrapper" data-heading-level="h1">
+          <a class="anchor-link" href="index.html" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+          <h1>  Introduction</h1>
+        </div>
+
+        <nav id="center-doc-outline" class="doc-outline is-hidden-desktop display-none-print margin-bottom-sm"
+          aria-label="On this page">
+          <h2 id="on-this-page" class="title is-6 margin-block-xs">
+            On this page
+          </h2>
+          <ol id="content-well-in-this-article-list2" class="border-left padding-left-xxs">
+  <li>
+    <a href="#what-is-a-package-manager">What is a Package Manager</a>
+  </li>
+  <li>
+    <a href="#who-and-why">Who and Why</a>
+  </li>
+  <li>
+    <a href="#dpm-status">DPM Status</a>
+    <ol>
+  <li>
+    <a href="#what-works">What works</a>
+  </li>
+</ol>
+  </li>
+  <li>
+    <a href="#can-i-use-it-with-non-dpm-third-party-libraries">Can I use it with non DPM third party libraries?</a>
+  </li>
+  <li>
+    <a href="#how-do-i-use-it">How do I use it</a>
+  </li>
+  <li>
+    <a href="#is-dpm-integrated-into-the-delphi-ide">Is DPM integrated into the Delphi IDE</a>
+  </li>
+  <li>
+    <a href="#is-there-a-central-package-source">Is there a central package source</a>
+  </li>
+  <li>
+    <a href="#do-i-have-to-use-the-public-package-server">Do I have to use the public package server?</a>
+  </li>
+  <li>
+    <a href="#is-my-old-version-of-delphi-supported">Is my old version of delphi supported</a>
+  </li>
+  <li>
+    <a href="#what-about-c-builder-or-fpc">What about C++ Builder or FPC</a>
+  </li>
+  <li>
+    <a href="#does-it-support-design-time-components">Does it support design-time components</a>
+  </li>
+  <li>
+    <a href="#how-does-it-work">How does it work</a>
+  </li>
+  <li>
+    <a href="#known-issues">Known Issues</a>
+  </li>
+  <li>
+    <a href="#can-i-help">Can I help</a>
+  </li>
+</ol>
+        </nav>
+
+        <div class="alert is-primary">
+    <p class="alert-title display-flex align-items-center gap-xxs">
+      <span class="icon icon-alert alert-note" aria-hidden="true"></span>
+      Note
+    </p>
+    <p>  This fork is used by DocInsight for internal compatibility and documentation-generation testing.</p><p>  It is not official DPM documentation and is not affiliated with, sponsored by, or endorsed by the DPM maintainers.</p><p>  Please use the official DPM project and documentation as the authoritative source.</p><p>  For an example of the API reference documentation, see <a href="reference/dpm.core.package.interfaces/ipackageinfo.html">IPackageInfo</a>  .</p>
+  </div><p>  DPM is an open-source package&#x2f;library manager for Delphi XE2 or later.</p>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#what-is-a-package-manager" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="what-is-a-package-manager">  What is a Package Manager</h3>
+  </div>
+<p>  A package manager provides a standard for developers to share and consume code. Authors create packages that other developers can consume. The package manager provides a simple way to automate the installation, upgrading or removal of packages. This streamlines the development process, allowing developers to get up and running on a project quickly, without needing to understand the (usually ad-hoc) way the project or organization has structured their third party libraries. This also translates into simpler build&#x2f;CI processes, with less &#x27;compiles on my machine&#x27; style issues.</p>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#who-and-why" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="who-and-why">  Who and Why</h3>
+  </div>
+<p>  DPM&#x27;s initial developer is Vincent Parrett (DUnitX, FinalBuilder, Continua CI). Why is discussed in <a href="https://www.finalbuilder.com/resources/blogs/delphi-package-manager-rfc" data-external="true">  this blog post</a>  .</p>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#dpm-status" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="dpm-status">  DPM Status</h3>
+  </div>
+<p>  DPM is in beta - we have put a lot of work in to getting it to a point where it should be usable for most Delphi developers.</p>  <div class="heading-wrapper" data-heading-level="h4">
+    <a class="anchor-link" href="#what-works" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h4 id="what-works">  What works</h4>
+  </div>
+<ul><li><p>  Creating packages (library authors)</p></li><li><p>  Pushing packages to a package source (directory or server)</p></li><li><p>  Installing and Restoring packages, including dependencies and design time components.</p></li><li><p>  Multiple package sources</p></li><li><p>  Package Signing - both Author (using a code signing certificate) and Repository signing (automatic).</p></li><li><p>  Repository and Author Trust.</p></li><li><p>  SBOM generation.</p></li><li><p>  CLI and IDE plugin clients.</p></li></ul>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#can-i-use-it-with-non-dpm-third-party-libraries" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="can-i-use-it-with-non-dpm-third-party-libraries">  Can I use it with non DPM third party libraries?</h3>
+  </div>
+<p>  Yes! DPM will not interfere with other libraries that may be installed. The manner in which it adds packages to the search path will not change existing settings.</p>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#how-do-i-use-it" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="how-do-i-use-it">  How do I use it</h3>
+  </div>
+<p>  See the <a href="getting-started/installing.html">  getting started guide</a>  .</p><p>  The command line documentation can be found <a href="commands/commands.html">  here</a>  .</p>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#is-dpm-integrated-into-the-delphi-ide" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="is-dpm-integrated-into-the-delphi-ide">  Is DPM integrated into the Delphi IDE</h3>
+  </div>
+<p>  Yes, IDE integration is provided in the installer for all supported IDE versions. See <a href="getting-started/ide-integration.html">  IDE Integration</a>  .</p>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#is-there-a-central-package-source" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="is-there-a-central-package-source">  Is there a central package source</h3>
+  </div>
+<p>  Yes. The site is at <a href="https://delphi.dev" data-external="true">  https:&#x2f;&#x2f;delphi.dev</a>   - it is relatively feature complete -   <strong>note</strong>   you do not need to register on this site to use packages from it - you only need to register if you want to publish packages.</p><p>  Package files are stored on cloudflare R2</p>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#do-i-have-to-use-the-public-package-server" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="do-i-have-to-use-the-public-package-server">  Do I have to use the public package server?</h3>
+  </div>
+<p>  No - you can put package files in a directory and configure a dpm package source to point to that directory. Or if you are feeling adventurous you can run the package server project locally.</p>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#is-my-old-version-of-delphi-supported" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="is-my-old-version-of-delphi-supported">  Is my old version of delphi supported</h3>
+  </div>
+<p><a href="compiler-versions.html">  See here</a>   for supported compiler versions. All target <a href="platforms.html">  platforms</a>   for supported compiler versions are supported.</p>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#what-about-c-builder-or-fpc" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="what-about-c-builder-or-fpc">  What about C++ Builder or FPC</h3>
+  </div>
+<p><a href="compiler-versions.html">  see here</a></p>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#does-it-support-design-time-components" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="does-it-support-design-time-components">  Does it support design-time components</h3>
+  </div>
+<p>  YES, design time components are installed automatically when the package is installed or restored (during project load).</p>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#how-does-it-work" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="how-does-it-work">  How does it work</h3>
+  </div>
+<p>  See <a href="concepts/how-it-works.html">  this page</a></p>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#known-issues" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="known-issues">  Known Issues</h3>
+  </div>
+<p>  See <a href="getting-started/known-issues.html">  known issues</a></p>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#can-i-help" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="can-i-help">  Can I help</h3>
+  </div>
+<p>  Yep, see <a href="contributing.html">  Contributing to DPM</a>  .</p>
+      </div>
+
+    </article>
+  </main>
+
+  <aside id="layout-body-aside" class="layout-body-aside" aria-label="Page Outline">
+    <div id="additional-resources" class="right-container padding-sm display-none display-block-desktop height-full"
+      role="complementary" aria-label="Additional resources">
+      <div id="affixed-right-container" class="position-sticky">
+        <nav id="side-doc-outline" class="doc-outline padding-bottom-xs margin-bottom-xs" aria-label="On this page">
+          <h2 class="title is-6 margin-top-xxs margin-bottom-xs">
+            On this page
+          </h2>
+          <ol id="right-rail-on-this-page-list">
+  <li class="border-left-md padding-left-xxs border-color-primary">
+    <a href="#what-is-a-package-manager" class="font-weight-semibold color-text">What is a Package Manager</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#who-and-why" class="color-text-subtle">Who and Why</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#dpm-status" class="color-text-subtle">DPM Status</a>
+    <ol>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#what-works" class="color-text-subtle">What works</a>
+  </li>
+</ol>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#can-i-use-it-with-non-dpm-third-party-libraries" class="color-text-subtle">Can I use it with non DPM third party libraries?</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#how-do-i-use-it" class="color-text-subtle">How do I use it</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#is-dpm-integrated-into-the-delphi-ide" class="color-text-subtle">Is DPM integrated into the Delphi IDE</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#is-there-a-central-package-source" class="color-text-subtle">Is there a central package source</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#do-i-have-to-use-the-public-package-server" class="color-text-subtle">Do I have to use the public package server?</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#is-my-old-version-of-delphi-supported" class="color-text-subtle">Is my old version of delphi supported</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#what-about-c-builder-or-fpc" class="color-text-subtle">What about C++ Builder or FPC</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#does-it-support-design-time-components" class="color-text-subtle">Does it support design-time components</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#how-does-it-work" class="color-text-subtle">How does it work</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#known-issues" class="color-text-subtle">Known Issues</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#can-i-help" class="color-text-subtle">Can I help</a>
+  </li>
+</ol>
+        </nav>
+      </div>
+    </div>
+  </aside>
+
+
+  <footer id="footer" class="layout-body-footer footer-layout uhf-container  has-padding
+    border-top" role="contentinfo">
+    <p class="color-text-subtle">Unofficial DocInsight showcase for <a href="https://delphi.dev" data-external="true">DPM</a>. This showcase is not affiliated with, sponsored by, or endorsed by the <a href="https://github.com/DelphiPackageManager" data-external="true">DPM Dev Team</a> or <a href="https://www.finalbuilder.com/" data-external="true">VSoft Technologies Pty Ltd</a>.<br>DPM source and documentation are copyright © 2023–present DPM Dev Team and licensed under the Apache License 2.0.<br>Built with <a href="https://docinsight.dev/" data-external="true">DocInsight</a>. View the <a href="https://github.com/docinsight/dpm/" data-external="true">showcase repository</a>.</p>
+  </footer>
+
+</body>
+
+</html>

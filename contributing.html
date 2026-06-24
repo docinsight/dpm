@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html class="layout layout-holy-grail" lang="en-US"
+  dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contributing | DocInsight Showcase</title>
+  <meta name="description" content="Unofficial DocInsight documentation showcase for DPM, an open-source package manager for Delphi." />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="generator" content="DocInsight" />
+  <meta name="toc-key" content="__root" />
+  <meta name="uid" content="dpm.guide/contributing" />
+  <meta name="search-index" content="_static/themes/learn/search/root.js" />
+  <meta name="robots" content="noindex,follow" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="any" />
+  <link rel="stylesheet" href="_static/themes/learn/assets/learn.08b892543dc6.css" />
+  <script src="_static/themes/learn/toc/root.js"></script>
+  <script src="_static/themes/learn/assets/learn.429029d00211.js" defer></script>
+</head>
+
+<body id="body" class="layout-body">
+
+  <header id="header" class="layout-body-header background-color-body-medium">
+    <div class="site-header display-flex align-items-center ">
+      <a href="index.html" class="site-header-brand padding-left-none">
+        <span>DPM Showcase</span>
+      </a>
+
+      <nav aria-label="site header nav" class="site-header-nav display-flex align-items-center gap-xxs">
+        <ul class="display-none display-flex-tablet justify-content-space-between gap-none">
+          <li>
+            <a class="site-header-button font-weight-semibold" href="index.html"><span>Guide</span></a>
+          </li>
+          <li>
+            <a class="site-header-button" href="reference/dpm/index.html"><span>Code Reference</span></a>
+          </li>
+        </ul>
+
+        <form role="search" aria-label="Search" id="search-container" class="margin-left-xss margin-left-lg-tablet">
+          <div class="autocomplete display-block">
+            <div class="position-relative">
+              <input class="input input-icon input-sm" type="text" placeholder="Search Guide" aria-expanded="false"
+                aria-activedescendant="">
+              <span class="icon search" aria-hidden="true"></span>
+            </div>
+            <ul role="listbox" id="search-suggestions"
+              class="autocomplete-suggestions is-vertically-scrollable padding-xxs" aria-label="Suggestions" hidden>
+            </ul>
+          </div>
+        </form>
+
+        <div class="display-flex flex-wrap-no-wrap margin-left-auto">
+          <button id="color-mode-toggle" title="Toggle color mode" aria-label="Toggle color mode" class="button button-clear">
+            <span class="icon color-mode" aria-hidden="true">
+            </span>
+          </button>
+          <a aria-label="Visit repository" class="button button-clear" href="https://github.com/DelphiPackageManager/DPM" data-external="true" target="_blank" rel="noopener">
+            <span class="icon repository github" aria-hidden="true">
+            </span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section id="layout-body-menu" class="layout-body-menu border-right display-flex background-color-body-medium">
+    <div id="left-container"
+      class="left-container display-none display-block-tablet padding-inline-sm padding-bottom-sm width-full">
+      <nav id="affixed-left-container" class="margin-top-sm-tablet position-sticky display-flex flex-direction-column"
+        aria-label="Primary">
+      </nav>
+    </div>
+  </section>
+
+  <main id="main" role="main" class="layout-body-main">
+    <article class="reading-width margin-inline-auto padding-sm padding-top-none padding-top-sm-tablet">
+      <div id="article-header"
+        class="align-items-center display-flex background-color-body margin-bottom-xs display-none-print">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumbs">
+            <li
+              class="breadcrumbs-item">
+              Introduction
+            </li>
+            <li
+              class="breadcrumbs-item breadcrumbs-item-slashless">
+              Contributing
+            </li>
+          </ol>
+        </nav>
+
+        <div id="page-actions" class="display-flex flex-wrap-no-wrap margin-left-auto">
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="heading-wrapper" data-heading-level="h1">
+          <a class="anchor-link" href="contributing.html" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+          <h1>  Contributing</h1>
+        </div>
+
+        <nav id="center-doc-outline" class="doc-outline is-hidden-desktop display-none-print margin-bottom-sm"
+          aria-label="On this page">
+          <h2 id="on-this-page" class="title is-6 margin-block-xs">
+            On this page
+          </h2>
+          <ol id="content-well-in-this-article-list2" class="border-left padding-left-xxs">
+  <li>
+    <a href="#building-dpm">Building DPM</a>
+  </li>
+</ol>
+        </nav>
+
+        <p>  We welcome contributions, however before submitting any changes, create an <a href="https://github.com/DelphiPackageManager/DPM/issues" data-external="true">  issue on GitHub</a>   so we can discuss your ideas, bugs etc. That way we all avoid wasting effort.</p><p>  We make extensive use of Spring4D for Dependency Injection and collections. Make sure you are up to speed with DI and use it where possible.</p><ul><li><p>  Use an extremely defensive coding style, with useful&#x2f;detailed error messages.</p></li><li><p>  Pass an ILogger in everywhere. There is one available through Dependency Injection.</p></li><li><p>  Start with high-level classes for functionality, that take an options object for the command.</p></li><li><p>  Do not use the RTL generic collections, we&#x27;re using the Spring4D collections (interfaced).</p></li><li><p>  Use interfaces where possible and only expose what is needed.</p></li><li><p>  Use unit namespaces, but avoid prefixes or name-spacing of types where possible (makes for simpler renaming).</p></li><li><p>  Since we&#x27;re targeting multiple compiler versions, avoid new language features or RTL features.</p></li><li><p>  Do not add&#x2f;use new external libraries before checking with the team. Whilst using libraries is unavoidable, we would like to keep the dependencies as low as possible. Many of the libraries listed below were created specifically for this project.</p></li></ul>  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#building-dpm" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="building-dpm">  Building DPM</h2>
+  </div>
+<p>  DPM is bootstrapped, so you need dpm to build it. Follow the <a href="getting-started/installing.html">  getting started guide</a>   first.</p><p>  Use the dpm release version to get your dev environment setup.</p><p>  The dpm IDE plugin will restore the packages automatically when you load the project and you should be able to build without issue.</p><p>  You should now be able to load the dpm projects - there are IDE plugin projects for XE2-13.x, the unit tests and the command line are developed with 13.1</p><p>  For debugging the IDE plugin dll, set the host application to the Delphi IDE version you are using (eg. E:\Emb\Studio\37.0\bin\bds.exe) and in the parameters to -rDPMTesting</p><p>  This will start an new IDE instance, with a clean registry. Do this once, then open regedit to</p><p><code>HKEY_CURRENT_USER\Software\Embarcadero\DPMTesting\37.0\Experts</code></p><p>  and add a string value pointing to the dll you just build</p><p>  eg. <code>I:\Github\DelphiPackageManager\DPMMaster\Output\DPM.IDE.D130.dll</code></p><p>  Then try debugging again - this time the new IDE instanced should load the plugin (you will see the logo on the splash screen).</p>
+      </div>
+
+    </article>
+  </main>
+
+  <aside id="layout-body-aside" class="layout-body-aside" aria-label="Page Outline">
+    <div id="additional-resources" class="right-container padding-sm display-none display-block-desktop height-full"
+      role="complementary" aria-label="Additional resources">
+      <div id="affixed-right-container" class="position-sticky">
+        <nav id="side-doc-outline" class="doc-outline padding-bottom-xs margin-bottom-xs" aria-label="On this page">
+          <h2 class="title is-6 margin-top-xxs margin-bottom-xs">
+            On this page
+          </h2>
+          <ol id="right-rail-on-this-page-list">
+  <li class="border-left-md padding-left-xxs border-color-primary">
+    <a href="#building-dpm" class="font-weight-semibold color-text">Building DPM</a>
+  </li>
+</ol>
+        </nav>
+      </div>
+    </div>
+  </aside>
+
+
+  <footer id="footer" class="layout-body-footer footer-layout uhf-container  has-padding
+    border-top" role="contentinfo">
+    <p class="color-text-subtle">Unofficial DocInsight showcase for <a href="https://delphi.dev" data-external="true">DPM</a>. This showcase is not affiliated with, sponsored by, or endorsed by the <a href="https://github.com/DelphiPackageManager" data-external="true">DPM Dev Team</a> or <a href="https://www.finalbuilder.com/" data-external="true">VSoft Technologies Pty Ltd</a>.<br>DPM source and documentation are copyright © 2023–present DPM Dev Team and licensed under the Apache License 2.0.<br>Built with <a href="https://docinsight.dev/" data-external="true">DocInsight</a>. View the <a href="https://github.com/docinsight/dpm/" data-external="true">showcase repository</a>.</p>
+  </footer>
+
+</body>
+
+</html>

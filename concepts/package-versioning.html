@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html class="layout layout-holy-grail" lang="en-US"
+  dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Package versioning | DocInsight Showcase</title>
+  <meta name="description" content="Unofficial DocInsight documentation showcase for DPM, an open-source package manager for Delphi." />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="generator" content="DocInsight" />
+  <meta name="toc-key" content="__root" />
+  <meta name="uid" content="dpm.guide/concepts/package-versioning" />
+  <meta name="search-index" content="../_static/themes/learn/search/root.js" />
+  <meta name="robots" content="noindex,follow" />
+  <link rel="icon" href="../favicon.ico" type="image/x-icon" sizes="any" />
+  <link rel="stylesheet" href="../_static/themes/learn/assets/learn.08b892543dc6.css" />
+  <script src="../_static/themes/learn/toc/root.js"></script>
+  <script src="../_static/themes/learn/assets/learn.429029d00211.js" defer></script>
+</head>
+
+<body id="body" class="layout-body">
+
+  <header id="header" class="layout-body-header background-color-body-medium">
+    <div class="site-header display-flex align-items-center ">
+      <a href="../index.html" class="site-header-brand padding-left-none">
+        <span>DPM Showcase</span>
+      </a>
+
+      <nav aria-label="site header nav" class="site-header-nav display-flex align-items-center gap-xxs">
+        <ul class="display-none display-flex-tablet justify-content-space-between gap-none">
+          <li>
+            <a class="site-header-button font-weight-semibold" href="../index.html"><span>Guide</span></a>
+          </li>
+          <li>
+            <a class="site-header-button" href="../reference/dpm/index.html"><span>Code Reference</span></a>
+          </li>
+        </ul>
+
+        <form role="search" aria-label="Search" id="search-container" class="margin-left-xss margin-left-lg-tablet">
+          <div class="autocomplete display-block">
+            <div class="position-relative">
+              <input class="input input-icon input-sm" type="text" placeholder="Search Guide" aria-expanded="false"
+                aria-activedescendant="">
+              <span class="icon search" aria-hidden="true"></span>
+            </div>
+            <ul role="listbox" id="search-suggestions"
+              class="autocomplete-suggestions is-vertically-scrollable padding-xxs" aria-label="Suggestions" hidden>
+            </ul>
+          </div>
+        </form>
+
+        <div class="display-flex flex-wrap-no-wrap margin-left-auto">
+          <button id="color-mode-toggle" title="Toggle color mode" aria-label="Toggle color mode" class="button button-clear">
+            <span class="icon color-mode" aria-hidden="true">
+            </span>
+          </button>
+          <a aria-label="Visit repository" class="button button-clear" href="https://github.com/DelphiPackageManager/DPM" data-external="true" target="_blank" rel="noopener">
+            <span class="icon repository github" aria-hidden="true">
+            </span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section id="layout-body-menu" class="layout-body-menu border-right display-flex background-color-body-medium">
+    <div id="left-container"
+      class="left-container display-none display-block-tablet padding-inline-sm padding-bottom-sm width-full">
+      <nav id="affixed-left-container" class="margin-top-sm-tablet position-sticky display-flex flex-direction-column"
+        aria-label="Primary">
+      </nav>
+    </div>
+  </section>
+
+  <main id="main" role="main" class="layout-body-main">
+    <article class="reading-width margin-inline-auto padding-sm padding-top-none padding-top-sm-tablet">
+      <div id="article-header"
+        class="align-items-center display-flex background-color-body margin-bottom-xs display-none-print">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumbs">
+            <li
+              class="breadcrumbs-item">
+              Concepts
+            </li>
+            <li
+              class="breadcrumbs-item breadcrumbs-item-slashless">
+              Package Versioning
+            </li>
+          </ol>
+        </nav>
+
+        <div id="page-actions" class="display-flex flex-wrap-no-wrap margin-left-auto">
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="heading-wrapper" data-heading-level="h1">
+          <a class="anchor-link" href="package-versioning.html" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+          <h1>  Package versioning</h1>
+        </div>
+
+
+        <p>  Packages are versioned using <a href="https://semver.org/" data-external="true">  Semantic Versioning</a>  .</p><p>  <strong>Summary</strong></p><p>  Given a version number MAJOR.MINOR.PATCH, increment the:</p><ol start="1"><li><p>  MAJOR version when you make incompatible API changes,</p></li><li><p>  MINOR version when you add functionality in a backwards-compatible manner, and</p></li><li><p>  PATCH version when you make backwards-compatible bug fixes.</p></li></ol><p>  Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.</p><p>  <strong>Delphi Challenges</strong></p><p>  Now with delphi, it&#x27;s extremely important to adhere to the rules for maintaining compatibility, especially if the packages are binary (ie the use dcu&#x27;s&#x2f;dcp&#x27;s etc rather than source files).</p><p>  Quoting Allen Bauer (ex Emb chief architect)</p><blockquote>
+    <p>  Ok, this is an interesting subject and one that many folks seem to think is voodoo and magic. The rules are deceptively simple...</p><p>  Any material change to an existing interfaced symbol, directly or indirectly, will render that dcu incompatible with prebuilt units that depend on this unit.&quot;</p><p>  Let&#x27;s break this down a little more. What is a &quot;material&quot; change?</p>
+  </blockquote><blockquote>
+    <p>  Anything that could change the layout of a structured type (object, class, record, etc).   A change in symbols within a structured scope. This means even the addition of a non-virtual method to a base class is a &quot;material&quot; change.   A change in method or global function signature.   Remember, I also said indirectly... For instance, a change to a type used as the parameter of a given global function will also cause a compatibility error. Even if that type is the same size and semantic.</p><p>  The key points here are changes to existing symbols. What this means is that you can, many times, get away with adding another symbol to the unit without rendering it incompatible with existing pre-built dcu files. This is logical because there cannot be a reference to a symbol that didn&#x27;t previously exist. However, this can also backfire, because you once new code references the new symbols, that new code cannot be used with the old version of the dcu. Logically because of the above &quot;material change&quot; rule. Deleting a symbol is a &quot;material&quot; change.</p><p>  Even if you think you followed all those rules, there can still be cases where dcus can be rendered incompatible. Some of those are the result of a compiler change in a patch that fixes something critical but could render dcus built with the new version incompatible with older versions of the compiler. The newer, fixed version would usually be made resilient enough to load the older dcu files and compile against them, but new dcus written cannot be used with the older compiler. This is rare, but has happened a few times over the last couple of decades.</p>
+  </blockquote><p>  More guidance will follow on this topic as we gain more experience with this.</p>
+      </div>
+
+    </article>
+  </main>
+
+
+
+  <footer id="footer" class="layout-body-footer footer-layout uhf-container  has-padding
+    border-top" role="contentinfo">
+    <p class="color-text-subtle">Unofficial DocInsight showcase for <a href="https://delphi.dev" data-external="true">DPM</a>. This showcase is not affiliated with, sponsored by, or endorsed by the <a href="https://github.com/DelphiPackageManager" data-external="true">DPM Dev Team</a> or <a href="https://www.finalbuilder.com/" data-external="true">VSoft Technologies Pty Ltd</a>.<br>DPM source and documentation are copyright © 2023–present DPM Dev Team and licensed under the Apache License 2.0.<br>Built with <a href="https://docinsight.dev/" data-external="true">DocInsight</a>. View the <a href="https://github.com/docinsight/dpm/" data-external="true">showcase repository</a>.</p>
+  </footer>
+
+</body>
+
+</html>

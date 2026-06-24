@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html class="layout layout-holy-grail" lang="en-US"
+  dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Package Signing | DocInsight Showcase</title>
+  <meta name="description" content="Unofficial DocInsight documentation showcase for DPM, an open-source package manager for Delphi." />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="generator" content="DocInsight" />
+  <meta name="toc-key" content="__root" />
+  <meta name="uid" content="dpm.guide/concepts/package-signing" />
+  <meta name="search-index" content="../_static/themes/learn/search/root.js" />
+  <meta name="robots" content="noindex,follow" />
+  <link rel="icon" href="../favicon.ico" type="image/x-icon" sizes="any" />
+  <link rel="stylesheet" href="../_static/themes/learn/assets/learn.08b892543dc6.css" />
+  <script src="../_static/themes/learn/toc/root.js"></script>
+  <script src="../_static/themes/learn/assets/learn.429029d00211.js" defer></script>
+</head>
+
+<body id="body" class="layout-body">
+
+  <header id="header" class="layout-body-header background-color-body-medium">
+    <div class="site-header display-flex align-items-center ">
+      <a href="../index.html" class="site-header-brand padding-left-none">
+        <span>DPM Showcase</span>
+      </a>
+
+      <nav aria-label="site header nav" class="site-header-nav display-flex align-items-center gap-xxs">
+        <ul class="display-none display-flex-tablet justify-content-space-between gap-none">
+          <li>
+            <a class="site-header-button font-weight-semibold" href="../index.html"><span>Guide</span></a>
+          </li>
+          <li>
+            <a class="site-header-button" href="../reference/dpm/index.html"><span>Code Reference</span></a>
+          </li>
+        </ul>
+
+        <form role="search" aria-label="Search" id="search-container" class="margin-left-xss margin-left-lg-tablet">
+          <div class="autocomplete display-block">
+            <div class="position-relative">
+              <input class="input input-icon input-sm" type="text" placeholder="Search Guide" aria-expanded="false"
+                aria-activedescendant="">
+              <span class="icon search" aria-hidden="true"></span>
+            </div>
+            <ul role="listbox" id="search-suggestions"
+              class="autocomplete-suggestions is-vertically-scrollable padding-xxs" aria-label="Suggestions" hidden>
+            </ul>
+          </div>
+        </form>
+
+        <div class="display-flex flex-wrap-no-wrap margin-left-auto">
+          <button id="color-mode-toggle" title="Toggle color mode" aria-label="Toggle color mode" class="button button-clear">
+            <span class="icon color-mode" aria-hidden="true">
+            </span>
+          </button>
+          <a aria-label="Visit repository" class="button button-clear" href="https://github.com/DelphiPackageManager/DPM" data-external="true" target="_blank" rel="noopener">
+            <span class="icon repository github" aria-hidden="true">
+            </span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section id="layout-body-menu" class="layout-body-menu border-right display-flex background-color-body-medium">
+    <div id="left-container"
+      class="left-container display-none display-block-tablet padding-inline-sm padding-bottom-sm width-full">
+      <nav id="affixed-left-container" class="margin-top-sm-tablet position-sticky display-flex flex-direction-column"
+        aria-label="Primary">
+      </nav>
+    </div>
+  </section>
+
+  <main id="main" role="main" class="layout-body-main">
+    <article class="reading-width margin-inline-auto padding-sm padding-top-none padding-top-sm-tablet">
+      <div id="article-header"
+        class="align-items-center display-flex background-color-body margin-bottom-xs display-none-print">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumbs">
+            <li
+              class="breadcrumbs-item">
+              Concepts
+            </li>
+            <li
+              class="breadcrumbs-item breadcrumbs-item-slashless">
+              Package Signing
+            </li>
+          </ol>
+        </nav>
+
+        <div id="page-actions" class="display-flex flex-wrap-no-wrap margin-left-auto">
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="heading-wrapper" data-heading-level="h1">
+          <a class="anchor-link" href="package-signing.html" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+          <h1>  Package Signing</h1>
+        </div>
+
+        <nav id="center-doc-outline" class="doc-outline is-hidden-desktop display-none-print margin-bottom-sm"
+          aria-label="On this page">
+          <h2 id="on-this-page" class="title is-6 margin-block-xs">
+            On this page
+          </h2>
+          <ol id="content-well-in-this-article-list2" class="border-left padding-left-xxs">
+  <li>
+    <a href="#why-sign-packages">Why sign packages</a>
+  </li>
+  <li>
+    <a href="#author-and-repository-signatures">Author and repository signatures</a>
+  </li>
+  <li>
+    <a href="#signing-a-package">Signing a package</a>
+  </li>
+  <li>
+    <a href="#verifying-a-package">Verifying a package</a>
+  </li>
+  <li>
+    <a href="#validation-modes">Validation modes</a>
+  </li>
+  <li>
+    <a href="#trusted-publishers-and-repositories">Trusted publishers and repositories</a>
+  </li>
+  <li>
+    <a href="#downgrade-protection">Downgrade protection</a>
+  </li>
+  <li>
+    <a href="#see-also">See also</a>
+  </li>
+</ol>
+        </nav>
+
+        <p>  DPM supports signing packages so that consumers can verify who built a package, that its contents have not been altered, and that a repository accepted it. Signing is optional but strongly recommended for any package you distribute publicly.</p>  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#why-sign-packages" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="why-sign-packages">  Why sign packages</h2>
+  </div>
+<p>  A signature on a <code>.dpkg</code>   file gives three guarantees:</p><ul><li><p>  <strong>Integrity</strong>   - the package contents are exactly what the signer produced, byte for byte.</p></li><li><p>  <strong>Authenticity</strong>   - the package came from the person or organisation identified by the signing certificate.</p></li><li><p>  <strong>Repository trust</strong>   - the repository that distributed the package vouches that it accepted and validated it.</p></li></ul><p>  Unsigned packages can still be installed, but consumers can configure DPM to reject them. See <a href="#validation-modes">  Validation modes</a>   below.</p>  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#author-and-repository-signatures" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="author-and-repository-signatures">  Author and repository signatures</h2>
+  </div>
+<p>  There are two independent signature layers, and a package can carry either, both, or neither.</p><ul><li><p>  <strong>Author signature</strong>   - applied by the package publisher before pushing to a package repository. It proves the package came from a specific author and has not been tampered with since they signed it.</p></li><li><p>  <strong>Repository signature</strong>   - applied by the DPM server after it accepts an upload. It records that the server verified the package (including the author signature, if any) and is serving it to the world.</p></li></ul><p>  Both signatures embed an RFC3161 trusted timestamp, so they remain verifiable after the signing certificate eventually expires.</p>  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#signing-a-package" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="signing-a-package">  Signing a package</h2>
+  </div>
+<p>  Authors sign their packages with the <a href="../commands/sign-command.html">  sign command</a>  :</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">bat</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-bat" dir="ltr">dpm sign yourpackage.dpkg --thumbprint=AB12CD34EF56...
+</code></pre><p>  DPM supports three signing providers, chosen with the <code>--provider</code>   option:</p><ul><li><p><code>local</code>   (default) - uses a certificate from the Windows certificate store (by SHA-1 thumbprint) or a PFX file on disk.</p></li><li><p><code>keyvault</code>   - uses a code-signing certificate stored in Azure Key Vault. The private key never leaves the vault. Currently Untested.</p></li><li><p><code>signotaur</code>   - uses VSoft&#x27;s Signotaur server (v2) for remote signing. The private key never leaves the Token or HSM used.</p></li></ul><p>  A typical publishing flow looks like this:</p><ol start="1"><li><p>  Obtain a code-signing certificate. For public distribution this should be a publicly trusted code-signing certificate; for internal use an organisation&#x27;s own CA is fine (e.g, ADCS, Signotaur etc). RSA and ECDSA certificates are accepted.</p></li><li><p>  Export your certificates Public Key - add it as a Signing Key to your account on the server (personal or organisation).</p></li><li><p>  Run <code>dpm sign</code>   to produce a signed package.</p></li><li><p>  Run <code>dpm push</code>   to upload it to a DPM server. The server re-verifies your author signature and adds its own repository signature before publishing.</p></li></ol>  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#verifying-a-package" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="verifying-a-package">  Verifying a package</h2>
+  </div>
+<p>  Consumers do not normally need to run verification manually - it happens automatically during <code>dpm install</code>  , <code>dpm restore</code>  , and <code>dpm update</code>  , using the trust policy from your <a href="config-files.html">  dpm.config</a>  .</p><p>  For ad-hoc checks there is the <a href="../commands/verify-command.html">  verify command</a>  :</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">bat</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-bat" dir="ltr">dpm verify yourpackage.dpkg
+</code></pre><p>  To re-hash and re-verify every package already in your local cache (useful as a periodic integrity check or after changing trust settings), use:</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">bat</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-bat" dir="ltr">dpm cache verify
+</code></pre>  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#validation-modes" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="validation-modes">  Validation modes</h2>
+  </div>
+<p>  The <code>signing.validationMode</code>   setting in <a href="config-files.html">  dpm.config</a>   controls how strict verification is. The default while the ecosystem transitions is <code>permissive</code>  .</p><table class="table table-sm">
+    <thead>
+      <tr>
+        <th><p>  Mode</p></th>
+        <th><p>  Behaviour</p></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><p><code>permissive</code></p></td>
+        <td><p>  Unsigned packages are allowed. Packages that are signed must verify successfully.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>require</code></p></td>
+        <td><p>  An author signature is required. Unsigned packages are rejected.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>repository-required</code></p></td>
+        <td><p>  A repository signature is required. Unsigned or repository-unsigned packages are rejected.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>author-and-repository</code></p></td>
+        <td><p>  Both an author signature and a repository signature are required.</p></td>
+      </tr>
+    </tbody>
+  </table>  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#trusted-publishers-and-repositories" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="trusted-publishers-and-repositories">  Trusted publishers and repositories</h2>
+  </div>
+<p>  DPM identifies signers by the   <strong>SPKI hash</strong>   of their certificate - a SHA-256 fingerprint of the certificate&#x27;s public key. Pinning by SPKI rather than by certificate name or thumbprint means trust survives routine certificate renewals as long as the same key pair is reused, while still uniquely identifying the signer.</p><p>  Add a trusted publisher or repository to your <code>dpm.config.yaml</code>  :</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">yaml</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-yaml" dir="ltr">signing:
+  trustedPublishers:
+    - name: VSoft Technologies
+      spki: 895eb1c77dc114802e80c6ff22b5140483bd09379482f4babfee752865207e16
+  trustedRepositories:
+    - url: https:&#x2f;&#x2f;delphi.dev
+      spki: 7a3f9b2c5d6e8f1a4b7c9d2e5f8a1b4c7d9e2f5a8b1c4d7e9f2a5b8c1d4e7f9a
+</code></pre><p>  See <a href="config-files.html">  Config Files</a>   for the full schema.</p>  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#downgrade-protection" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="downgrade-protection">  Downgrade protection</h2>
+  </div>
+<p>  DPM remembers whether a package id was previously seen signed. If a later version of the same package shows up unsigned, that is suspicious - either an attacker is trying to substitute a malicious package, or the publisher has lost their signing key. The <code>signing.authorDowngradePolicy</code>   setting controls what happens:</p><ul><li><p><code>prompt</code>   (default) - asks the user to acknowledge the downgrade.</p></li><li><p><code>deny</code>   - rejects the downgrade outright.</p></li><li><p><code>allow</code>   - accepts the downgrade silently (not recommended).</p></li></ul>  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#see-also" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="see-also">  See also</h2>
+  </div>
+<ul><li><p><a href="config-files.html">  Config Files</a>   - the <code>signing</code>   section reference.</p></li><li><p><a href="../commands/sign-command.html">  sign command</a>   - signing packages from the CLI.</p></li><li><p><a href="../commands/verify-command.html">  verify command</a>   - verifying a single package.</p></li><li><p><a href="../commands/cache-command.html">  cache command</a>   - including <code>dpm cache verify</code>   for the whole cache.</p></li></ul>
+      </div>
+
+    </article>
+  </main>
+
+  <aside id="layout-body-aside" class="layout-body-aside" aria-label="Page Outline">
+    <div id="additional-resources" class="right-container padding-sm display-none display-block-desktop height-full"
+      role="complementary" aria-label="Additional resources">
+      <div id="affixed-right-container" class="position-sticky">
+        <nav id="side-doc-outline" class="doc-outline padding-bottom-xs margin-bottom-xs" aria-label="On this page">
+          <h2 class="title is-6 margin-top-xxs margin-bottom-xs">
+            On this page
+          </h2>
+          <ol id="right-rail-on-this-page-list">
+  <li class="border-left-md padding-left-xxs border-color-primary">
+    <a href="#why-sign-packages" class="font-weight-semibold color-text">Why sign packages</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#author-and-repository-signatures" class="color-text-subtle">Author and repository signatures</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#signing-a-package" class="color-text-subtle">Signing a package</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#verifying-a-package" class="color-text-subtle">Verifying a package</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#validation-modes" class="color-text-subtle">Validation modes</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#trusted-publishers-and-repositories" class="color-text-subtle">Trusted publishers and repositories</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#downgrade-protection" class="color-text-subtle">Downgrade protection</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#see-also" class="color-text-subtle">See also</a>
+  </li>
+</ol>
+        </nav>
+      </div>
+    </div>
+  </aside>
+
+
+  <footer id="footer" class="layout-body-footer footer-layout uhf-container  has-padding
+    border-top" role="contentinfo">
+    <p class="color-text-subtle">Unofficial DocInsight showcase for <a href="https://delphi.dev" data-external="true">DPM</a>. This showcase is not affiliated with, sponsored by, or endorsed by the <a href="https://github.com/DelphiPackageManager" data-external="true">DPM Dev Team</a> or <a href="https://www.finalbuilder.com/" data-external="true">VSoft Technologies Pty Ltd</a>.<br>DPM source and documentation are copyright © 2023–present DPM Dev Team and licensed under the Apache License 2.0.<br>Built with <a href="https://docinsight.dev/" data-external="true">DocInsight</a>. View the <a href="https://github.com/docinsight/dpm/" data-external="true">showcase repository</a>.</p>
+  </footer>
+
+</body>
+
+</html>

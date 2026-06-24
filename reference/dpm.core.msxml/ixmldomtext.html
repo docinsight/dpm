@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html class="layout layout-holy-grail" lang="en-US"
+  dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IXMLDOMText Interface | DocInsight Showcase</title>
+  <meta name="description" content="Unofficial DocInsight documentation showcase for DPM, an open-source package manager for Delphi." />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="generator" content="DocInsight" />
+  <meta name="toc-key" content="reference:project/dpm" />
+  <meta name="uid" content="dpm.reference/dpm/dpm.core.msxml/ixmldomtext" />
+  <meta name="search-index" content="../../_static/themes/learn/search/reference.js" />
+  <meta name="robots" content="noindex,follow" />
+  <link rel="icon" href="../../favicon.ico" type="image/x-icon" sizes="any" />
+  <link rel="stylesheet" href="../../_static/themes/learn/assets/learn.08b892543dc6.css" />
+  <script src="../../_static/themes/learn/toc/reference-project-dpm.js"></script>
+  <script src="../../_static/themes/learn/assets/learn.429029d00211.js" defer></script>
+</head>
+
+<body id="body" class="layout-body">
+
+  <header id="header" class="layout-body-header background-color-body-medium">
+    <div class="site-header display-flex align-items-center ">
+      <a href="../../index.html" class="site-header-brand padding-left-none">
+        <span>DPM Showcase</span>
+      </a>
+
+      <nav aria-label="site header nav" class="site-header-nav display-flex align-items-center gap-xxs">
+        <ul class="display-none display-flex-tablet justify-content-space-between gap-none">
+          <li>
+            <a class="site-header-button" href="../../index.html"><span>Guide</span></a>
+          </li>
+          <li>
+            <a class="site-header-button font-weight-semibold" href="../dpm/index.html"><span>Code Reference</span></a>
+          </li>
+        </ul>
+
+        <form role="search" aria-label="Search" id="search-container" class="margin-left-xss margin-left-lg-tablet">
+          <div class="autocomplete display-block">
+            <div class="position-relative">
+              <input class="input input-icon input-sm" type="text" placeholder="Search Code Reference" aria-expanded="false"
+                aria-activedescendant="">
+              <span class="icon search" aria-hidden="true"></span>
+            </div>
+            <ul role="listbox" id="search-suggestions"
+              class="autocomplete-suggestions is-vertically-scrollable padding-xxs" aria-label="Suggestions" hidden>
+            </ul>
+          </div>
+        </form>
+
+        <div class="display-flex flex-wrap-no-wrap margin-left-auto">
+          <button id="color-mode-toggle" title="Toggle color mode" aria-label="Toggle color mode" class="button button-clear">
+            <span class="icon color-mode" aria-hidden="true">
+            </span>
+          </button>
+          <a aria-label="Visit repository" class="button button-clear" href="https://github.com/DelphiPackageManager/DPM" data-external="true" target="_blank" rel="noopener">
+            <span class="icon repository github" aria-hidden="true">
+            </span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section id="layout-body-menu" class="layout-body-menu border-right display-flex background-color-body-medium">
+    <div id="left-container"
+      class="left-container display-none display-block-tablet padding-inline-sm padding-bottom-sm width-full">
+      <nav id="affixed-left-container" class="margin-top-sm-tablet position-sticky display-flex flex-direction-column"
+        aria-label="Primary">
+      </nav>
+    </div>
+  </section>
+
+  <main id="main" role="main" class="layout-body-main">
+    <article class="reading-width margin-inline-auto padding-sm padding-top-none padding-top-sm-tablet">
+      <div id="article-header"
+        class="align-items-center display-flex background-color-body margin-bottom-xs display-none-print">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumbs">
+            <li
+              class="breadcrumbs-item">
+              <a href="../dpm/index.html" class="cref">dpm</a>
+            </li>
+            <li
+              class="breadcrumbs-item">
+              <a href="index.html" class="cref">DPM.Core.MSXML</a>
+            </li>
+            <li
+              class="breadcrumbs-item breadcrumbs-item-slashless">
+              IXMLDOMText
+            </li>
+          </ol>
+        </nav>
+
+        <div id="page-actions" class="display-flex flex-wrap-no-wrap margin-left-auto">
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="heading-wrapper" data-heading-level="h1">
+          <a class="anchor-link" href="ixmldomtext.html" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+          <h1>  IXMLDOMText Interface</h1>
+        </div>
+
+        <nav id="center-doc-outline" class="doc-outline is-hidden-desktop display-none-print margin-bottom-sm"
+          aria-label="On this page">
+          <h2 id="on-this-page" class="title is-6 margin-block-xs">
+            On this page
+          </h2>
+          <ol id="content-well-in-this-article-list2" class="border-left padding-left-xxs">
+  <li>
+    <a href="#definition">Definition</a>
+  </li>
+  <li>
+    <a href="#properties">Properties</a>
+  </li>
+  <li>
+    <a href="#methods">Methods</a>
+  </li>
+</ol>
+        </nav>
+
+        <div class="heading-wrapper" data-heading-level="h2">
+  <a class="anchor-link" href="#definition" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+  <h2 id="definition">Definition</h2>
+</div>
+
+<div class="metadata">
+  <dl class="attributeList">
+    <dt>Unit:</dt>
+    <dd>
+      <span class="break-text">
+          DPM.Core.MSXML
+      </span>
+    </dd>
+  </dl>
+  <dl class="attributeList">
+    <dt>Package:</dt>
+    <dd>
+      <span class="break-text">
+          dpm
+      </span>
+    </dd>
+  </dl>
+</div>
+
+
+
+
+<div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">Delphi</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+<pre class="wrap has-inner-focus"><code class="language-Delphi" dir="ltr">type IXMLDOMText = interface(IXMLDOMCharacterData)</code></pre>
+
+
+
+
+
+
+<dl class="attributeList stack">
+  <dt>Inheritance</dt>
+  <dd>
+    <div class="pdlHolder">
+      <div class="pdl">
+        IDispatch
+      </div>
+      <div class="pdl">
+        <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>
+      </div>
+      <div class="pdl">
+        <a href="ixmldomcharacterdata.html" data-linktype="relative-path">IXMLDOMCharacterData</a>
+      </div>
+      <span>IXMLDOMText</span>
+    </div>
+  </dd>
+</dl>
+
+<dl id="derived" class="attributeList stack">
+  <dt>Derived</dt>
+  <dd>
+    <div>
+      <span class="break-text">
+        <a href="ixmldomcdatasection.html" data-linktype="relative-path">IXMLDOMCDATASection</a>
+      </span>
+    </div>
+  </dd>
+</dl>
+
+
+
+
+
+
+
+<section class="member-group">
+  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#properties" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="properties">Properties</h2>
+  </div>
+  <div class="has-inner-focus">
+    <table class="table table-sm margin-top-none">
+      <tbody>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.attributes.html" class="cref">attributes</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.basename.html" class="cref">baseName</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.childnodes.html" class="cref">childNodes</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomcharacterdata.data.html" class="cref">data</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomcharacterdata.html" data-linktype="relative-path">IXMLDOMCharacterData</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.definition.html" class="cref">definition</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.firstchild.html" class="cref">firstChild</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.lastchild.html" class="cref">lastChild</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomcharacterdata.length.html" class="cref">length</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomcharacterdata.html" data-linktype="relative-path">IXMLDOMCharacterData</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.namespaceuri.html" class="cref">namespaceURI</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.nextsibling.html" class="cref">nextSibling</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.nodename.html" class="cref">nodeName</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.nodetype.html" class="cref">nodeType</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.nodetypestring.html" class="cref">nodeTypeString</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.nodetypedvalue.html" class="cref">nodeTypedValue</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.nodevalue.html" class="cref">nodeValue</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.ownerdocument.html" class="cref">ownerDocument</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.parentnode.html" class="cref">parentNode</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.parsed.html" class="cref">parsed</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.prefix.html" class="cref">prefix</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.previoussibling.html" class="cref">previousSibling</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.specified.html" class="cref">specified</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.text.html" class="cref">text</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.xml.html" class="cref">xml</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section class="member-group">
+  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#methods" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="methods">Methods</h2>
+  </div>
+  <div class="has-inner-focus">
+    <table class="table table-sm margin-top-none">
+      <tbody>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.get_attributes.html" class="cref">Get_attributes</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.get_basename.html" class="cref">Get_baseName</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.get_childnodes.html" class="cref">Get_childNodes</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomcharacterdata.get_data.html" class="cref">Get_data</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomcharacterdata.html" data-linktype="relative-path">IXMLDOMCharacterData</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.get_datatype.html" class="cref">Get_dataType</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.get_definition.html" class="cref">Get_definition</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.get_firstchild.html" class="cref">Get_firstChild</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.get_lastchild.html" class="cref">Get_lastChild</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomcharacterdata.get_length.html" class="cref">Get_length</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomcharacterdata.html" data-linktype="relative-path">IXMLDOMCharacterData</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.get_namespaceuri.html" class="cref">Get_namespaceURI</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.get_nextsibling.html" class="cref">Get_nextSibling</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.get_nodename.html" class="cref">Get_nodeName</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.get_nodetype.html" class="cref">Get_nodeType</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.get_nodetypestring.html" class="cref">Get_nodeTypeString</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.get_nodetypedvalue.html" class="cref">Get_nodeTypedValue</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.get_nodevalue.html" class="cref">Get_nodeValue</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.get_ownerdocument.html" class="cref">Get_ownerDocument</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.get_parentnode.html" class="cref">Get_parentNode</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.get_parsed.html" class="cref">Get_parsed</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.get_prefix.html" class="cref">Get_prefix</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.get_previoussibling.html" class="cref">Get_previousSibling</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.get_specified.html" class="cref">Get_specified</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.get_text.html" class="cref">Get_text</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.get_xml.html" class="cref">Get_xml</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomcharacterdata.set_data.html" class="cref">Set_data(WideString)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomcharacterdata.html" data-linktype="relative-path">IXMLDOMCharacterData</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.set_datatype.html" class="cref">Set_dataType(WideString)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.set_nodetypedvalue.html" class="cref">Set_nodeTypedValue(OleVariant)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.set_nodevalue.html" class="cref">Set_nodeValue(OleVariant)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.set_text.html" class="cref">Set_text(WideString)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.appendchild.html" class="cref">appendChild(IXMLDOMNode)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomcharacterdata.appenddata.html" class="cref">appendData(WideString)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomcharacterdata.html" data-linktype="relative-path">IXMLDOMCharacterData</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.clonenode.html" class="cref">cloneNode(WordBool)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomcharacterdata.deletedata.html" class="cref">deleteData(Integer, Integer)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomcharacterdata.html" data-linktype="relative-path">IXMLDOMCharacterData</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.haschildnodes.html" class="cref">hasChildNodes</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.insertbefore.html" class="cref">insertBefore(IXMLDOMNode, OleVariant)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomcharacterdata.insertdata.html" class="cref">insertData(Integer, WideString)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomcharacterdata.html" data-linktype="relative-path">IXMLDOMCharacterData</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.removechild.html" class="cref">removeChild(IXMLDOMNode)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.replacechild.html" class="cref">replaceChild(IXMLDOMNode, IXMLDOMNode)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomcharacterdata.replacedata.html" class="cref">replaceData(Integer, Integer, WideString)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomcharacterdata.html" data-linktype="relative-path">IXMLDOMCharacterData</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.selectnodes.html" class="cref">selectNodes(WideString)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.selectsinglenode.html" class="cref">selectSingleNode(WideString)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomtext.splittext.html" class="cref">splitText(Integer)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomcharacterdata.substringdata.html" class="cref">substringData(Integer, Integer)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomcharacterdata.html" data-linktype="relative-path">IXMLDOMCharacterData</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.transformnode.html" class="cref">transformNode(IXMLDOMNode)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+        <tr data-inherited=true>
+          <td>
+            <span class="break-text">
+              <a href="ixmldomnode.transformnodetoobject.html" class="cref">transformNodeToObject(IXMLDOMNode, OleVariant)</a>
+            </span>
+          </td>
+          <td class="has-text-wrap">
+            (Inherited from <a href="ixmldomnode.html" data-linktype="relative-path">IXMLDOMNode</a>)
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+      </div>
+
+    </article>
+  </main>
+
+  <aside id="layout-body-aside" class="layout-body-aside" aria-label="Page Outline">
+    <div id="additional-resources" class="right-container padding-sm display-none display-block-desktop height-full"
+      role="complementary" aria-label="Additional resources">
+      <div id="affixed-right-container" class="position-sticky">
+        <nav id="side-doc-outline" class="doc-outline padding-bottom-xs margin-bottom-xs" aria-label="On this page">
+          <h2 class="title is-6 margin-top-xxs margin-bottom-xs">
+            On this page
+          </h2>
+          <ol id="right-rail-on-this-page-list">
+  <li class="border-left-md padding-left-xxs border-color-primary">
+    <a href="#definition" class="font-weight-semibold color-text">Definition</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#properties" class="color-text-subtle">Properties</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#methods" class="color-text-subtle">Methods</a>
+  </li>
+</ol>
+        </nav>
+      </div>
+    </div>
+  </aside>
+
+
+  <footer id="footer" class="layout-body-footer footer-layout uhf-container  has-padding
+    border-top" role="contentinfo">
+    <p class="color-text-subtle">Unofficial DocInsight showcase for <a href="https://delphi.dev" data-external="true">DPM</a>. This showcase is not affiliated with, sponsored by, or endorsed by the <a href="https://github.com/DelphiPackageManager" data-external="true">DPM Dev Team</a> or <a href="https://www.finalbuilder.com/" data-external="true">VSoft Technologies Pty Ltd</a>.<br>DPM source and documentation are copyright © 2023–present DPM Dev Team and licensed under the Apache License 2.0.<br>Built with <a href="https://docinsight.dev/" data-external="true">DocInsight</a>. View the <a href="https://github.com/docinsight/dpm/" data-external="true">showcase repository</a>.</p>
+  </footer>
+
+</body>
+
+</html>

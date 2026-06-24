@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html class="layout layout-holy-grail" lang="en-US"
+  dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Using DPM in Continuous Integration | DocInsight Showcase</title>
+  <meta name="description" content="Unofficial DocInsight documentation showcase for DPM, an open-source package manager for Delphi." />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="generator" content="DocInsight" />
+  <meta name="toc-key" content="__root" />
+  <meta name="uid" content="dpm.guide/getting-started/continuous-integration" />
+  <meta name="search-index" content="../_static/themes/learn/search/root.js" />
+  <meta name="robots" content="noindex,follow" />
+  <link rel="icon" href="../favicon.ico" type="image/x-icon" sizes="any" />
+  <link rel="stylesheet" href="../_static/themes/learn/assets/learn.08b892543dc6.css" />
+  <script src="../_static/themes/learn/toc/root.js"></script>
+  <script src="../_static/themes/learn/assets/learn.429029d00211.js" defer></script>
+</head>
+
+<body id="body" class="layout-body">
+
+  <header id="header" class="layout-body-header background-color-body-medium">
+    <div class="site-header display-flex align-items-center ">
+      <a href="../index.html" class="site-header-brand padding-left-none">
+        <span>DPM Showcase</span>
+      </a>
+
+      <nav aria-label="site header nav" class="site-header-nav display-flex align-items-center gap-xxs">
+        <ul class="display-none display-flex-tablet justify-content-space-between gap-none">
+          <li>
+            <a class="site-header-button font-weight-semibold" href="../index.html"><span>Guide</span></a>
+          </li>
+          <li>
+            <a class="site-header-button" href="../reference/dpm/index.html"><span>Code Reference</span></a>
+          </li>
+        </ul>
+
+        <form role="search" aria-label="Search" id="search-container" class="margin-left-xss margin-left-lg-tablet">
+          <div class="autocomplete display-block">
+            <div class="position-relative">
+              <input class="input input-icon input-sm" type="text" placeholder="Search Guide" aria-expanded="false"
+                aria-activedescendant="">
+              <span class="icon search" aria-hidden="true"></span>
+            </div>
+            <ul role="listbox" id="search-suggestions"
+              class="autocomplete-suggestions is-vertically-scrollable padding-xxs" aria-label="Suggestions" hidden>
+            </ul>
+          </div>
+        </form>
+
+        <div class="display-flex flex-wrap-no-wrap margin-left-auto">
+          <button id="color-mode-toggle" title="Toggle color mode" aria-label="Toggle color mode" class="button button-clear">
+            <span class="icon color-mode" aria-hidden="true">
+            </span>
+          </button>
+          <a aria-label="Visit repository" class="button button-clear" href="https://github.com/DelphiPackageManager/DPM" data-external="true" target="_blank" rel="noopener">
+            <span class="icon repository github" aria-hidden="true">
+            </span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section id="layout-body-menu" class="layout-body-menu border-right display-flex background-color-body-medium">
+    <div id="left-container"
+      class="left-container display-none display-block-tablet padding-inline-sm padding-bottom-sm width-full">
+      <nav id="affixed-left-container" class="margin-top-sm-tablet position-sticky display-flex flex-direction-column"
+        aria-label="Primary">
+      </nav>
+    </div>
+  </section>
+
+  <main id="main" role="main" class="layout-body-main">
+    <article class="reading-width margin-inline-auto padding-sm padding-top-none padding-top-sm-tablet">
+      <div id="article-header"
+        class="align-items-center display-flex background-color-body margin-bottom-xs display-none-print">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumbs">
+            <li
+              class="breadcrumbs-item">
+              Getting Started
+            </li>
+            <li
+              class="breadcrumbs-item breadcrumbs-item-slashless">
+              Continuous Integration
+            </li>
+          </ol>
+        </nav>
+
+        <div id="page-actions" class="display-flex flex-wrap-no-wrap margin-left-auto">
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="heading-wrapper" data-heading-level="h1">
+          <a class="anchor-link" href="continuous-integration.html" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+          <h1>  Using DPM in Continuous Integration</h1>
+        </div>
+
+        <nav id="center-doc-outline" class="doc-outline is-hidden-desktop display-none-print margin-bottom-sm"
+          aria-label="On this page">
+          <h2 id="on-this-page" class="title is-6 margin-block-xs">
+            On this page
+          </h2>
+          <ol id="content-well-in-this-article-list2" class="border-left padding-left-xxs">
+  <li>
+    <a href="#table-of-contents">Table of Contents</a>
+  </li>
+  <li>
+    <a href="#why-dpm-in-ci">Why DPM in CI</a>
+  </li>
+  <li>
+    <a href="#getting-dpm-exe-onto-the-build-agent">Getting dpm.exe onto the build agent</a>
+  </li>
+  <li>
+    <a href="#what-to-commit-and-what-to-ignore">What to commit and what to ignore</a>
+  </li>
+  <li>
+    <a href="#configuring-sources-non-interactively">Configuring sources non-interactively</a>
+  </li>
+  <li>
+    <a href="#restoring-packages-the-consume-path">Restoring packages (the consume path)</a>
+  </li>
+  <li>
+    <a href="#caching-packages-between-builds">Caching packages between builds</a>
+  </li>
+  <li>
+    <a href="#publishing-packages-the-release-path">Publishing packages (the release path)</a>
+    <ol>
+  <li>
+    <a href="#1-pack">1. Pack</a>
+  </li>
+  <li>
+    <a href="#2-sign">2. Sign</a>
+  </li>
+  <li>
+    <a href="#3-verify">3. Verify</a>
+  </li>
+  <li>
+    <a href="#4-push">4. Push</a>
+  </li>
+  <li>
+    <a href="#optional-sbom-and-vulnerability-gating">Optional: SBOM and vulnerability gating</a>
+  </li>
+</ol>
+  </li>
+  <li>
+    <a href="#exit-codes">Exit codes</a>
+  </li>
+  <li>
+    <a href="#ci-system-examples">CI system examples</a>
+    <ol>
+  <li>
+    <a href="#generic-ci-agnostic">Generic &#x2f; CI-agnostic</a>
+  </li>
+  <li>
+    <a href="#github-actions">GitHub Actions</a>
+  </li>
+  <li>
+    <a href="#finalbuilder-continua-ci">FinalBuilder &#x2f; Continua CI</a>
+  </li>
+  <li>
+    <a href="#gitlab-ci">GitLab CI</a>
+  </li>
+  <li>
+    <a href="#jenkins">Jenkins</a>
+  </li>
+</ol>
+  </li>
+  <li>
+    <a href="#troubleshooting">Troubleshooting</a>
+  </li>
+</ol>
+        </nav>
+
+        <p>  DPM is designed to work well on a build server. Because packages are restored from   sources into a machine-local cache and compiled on demand, your build agents don&#x27;t   need third-party components pre-installed, and you avoid the &quot;compiles on my machine&quot;   problems that come from manually-managed library paths.</p><p>  This guide covers both sides of CI:</p><ul><li><p>  <strong>Consuming</strong>   — restoring the packages a project depends on, then building it.</p></li><li><p>  <strong>Publishing</strong>   — packing, signing, verifying and pushing your own packages from a   release pipeline.</p></li></ul><hr />  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#table-of-contents" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="table-of-contents">  Table of Contents</h2>
+  </div>
+<ul><li><p><a href="#why-dpm-in-ci">  Why DPM in CI</a></p></li><li><p><a href="#getting-dpmexe-onto-the-build-agent">  Getting dpm.exe onto the build agent</a></p></li><li><p><a href="#what-to-commit-and-what-to-ignore">  What to commit and what to ignore</a></p></li><li><p><a href="#configuring-sources-non-interactively">  Configuring sources non-interactively</a></p></li><li><p><a href="#restoring-packages-the-consume-path">  Restoring packages (the consume path)</a></p></li><li><p><a href="#caching-packages-between-builds">  Caching packages between builds</a></p></li><li><p><a href="#publishing-packages-the-release-path">  Publishing packages (the release path)</a></p></li><li><p><a href="#exit-codes">  Exit codes</a></p></li><li><p><a href="#ci-system-examples">  CI system examples</a></p><ul><li><p><a href="#generic--ci-agnostic">  Generic &#x2f; CI-agnostic</a></p></li><li><p><a href="#github-actions">  GitHub Actions</a></p></li><li><p><a href="#finalbuilder--continua-ci">  FinalBuilder &#x2f; Continua CI</a></p></li><li><p><a href="#gitlab-ci">  GitLab CI</a></p></li><li><p><a href="#jenkins">  Jenkins</a></p></li></ul></li><li><p><a href="#troubleshooting">  Troubleshooting</a></p></li></ul><hr />  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#why-dpm-in-ci" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="why-dpm-in-ci">  Why DPM in CI</h2>
+  </div>
+<ul><li><p>  <strong>No components installed in the IDE.</strong>   <code>dpm restore</code>   resolves and compiles   packages into the cache and wires the project&#x27;s search   paths. Nothing has to be installed into a RAD Studio instance on the agent.</p></li><li><p>  <strong>Reproducible builds.</strong>   Versions are recorded in the <code>.dproj</code>  , so a clean checkout   restores exactly the same dependency graph on every agent.</p></li><li><p>  <strong>Runs headless.</strong>   The CLI is a single executable with no IDE dependency for <code>restore</code>  , <code>pack</code>  , <code>sign</code>  , <code>verify</code>   and <code>push</code>   — it runs fine in a Windows   container &#x2f; Server Core.</p></li><li><p>  <strong>Scriptable.</strong>   Every command returns a meaningful <a href="#exit-codes">  exit code</a>  , so a   failed restore or a vulnerable dependency can fail the build.</p></li></ul><hr />  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#getting-dpm-exe-onto-the-build-agent" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="getting-dpm-exe-onto-the-build-agent">  Getting dpm.exe onto the build agent</h2>
+  </div>
+<p><code>dpm.exe</code>   is a standalone console application. The simplest approach is to download a   known release of the CLI, unzip it to a fixed location on the agent, and put that   folder on the <code>PATH</code>  . See <a href="https://docs.delphi.dev/getting-started/installing.html" data-external="true">  installing</a>   for download locations.</p><p>  Recommendations for CI:</p><ul><li><p>  <strong>Pin a version.</strong>   Download a specific <code>dpm.exe</code>   release rather than &quot;latest&quot; so   builds are reproducible. Treat the DPM version like any other build tool version.</p></li><li><p>  <strong>No IDE required to restore or publish.</strong>   <code>restore</code>  , <code>pack</code>  , <code>sign</code>  , <code>verify</code>   and <code>push</code>   do not need the Delphi IDE.   <em>Compiling</em>   the restored project does — that step   still calls MSBuild &#x2f; <code>dcc32</code>  , so the agent needs RAD Studio (or the command-line   compiler) installed for the target compiler version.</p></li><li><p>  <strong>Quieter output.</strong>   Pass <code>--nobanner</code>   to suppress the startup banner and <code>--verbosity=Quiet|Normal|Detailed</code>   to control log volume.</p></li></ul><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">cmd</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-cmd" dir="ltr">dpm --nobanner restore .\MyProject.dproj
+</code></pre><hr />  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#what-to-commit-and-what-to-ignore" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="what-to-commit-and-what-to-ignore">  What to commit and what to ignore</h2>
+  </div>
+<table class="table table-sm">
+    <thead>
+      <tr>
+        <th><p>  Path</p></th>
+        <th><p>  Commit?</p></th>
+        <th><p>  Why</p></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><p><code>*.dproj</code>   &#x2f; <code>*.groupproj</code></p></td>
+        <td><p>  <strong>Yes</strong></p></td>
+        <td><p>  These carry the resolved DPM dependency graph that <code>restore</code>   reads. They are the source of truth for which package versions a clean build will restore.</p></td>
+      </tr>
+      <tr>
+        <td><p>  A repo-level <code>dpm.config.yaml</code>   (optional)</p></td>
+        <td><p>  <strong>Yes</strong>  , if used</p></td>
+        <td><p>  Lets the build pin its package sources without touching the agent&#x27;s machine config.</p></td>
+      </tr>
+      <tr>
+        <td><p>  The package cache (<code>%APPDATA%\.dpm\package_cache</code>  )</p></td>
+        <td><p>  <strong>No</strong></p></td>
+        <td><p>  Machine-local and fully regenerated by <code>restore</code>  . <a href="#caching-packages-between-builds">  Cache it in the CI system</a>   instead of committing it.</p></td>
+      </tr>
+    </tbody>
+  </table><hr />  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#configuring-sources-non-interactively" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="configuring-sources-non-interactively">  Configuring sources non-interactively</h2>
+  </div>
+<p>  By default DPM reads its config from <code>%APPDATA%\.dpm\dpm.config.yaml</code>  . On a build   agent you usually want the build to be self-contained rather than depending on   whatever is in the agent user&#x27;s profile. Two options:</p><p>  <strong>1. Ship a config with the repo and point at it explicitly.</strong>   Every command accepts <code>--configFile</code>  :</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">cmd</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-cmd" dir="ltr">dpm --nobanner restore .\MyProject.dproj --configFile=.\ci\dpm.config.yaml
+</code></pre><p>  <strong>2. Add the source as a setup step.</strong></p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">cmd</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-cmd" dir="ltr">dpm sources add -name=corporate -source=https:&#x2f;&#x2f;packages.example.com -type=DPMServer ^
+  -userName=%DPM_USER% -password=%DPM_PASSWORD%
+dpm sources list
+</code></pre><p><code>dpm sources</code>   supports <code>Add</code>  , <code>Remove</code>  , <code>Enable</code>  , <code>Disable</code>  , <code>Update</code>  , <code>Refresh</code>   and <code>List</code>  , with <code>-type</code>   one of <code>Folder</code>  , <code>GitRegistry</code>   or <code>DPMServer</code>  . For git-registry   sources, see <a href="git-registry-packages.html">  git-registry-packages.md</a>  .</p><blockquote>
+    <p>  Keep push API keys in your CI system&#x27;s secret store and   pass them through environment variables — never hard-code them in a committed config   or a script.</p>
+  </blockquote><hr />  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#restoring-packages-the-consume-path" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="restoring-packages-the-consume-path">  Restoring packages (the consume path)</h2>
+  </div>
+<p><code>dpm restore</code>   is the core CI command. It accepts a <code>.dproj</code>  , a <code>.groupproj</code>  , or a   folder (in which case it restores every <code>.dproj</code>   it finds):</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">cmd</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-cmd" dir="ltr">dpm --nobanner restore .\MyProject.dproj
+dpm --nobanner restore .\src                       :: every .dproj under .\src
+dpm --nobanner restore .\MySolution.groupproj
+</code></pre><p>  Useful options (<a href="https://github.com/DelphiPackageManager/DPM/blob/master/Source/Cmdline/Commands/DPM.Console.Command.Restore.pas" data-external="true">  source</a>  ):</p><table class="table table-sm">
+    <thead>
+      <tr>
+        <th><p>  Option</p></th>
+        <th><p>  Alias</p></th>
+        <th><p>  Purpose</p></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><p><code>-source=&lt;name&gt;</code></p></td>
+        <td><p><code>-s</code></p></td>
+        <td><p>  Restrict to specific source(s). Repeat or comma-separate for several. Omit to use all configured sources.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>-compiler=&lt;ver&gt;</code></p></td>
+        <td><p><code>-c</code></p></td>
+        <td><p>  Restore for a specific compiler version (e.g. <code>12.0</code>  ).</p></td>
+      </tr>
+      <tr>
+        <td><p><code>-debugMode</code></p></td>
+        <td><p><code>-dm</code></p></td>
+        <td><p>  Restore&#x2f;compile the Debug configuration of packages.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>-ignoreHashLocks</code></p></td>
+        <td><p><code>-ihl</code></p></td>
+        <td><p>  Refresh manifest hashes from the cache instead of failing on a recorded-hash mismatch.</p></td>
+      </tr>
+    </tbody>
+  </table><p>  A typical pipeline restores, then hands the project to your build tool (FinalBuilder, MSBuild etc):</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">cmd</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-cmd" dir="ltr">dpm --nobanner restore .\MyProject.dproj || exit &#x2f;b 1
+call rsvars.bat
+fbcmd MyProject.dproj || exit &#x2f;b 1
+</code></pre><p><code>restore</code>   returns <code>0</code>   on success and non-zero on failure — always gate the build on it   (see <a href="#exit-codes">  Exit codes</a>  ).</p><hr />  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#caching-packages-between-builds" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="caching-packages-between-builds">  Caching packages between builds</h2>
+  </div>
+<p>  DPM downloads and compiles packages into a cache. By default that&#x27;s <code>%APPDATA%\.dpm\package_cache</code>  , but you can redirect it with the <code>DPMPACKAGECACHE</code>   environment variable. Pointing it at a folder your CI system persists between runs   means packages aren&#x27;t re-downloaded and re-compiled every build:</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">cmd</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-cmd" dir="ltr">set DPMPACKAGECACHE=%CI_WORKSPACE%\.dpmcache
+dpm --nobanner restore .\MyProject.dproj
+</code></pre><p>  This will speed up builds substantially.</p><hr />  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#publishing-packages-the-release-path" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="publishing-packages-the-release-path">  Publishing packages (the release path)</h2>
+  </div>
+<p>  To publish your own packages from CI, run the release pipeline in this order:   <strong>pack → sign → verify → push</strong>  .</p>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#1-pack" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="1-pack">  1. Pack</h3>
+  </div>
+<p><code>dpm pack</code>   builds a <code>.dpkg</code>   from a <code>.dspec.yaml</code>  . Override the version from CI (e.g.   your build number) so each build produces a uniquely-versioned package:</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">cmd</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-cmd" dir="ltr">dpm --nobanner pack .\MyPackage.dspec.yaml -version=%BUILD_VERSION% -outputfolder=.\artifacts
+</code></pre>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#2-sign" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="2-sign">  2. Sign</h3>
+  </div>
+<p><code>dpm sign</code>   signs one or more <code>.dpkg</code>   files. For CI,   <strong>always supply secrets via</strong>   <strong>environment variables</strong>  , never as literal command-line values (they leak into process   listings and logs). The provider-specific secret flags all take the   <em>name</em>   of an   environment variable:</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">cmd</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-cmd" dir="ltr">:: Local PFX, password from the PFX_PWD environment variable
+dpm sign .\artifacts\*.dpkg -pfx=%CODESIGN_PFX% -pfx-password-env=PFX_PWD
+
+:: Azure Key Vault
+dpm sign .\artifacts\*.dpkg -provider=keyvault ^
+  -vault-url=https:&#x2f;&#x2f;my.vault.azure.net -cert-name=codesign ^
+  -tenant-id=%AZ_TENANT% -client-id=%AZ_CLIENT% -client-secret-env=AAD_SECRET
+
+:: VSoft Signotaur
+dpm sign .\artifacts\*.dpkg -provider=signotaur ^
+  -endpoint=https:&#x2f;&#x2f;signotaur.example.com -api-key-env=SIGNOTAUR_KEY -label=CodeSign
+</code></pre><p>  Note whilst you can sign using certificates in your windows credential store, those are usually backed by a token which will prompt for a password - not recommended for CI.</p><p>  The target can be a single file, a folder, or a wildcard. Add <code>-r</code>   to recurse and <code>-fail-fast</code>   to stop on the first failure. See <a href="../concepts/package-signing.html">  Package Signing</a>   for the full signing guide.</p>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#3-verify" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="3-verify">  3. Verify</h3>
+  </div>
+<p>  Confirm the signature and package integrity before publishing. <code>--json-output</code>   is   handy for parsing in a script; <code>--offline</code>   skips network calls (revocation &#x2f;   timestamp authority) on locked-down agents:</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">cmd</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-cmd" dir="ltr">dpm verify .\artifacts\MyPackage.1.2.3.dpkg --json-output
+</code></pre><p><code>verify</code>   exits <code>0</code>   when the package is valid and non-zero otherwise.</p>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#4-push" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="4-push">  4. Push</h3>
+  </div>
+<p><code>dpm push</code>   uploads a <code>.dpkg</code>   to a source. <code>-source</code>  &#x2f;<code>-s</code>   is required; supply the API   key from a secret:</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">cmd</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-cmd" dir="ltr">dpm push .\artifacts\MyPackage.1.2.3.dpkg -source=corporate -apiKey=%DPM_APIKEY% ^
+  -skipDuplicate -retries=3
+</code></pre><table class="table table-sm">
+    <thead>
+      <tr>
+        <th><p>  Option</p></th>
+        <th><p>  Purpose</p></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><p><code>-source</code>   &#x2f; <code>-s</code></p></td>
+        <td><p>  <strong>Required.</strong>   Target source name from your config.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>-apiKey</code>   &#x2f; <code>-a</code></p></td>
+        <td><p>  API key for an authenticated source. Pass from a CI secret.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>-skipDuplicate</code></p></td>
+        <td><p>  Don&#x27;t fail if that package + version already exists. Makes re-runs idempotent.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>-retries</code></p></td>
+        <td><p>  Retry on rate-limit (429) &#x2f; transient (502&#x2f;503&#x2f;504) errors. Default 3; <code>0</code>   disables.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>-retryDelay</code></p></td>
+        <td><p>  Base seconds between retries (exponential backoff with jitter). Default 2.</p></td>
+      </tr>
+      <tr>
+        <td><p><code>-timeout</code>   &#x2f; <code>-t</code></p></td>
+        <td><p>  Upload timeout in seconds. Default 300.</p></td>
+      </tr>
+    </tbody>
+  </table>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#optional-sbom-and-vulnerability-gating" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="optional-sbom-and-vulnerability-gating">  Optional: SBOM and vulnerability gating</h3>
+  </div>
+<p>  DPM can also generate a Software Bill of Materials and fail the build on known   vulnerabilities — useful as a release-pipeline gate:</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">cmd</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-cmd" dir="ltr">dpm sbom .\MyProject.dproj -format=cyclonedx -outdir=.\artifacts
+dpm scan .\MyProject.dproj -fail-on=high
+</code></pre><p><code>dpm scan -fail-on=high</code>   returns a non-zero exit code when a vulnerability of the   given severity (or higher) is found. See <a href="../commands/sbom-command.html">  sbom command</a>   and <a href="../commands/scan-command.html">  scan command</a>  .</p><hr />  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#exit-codes" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="exit-codes">  Exit codes</h2>
+  </div>
+<p>  Every command returns one of these   (<a href="https://github.com/DelphiPackageManager/DPM/blob/master/Source/Cmdline/DPM.Console.ExitCodes.pas" data-external="true">  source</a>  ). Gate your pipeline on a   non-zero result. You can also run <code>dpm exitcodes</code>   to print this list.</p><table class="table table-sm">
+    <thead>
+      <tr>
+        <th><p>  Code</p></th>
+        <th><p>  Meaning</p></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><p><code>0</code></p></td>
+        <td><p>  Success</p></td>
+      </tr>
+      <tr>
+        <td><p><code>1</code></p></td>
+        <td><p>  Error (command failed)</p></td>
+      </tr>
+      <tr>
+        <td><p><code>2</code></p></td>
+        <td><p>  Missing argument</p></td>
+      </tr>
+      <tr>
+        <td><p><code>100</code></p></td>
+        <td><p>  Initialization exception</p></td>
+      </tr>
+      <tr>
+        <td><p><code>101</code></p></td>
+        <td><p>  Invalid arguments</p></td>
+      </tr>
+      <tr>
+        <td><p><code>102</code></p></td>
+        <td><p>  Invalid command</p></td>
+      </tr>
+      <tr>
+        <td><p><code>200</code></p></td>
+        <td><p>  Feature not implemented</p></td>
+      </tr>
+      <tr>
+        <td><p><code>9999</code></p></td>
+        <td><p>  Unhandled exception</p></td>
+      </tr>
+    </tbody>
+  </table><p>  Checking the code in a script:</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">cmd</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-cmd" dir="ltr">:: cmd &#x2f; batch
+dpm --nobanner restore .\MyProject.dproj
+if errorlevel 1 (
+  echo DPM restore failed
+  exit &#x2f;b 1
+)
+</code></pre><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">powershell</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-powershell" dir="ltr"># PowerShell
+dpm --nobanner restore .\MyProject.dproj
+if ($LASTEXITCODE -ne 0) { throw &quot;DPM restore failed ($LASTEXITCODE)&quot; }
+</code></pre><hr />  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#ci-system-examples" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="ci-system-examples">  CI system examples</h2>
+  </div>
+<p>  All examples assume <code>dpm.exe</code>   is on the <code>PATH</code>   and a Delphi command-line compiler is   available on the agent for the build step.</p>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#generic-ci-agnostic" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="generic-ci-agnostic">  Generic &#x2f; CI-agnostic</h3>
+  </div>
+<p>  A minimal restore-then-build, with caching and exit-code checks, in PowerShell:</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">powershell</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-powershell" dir="ltr">$env:DPMPACKAGECACHE = Join-Path $PWD &#x27;.dpmcache&#x27;   # persist this folder between runs
+
+dpm --nobanner restore .\MyProject.dproj
+if ($LASTEXITCODE -ne 0) { throw &quot;restore failed&quot; }
+
+&amp; &quot;$env:BDS\bin\rsvars.bat&quot;
+msbuild MyProject.dproj &#x2f;t:Build &#x2f;p:Config=Release &#x2f;p:Platform=Win32
+if ($LASTEXITCODE -ne 0) { throw &quot;build failed&quot; }
+</code></pre>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#github-actions" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="github-actions">  GitHub Actions</h3>
+  </div>
+<p>  Delphi isn&#x27;t available on GitHub-hosted runners, so use a   <strong>self-hosted Windows</strong>   <strong>runner</strong>   with RAD Studio and <code>dpm.exe</code>   installed and (optionally) FinalBuilder. <code>actions&#x2f;cache</code>   persists the package   cache between runs, keyed on the project files.</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">yaml</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-yaml" dir="ltr">name: build
+on: [push]
+
+jobs:
+  build:
+    runs-on: [self-hosted, windows, delphi]
+    env:
+      DPMPACKAGECACHE: ${{ github.workspace }}\.dpmcache
+    steps:
+      - uses: actions&#x2f;checkout@v4
+
+      - name: Cache DPM packages
+        uses: actions&#x2f;cache@v4
+        with:
+          path: ${{ github.workspace }}\.dpmcache
+          key: dpm-${{ hashFiles(&#x27;**&#x2f;*.dproj&#x27;, &#x27;**&#x2f;*.groupproj&#x27;, &#x27;**&#x2f;dpm.config.yaml&#x27;) }}
+
+      - name: Restore
+        run: dpm --nobanner restore .\MyProject.dproj
+
+      - name: Build
+        run: |
+          call &quot;%BDS%\bin\rsvars.bat&quot;
+          msbuild MyProject.dproj &#x2f;t:Build &#x2f;p:Config=Release &#x2f;p:Platform=Win32
+        shell: cmd
+
+  release:
+    needs: build
+    runs-on: [self-hosted, windows, delphi]
+    if: startsWith(github.ref, &#x27;refs&#x2f;tags&#x2f;&#x27;)
+    env:
+      PFX_PWD:     ${{ secrets.CODESIGN_PFX_PWD }}
+      DPM_APIKEY:  ${{ secrets.DPM_APIKEY }}
+    steps:
+      - uses: actions&#x2f;checkout@v4
+      - name: Pack, sign, verify, push
+        run: |
+          dpm --nobanner pack .\MyPackage.dspec.yaml -version=${{ github.ref_name }} -outputfolder=.\artifacts
+          dpm sign .\artifacts\*.dpkg -pfx=%CODESIGN_PFX% -pfx-password-env=PFX_PWD
+          for %%f in (.\artifacts\*.dpkg) do dpm verify &quot;%%f&quot; || exit &#x2f;b 1
+          for %%f in (.\artifacts\*.dpkg) do dpm push &quot;%%f&quot; -source=corporate -apiKey=%DPM_APIKEY% -skipDuplicate
+        shell: cmd
+</code></pre>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#finalbuilder-continua-ci" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="finalbuilder-continua-ci">  FinalBuilder &#x2f; Continua CI</h3>
+  </div>
+<p>  DPM is itself built with FinalBuilder and Continua CI, so they&#x27;re a natural fit.</p><p>  <strong>FinalBuilder</strong>   — there are FinalBuilder Actions for DPM restore and pack (sign action will be added soon).</p><p>  Set <code>DPMPACKAGECACHE</code>   as a project&#x2f;environment variable so the cache lives in a known   location, then follow the restore with your existing   <strong>Compile Delphi Project</strong>   action.</p><p>  <strong>Continua CI</strong>   — run the same commands in an   <strong>Execute Program</strong>   action inside your   stage. Point <code>DPMPACKAGECACHE</code>   at a path under the workspace and use a   <strong>Continua CI</strong>   <strong>Cache</strong>   (or a shared agent folder) so the package cache survives between builds. Pass   the push API key from a Continua secret&#x2f;variable into the environment rather than   hard-coding it.</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">text</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-text" dir="ltr">:: stage script (Execute Program actions)
+set DPMPACKAGECACHE=$Workspace$\.dpmcache
+dpm --nobanner restore .\MyProject.dproj
+dpm --nobanner pack .\MyPackage.dspec.yaml -version=$Version$ -outputfolder=.\artifacts
+dpm push .\artifacts\*.dpkg -source=corporate -apiKey=$DPM_APIKEY$ -skipDuplicate
+</code></pre>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#gitlab-ci" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="gitlab-ci">  GitLab CI</h3>
+  </div>
+<p>  Use a Windows runner with the <code>shell</code>   executor (Delphi can&#x27;t run in a generic Linux   container). <code>cache:</code>   persists the package folder between jobs.</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">yaml</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-yaml" dir="ltr">stages: [build, release]
+
+variables:
+  DPMPACKAGECACHE: &quot;$CI_PROJECT_DIR\\.dpmcache&quot;
+
+cache:
+  key:
+    files:
+      - &quot;**&#x2f;*.dproj&quot;
+      - dpm.config.yaml
+  paths:
+    - .dpmcache&#x2f;
+
+build:
+  stage: build
+  tags: [windows, delphi]
+  script:
+    - dpm --nobanner restore .\MyProject.dproj
+    - cmd &#x2f;c &quot;call \&quot;%BDS%\bin\rsvars.bat\&quot; &amp;&amp; msbuild MyProject.dproj &#x2f;t:Build &#x2f;p:Config=Release &#x2f;p:Platform=Win32&quot;
+
+publish:
+  stage: release
+  tags: [windows, delphi]
+  rules:
+    - if: $CI_COMMIT_TAG
+  script:
+    - dpm --nobanner pack .\MyPackage.dspec.yaml -version=$CI_COMMIT_TAG -outputfolder=.\artifacts
+    - dpm sign .\artifacts\*.dpkg -pfx=$CODESIGN_PFX -pfx-password-env=PFX_PWD
+    - dpm push .\artifacts\*.dpkg -source=corporate -apiKey=$DPM_APIKEY -skipDuplicate
+</code></pre><p><code>PFX_PWD</code>  , <code>CODESIGN_PFX</code>   and <code>DPM_APIKEY</code>   are defined as masked&#x2f;protected CI&#x2f;CD   variables, not in the YAML.</p>  <div class="heading-wrapper" data-heading-level="h3">
+    <a class="anchor-link" href="#jenkins" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h3 id="jenkins">  Jenkins</h3>
+  </div>
+<p>  A declarative <code>Jenkinsfile</code>   on a Windows agent, using credentials binding so the API   key never appears in the log:</p><div class="code-block-header margin-top-sm">
+  <span class="code-block-header-language">groovy</span>
+  <div class="code-block-header-action-bar">
+    <button type="button" class="button button-sm action inner-focus display-none-print">
+      <span class="icon copy has-text-subtle" aria-hidden="true">
+      </span>
+      <span>Copy</span>
+    </button>
+  </div>
+</div>
+  <pre class="wrap has-inner-focus"><code class="language-groovy" dir="ltr">pipeline {
+  agent { label &#x27;windows &amp;&amp; delphi&#x27; }
+  environment {
+    DPMPACKAGECACHE = &quot;${WORKSPACE}\\.dpmcache&quot;
+  }
+  stages {
+    stage(&#x27;Restore&#x27;) {
+      steps {
+        bat &#x27;dpm --nobanner restore .\\MyProject.dproj&#x27;
+      }
+    }
+    stage(&#x27;Build&#x27;) {
+      steps {
+        bat &#x27;&#x27;&#x27;
+          call &quot;%BDS%\\bin\\rsvars.bat&quot;
+          msbuild MyProject.dproj &#x2f;t:Build &#x2f;p:Config=Release &#x2f;p:Platform=Win32
+        &#x27;&#x27;&#x27;
+      }
+    }
+    stage(&#x27;Publish&#x27;) {
+      when { tag &#x27;*&#x27; }
+      steps {
+        withCredentials([string(credentialsId: &#x27;dpm-apikey&#x27;, variable: &#x27;DPM_APIKEY&#x27;)]) {
+          bat &#x27;&#x27;&#x27;
+            dpm --nobanner pack .\\MyPackage.dspec.yaml -version=%TAG_NAME% -outputfolder=.\\artifacts
+            dpm push .\\artifacts\\*.dpkg -source=corporate -apiKey=%DPM_APIKEY% -skipDuplicate
+          &#x27;&#x27;&#x27;
+        }
+      }
+    }
+  }
+}
+</code></pre><hr />  <div class="heading-wrapper" data-heading-level="h2">
+    <a class="anchor-link" href="#troubleshooting" aria-label="Link to this heading" title="Link to this heading">
+  <span class="icon link" aria-hidden="true"></span>
+</a>
+    <h2 id="troubleshooting">  Troubleshooting</h2>
+  </div>
+<ul><li><p>  <strong>Restore can&#x27;t find a package &#x2f; source.</strong>   Confirm the build is reading the config   you expect — pass <code>--configFile</code>   explicitly and run <code>dpm sources list</code>   as a   diagnostic step. A source defined only in a developer&#x27;s profile won&#x27;t exist on the   agent.</p></li><li><p>  <strong>Authentication failures on a private feed.</strong>   Make sure the credential environment   variables are actually set in the job (masked secrets are easy to forget to expose)   and that the source was added with the matching <code>-userName</code>   &#x2f; <code>-password</code>   or that   the API key is passed to <code>push</code>  .</p></li><li><p>  <strong>Packages re-download every build.</strong>   The cache isn&#x27;t being persisted. Set <code>DPMPACKAGECACHE</code>   to a stable path and wire it into the CI system&#x27;s cache mechanism   (see <a href="#caching-packages-between-builds">  Caching packages between builds</a>  ).</p></li><li><p>  <strong>Hash-lock mismatch on restore.</strong>   If a package was legitimately refreshed in the   cache, <code>-ignoreHashLocks</code>   lets restore refresh the recorded hashes instead of   failing. Investigate first — a mismatch can also indicate a changed package.</p></li><li><p>  <strong>Verifying on an offline &#x2f; locked-down agent.</strong>   Use <code>dpm verify ... --offline</code>   to   skip revocation and timestamp-authority network calls.</p></li><li><p>  <strong>A command returns 200 (not implemented).</strong>   That feature isn&#x27;t available in your   DPM build — check the version and the command&#x27;s status in the docs.</p></li></ul>
+      </div>
+
+    </article>
+  </main>
+
+  <aside id="layout-body-aside" class="layout-body-aside" aria-label="Page Outline">
+    <div id="additional-resources" class="right-container padding-sm display-none display-block-desktop height-full"
+      role="complementary" aria-label="Additional resources">
+      <div id="affixed-right-container" class="position-sticky">
+        <nav id="side-doc-outline" class="doc-outline padding-bottom-xs margin-bottom-xs" aria-label="On this page">
+          <h2 class="title is-6 margin-top-xxs margin-bottom-xs">
+            On this page
+          </h2>
+          <ol id="right-rail-on-this-page-list">
+  <li class="border-left-md padding-left-xxs border-color-primary">
+    <a href="#table-of-contents" class="font-weight-semibold color-text">Table of Contents</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#why-dpm-in-ci" class="color-text-subtle">Why DPM in CI</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#getting-dpm-exe-onto-the-build-agent" class="color-text-subtle">Getting dpm.exe onto the build agent</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#what-to-commit-and-what-to-ignore" class="color-text-subtle">What to commit and what to ignore</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#configuring-sources-non-interactively" class="color-text-subtle">Configuring sources non-interactively</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#restoring-packages-the-consume-path" class="color-text-subtle">Restoring packages (the consume path)</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#caching-packages-between-builds" class="color-text-subtle">Caching packages between builds</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#publishing-packages-the-release-path" class="color-text-subtle">Publishing packages (the release path)</a>
+    <ol>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#1-pack" class="color-text-subtle">1. Pack</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#2-sign" class="color-text-subtle">2. Sign</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#3-verify" class="color-text-subtle">3. Verify</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#4-push" class="color-text-subtle">4. Push</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#optional-sbom-and-vulnerability-gating" class="color-text-subtle">Optional: SBOM and vulnerability gating</a>
+  </li>
+</ol>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#exit-codes" class="color-text-subtle">Exit codes</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#ci-system-examples" class="color-text-subtle">CI system examples</a>
+    <ol>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#generic-ci-agnostic" class="color-text-subtle">Generic &#x2f; CI-agnostic</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#github-actions" class="color-text-subtle">GitHub Actions</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#finalbuilder-continua-ci" class="color-text-subtle">FinalBuilder &#x2f; Continua CI</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#gitlab-ci" class="color-text-subtle">GitLab CI</a>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#jenkins" class="color-text-subtle">Jenkins</a>
+  </li>
+</ol>
+  </li>
+  <li class="border-left-md padding-left-xxs border-color-transparent">
+    <a href="#troubleshooting" class="color-text-subtle">Troubleshooting</a>
+  </li>
+</ol>
+        </nav>
+      </div>
+    </div>
+  </aside>
+
+
+  <footer id="footer" class="layout-body-footer footer-layout uhf-container  has-padding
+    border-top" role="contentinfo">
+    <p class="color-text-subtle">Unofficial DocInsight showcase for <a href="https://delphi.dev" data-external="true">DPM</a>. This showcase is not affiliated with, sponsored by, or endorsed by the <a href="https://github.com/DelphiPackageManager" data-external="true">DPM Dev Team</a> or <a href="https://www.finalbuilder.com/" data-external="true">VSoft Technologies Pty Ltd</a>.<br>DPM source and documentation are copyright © 2023–present DPM Dev Team and licensed under the Apache License 2.0.<br>Built with <a href="https://docinsight.dev/" data-external="true">DocInsight</a>. View the <a href="https://github.com/docinsight/dpm/" data-external="true">showcase repository</a>.</p>
+  </footer>
+
+</body>
+
+</html>
