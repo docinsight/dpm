@@ -34,7 +34,7 @@
         "Source/dpm.dproj"
       ],
       "options": {
-        "compatibility": "delphi_13",
+        "compiler": "delphi_13",
         "platform": "Win32"
       }
     }
@@ -58,13 +58,13 @@
     }
   },
   "site": {
-    "title": "DPM Docs",
+    "title": "DPM Showcase",
     "title_suffix": " | DocInsight Showcase",
     "description": "Unofficial DocInsight documentation showcase for DPM, an open-source package manager for Delphi.",
     "base_path": "/dpm/",
     "robots": "noindex,follow",
     "footer": {
-      "notice": "Unofficial DocInsight showcase for {{dpm.homepage}}. This showcase is not affiliated with, sponsored by, or endorsed by the {{dpm.team}} or {{vsoft}}.\n{{dpm.copyright}}\nBuilt with {{sys.docinsight}}. View the {{showcase_repo}}."
+      "notice": "Unofficial DocInsight showcase for {{dpm.homepage}}. This showcase is not affiliated with, sponsored by, or endorsed by the {{dpm.team}} or {{vsoft}}.\nDPM source and documentation are copyright © 2023–present DPM Dev Team and licensed under the Apache License 2.0.\nBuilt with {{sys.docinsight}}. View the {{showcase_repo}}."
     }
   },
   "output": {
