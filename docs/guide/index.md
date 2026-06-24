@@ -5,8 +5,8 @@
 >
 > It is not official DPM documentation and is not affiliated with, sponsored by, or endorsed by the DPM maintainers.
 >
-> Please use the official DPM project and documentation as the authoritative source.
-> 
+> Please use the official [DPM project](https://delphi.dev/) and documentation as the authoritative source.
+>
 > For an example of the API reference documentation, see <xref:reference/DPM.Core.Package.Interfaces/IPackageInfo>.
 
 DPM is an open-source package/library manager for Delphi XE2 or later.

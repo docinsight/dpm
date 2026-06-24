@@ -5,9 +5,11 @@
 # DPM - A package manager for Delphi
 
 > [!NOTE]
-> This is an unofficial DocInsight showcase for [DPM](https://delphi.dev), a package manager for Delphi.
+> This fork is used by DocInsight for internal compatibility and documentation-generation testing.
 >
-> This showcase uses an adapted, co-located layout for DocInsight. The original DPM project keeps code and documentation in separate repositories; here, the guide content is imported into `docs/guide` so DocInsight can check Markdown topics, API comments, and cross-references as one connected documentation graph.
+> It is not official DPM documentation and is not affiliated with, sponsored by, or endorsed by the DPM maintainers.
+>
+> Please use the official DPM project and documentation as the authoritative source.
 
 ## Introducing DPM
 
