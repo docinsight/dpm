@@ -2,7 +2,6 @@
   "project": {
     "name": "dpm",
     "title": "DPM",
-    "variable_alias": "dpm",
     "description": "A open-source package manager for Delphi",
     "copyright": "Copyright © 2023 - present {{dpm.team}}. All Rights Reserved.",
     "homepage": "https://delphi.dev",
