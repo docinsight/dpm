@@ -27,7 +27,7 @@ dpm install VSoft.CommandLine
 
 This would install the latest version of the `VSoft.CommandLine` package (assuming it was found), for all supported platforms that are enabled in the Delphi project file. If there are more than one Delphi project files in the folder, the package will be installed into all projects found.
 
-::: warning NOTE
+::: warning title=NOTE
 Note that installing a package modifies the dproj file.
 :::
 
